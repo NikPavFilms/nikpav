@@ -1,5 +1,4 @@
 import { MoreHorizontal } from "lucide-react";
-import { setRequestLocale } from "next-intl/server";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { TypographyH3, TypographyRegular } from "@/components/ui/typography";
 import { getStatusColor } from "@/lib/admin/utils";
+import { setupPageLocale } from "@/lib/i18n/locale";
 import { BasePageProps } from "@/types/page-props";
 
 const mockUsers = [
@@ -19,8 +19,7 @@ const mockUsers = [
 ];
 
 const UsersPage = async ({ params }: BasePageProps) => {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  await setupPageLocale(params);
 
   return (
     <div className="space-y-6">

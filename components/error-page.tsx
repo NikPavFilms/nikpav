@@ -10,6 +10,8 @@ interface ErrorPageProps {
   description: string;
   backHref?: string;
   backLabel?: string;
+  /** Replaces the default "back" link, e.g. a sign-in button. */
+  action?: React.ReactNode;
 }
 
 export const ErrorPage = ({
@@ -17,6 +19,7 @@ export const ErrorPage = ({
   description,
   backHref = "/",
   backLabel = "Go back home",
+  action,
 }: ErrorPageProps) => {
   return (
     <div className="flex min-h-svh items-center justify-center bg-background p-4">
@@ -33,9 +36,11 @@ export const ErrorPage = ({
           </TypographyRegular>
         </CardContent>
         <CardFooter className="justify-center">
-          <Button asChild>
-            <Link href={backHref}>{backLabel}</Link>
-          </Button>
+          {action ?? (
+            <Button asChild>
+              <Link href={backHref}>{backLabel}</Link>
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </div>

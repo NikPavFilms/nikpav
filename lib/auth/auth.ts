@@ -62,10 +62,7 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
   },
-  pages: {
-    signIn: "/auth/signin",
-    error: "/auth/error",
-  },
+  // No custom `pages`: /auth/signin and /auth/error were never built, so NextAuth's own pages are used.
   secret: process.env.NEXTAUTH_SECRET,
 };
 

@@ -12,14 +12,15 @@ paths:
 - **Always use the frontend-design plugin** for any design or UI task.
 - **Always use shadcn/ui components.** If the component exists in the shadcn/ui library, install it (`npx shadcn@latest add <component>`) and use its official API. Never hand-build a Button, Dialog, Select, Input, Table, and so on. Look the API up (web, context7) instead of guessing.
 - **`components/ui/` is shadcn/ui ONLY.** Custom components live in `components/`.
-- **Always use Lucide icons** (`lucide-react`), the icon set shadcn/ui ships with. Search for the correct icon name rather than guessing.
+- **Always use Lucide icons** (`lucide-react`), the icon set shadcn/ui ships with. Search for the correct icon name rather than guessing. Lucide v1 removed every brand icon (Instagram, YouTube, ...): those live in `components/brand-icons.tsx`, drawn on the same 24px stroke grid.
+- **After any `pnpm dlx shadcn@latest add`, read the generated file and the `package.json` diff.** The CLI has written `import { cn } from "cn"` and installed an unrelated npm package named `cn`. The import must be `@/lib/utils`, and the stray package must be removed.
 
 ## Shared primitives: grep `components/` before writing a new one
 
 | Component | Use for |
 | --- | --- |
 | `CircleIcon` (`components/CircleIcon.tsx`) | Any prominent icon display: feature cards, services, about, highlights. Raw Lucide icons are only for small inline UI (button icons, form labels, nav items). |
-| `SocialIcon` (`components/social-icon.tsx`) | ALL social media links (footer, contact, navbar). Platform colors and hover effects included. Never build a custom social button. |
+| `SocialIcon` (`components/social-icon.tsx`) | ALL social media links (footer, contact, navbar). Platform colors and hover effects included; `color="monochrome"` for this brand, and always pass `label` (the icon-only link's accessible name). `components/site/social-links.tsx` renders every configured profile. Never build a custom social button. |
 | `ExpandMap` (`components/expand-map.tsx`) | ALL map displays. Props: `address`, `mapsUrl`, `coordinates`. Never embed a raw Google Maps iframe. |
 | `EmptyState` | Icon + title + optional description (empty tables, lists). |
 | `PageHeader` | Title + optional description + children slot for action buttons. |
@@ -67,7 +68,10 @@ Radix's Viewport uses `display: table` internally, which breaks height calculati
 
 ## Styling
 
-- CSS variables live in `app/[locale]/globals.css` (including brand colors like `--forest`, `--leaf`, `--cream`). Dark mode via `next-themes`, class strategy, `@custom-variant dark (&:is(.dark *))`.
+- CSS variables live in `app/[locale]/globals.css`. **This site is dark only** (cinematic monochrome brief): one palette in `:root`, `<html className="dark">` is static and `next-themes` was removed (it logs a script-tag error on Next 16.2+). `@custom-variant dark` stays so shadcn's `dark:` utilities apply. Don't add a light theme or a theme switcher.
+- **`@theme inline` variables are not emitted as CSS custom properties.** Tailwind inlines them into its own utilities only, so a custom `@utility` or plain CSS must reference the underlying variable (`var(--font-sofia-display)`), never `var(--font-display)`.
+- Shared type utilities: `eyebrow` (small wide-tracked label), `title-display` (condensed uppercase titles), `container-site` (page gutter). Above-the-fold entrances are CSS only (`motion-safe:animate-rise`, `animate-settle`); below the fold use `Reveal` (framer-motion `whileInView`). **Never hide, clip or fade the hero H1:** measured, it is the LCP element (Chrome doesn't pick the full-bleed hero photo), so a clipped slide-up reveal delays LCP. It paints on the first frame and only settles via `transform`.
+- **Service and category cards here use bare Lucide line icons** (`strokeWidth` about 1.1), as the brief asks. `CircleIcon`'s tinted disc needs a hex color and doesn't suit a monochrome brand.
 - **Semantic tokens only:** `text-foreground`, `bg-background`. Never raw color values. New brand colors become CSS variables with semantic names, referenced as `bg-forest` or `text-leaf`.
 - **Tailwind 4 canonical class names:** `z-100` not `z-[100]`, `bg-linear-to-t` not `bg-gradient-to-t`.
 - **Transitions use `transition-all duration-300` or `transition-colors`** on interactive elements, so nothing changes state abruptly. Animate `transform` and `opacity` only, never width/height/top/left.

@@ -1,8 +1,11 @@
-import en from "./messages/en.json";
+import type { routing } from "./lib/i18n/routing";
+import type en from "./messages/en.json";
 
-type Messages = typeof en;
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface IntlMessages extends Messages {}
+// next-intl 4 reads its types from this augmentation (the old global `IntlMessages` is ignored),
+// so translation keys and locales are checked at compile time.
+declare module "next-intl" {
+  interface AppConfig {
+    Locale: (typeof routing.locales)[number];
+    Messages: typeof en;
+  }
 }

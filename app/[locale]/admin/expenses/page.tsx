@@ -1,5 +1,4 @@
 import { MoreHorizontal } from "lucide-react";
-import { setRequestLocale } from "next-intl/server";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { TypographyH3, TypographyRegular } from "@/components/ui/typography";
 import { getStatusColor } from "@/lib/admin/utils";
+import { setupPageLocale } from "@/lib/i18n/locale";
 import { BasePageProps } from "@/types/page-props";
 
 const mockExpenses = [
@@ -26,8 +26,7 @@ const formatCurrency = (amount: number, locale: string) =>
   new Intl.NumberFormat(locale, { style: "currency", currency: "USD" }).format(amount);
 
 const ExpensesPage = async ({ params }: BasePageProps) => {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const locale = await setupPageLocale(params);
 
   return (
     <div className="space-y-6">

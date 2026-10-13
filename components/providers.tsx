@@ -1,8 +1,6 @@
 "use client";
 
-import { SessionProvider } from "next-auth/react";
-import { AbstractIntlMessages,NextIntlClientProvider } from "next-intl";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { AbstractIntlMessages, Locale, NextIntlClientProvider } from "next-intl";
 
 import { DialogProvider } from "@/components/dialog-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -11,26 +9,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 type Props = {
   children: React.ReactNode;
   messages: AbstractIntlMessages;
-  locale: string;
+  locale: Locale;
+  /** Same zone as the server config, so client-rendered dates never mismatch on hydration. */
+  timeZone: string;
 };
 
-export const Providers = ({ children, messages, locale }: Props) => {
+// The brand is dark only: `<html className="dark">` is static, so no theme provider is needed.
+// Auth (SessionProvider) lives in the admin layout, so public pages never call /api/auth/session.
+export const Providers = ({ children, messages, locale, timeZone }: Props) => {
   return (
-    <SessionProvider>
-      <NextThemesProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <TooltipProvider>
-            {children}
-          </TooltipProvider>
-          <DialogProvider />
-          <Toaster />
-        </NextIntlClientProvider>
-      </NextThemesProvider>
-    </SessionProvider>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone={timeZone}>
+      <TooltipProvider>{children}</TooltipProvider>
+      <DialogProvider />
+      <Toaster />
+    </NextIntlClientProvider>
   );
 };

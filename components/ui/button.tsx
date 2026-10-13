@@ -22,12 +22,17 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         brand:
           "bg-[var(--brand-primary,hsl(var(--primary)))] text-white hover:opacity-90 active:scale-[0.98]",
+        // Translucent hairline button for use over photos and video.
+        glass:
+          "border border-foreground/25 bg-foreground/5 text-foreground backdrop-blur-md hover:border-foreground/60 hover:bg-foreground/15",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         xs: "h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        // Site call-to-action size: tall, wide-tracked uppercase label.
+        xl: "h-12 gap-3 rounded-md px-7 text-xs tracking-[0.18em] uppercase has-[>svg]:px-6",
         icon: "size-9",
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",

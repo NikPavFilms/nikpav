@@ -1,14 +1,284 @@
 {
-  "HomePage": {
-    "title": "Welcome",
-    "description": "Get started by editing this page.",
-    "components": {
-      "title": "Available Components",
-      "button": "Button",
-      "input": "Input",
-      "card": "Card",
-      "label": "Label"
+  "Metadata": {
+    "siteName": "Nikos Pavlakos",
+    "defaultTitle": "Nikos Pavlakos | Photography & Film",
+    "defaultDescription": "Nikos Pavlakos is a photographer and filmmaker based in Greece, creating cinematic photography and film for weddings, baptisms, brands and real estate.",
+    "jobTitle": "Photographer & Filmmaker",
+    "home": {
+      "title": "Nikos Pavlakos | Photographer & Filmmaker in Greece",
+      "description": "Cinematic photography and film for people, brands and spaces. Weddings, baptisms, social media content, real estate and productions, based in Greece."
+    },
+    "works": {
+      "title": "Works",
+      "description": "Selected photography and film projects by Nikos Pavlakos: weddings, baptisms, brand content, real estate and productions."
+    },
+    "about": {
+      "title": "About",
+      "description": "Photographer and filmmaker based in Greece. The story, the approach and the services behind every project."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Tell me about your wedding, baptism, brand or space. Get in touch with Nikos Pavlakos for photography and film."
     }
+  },
+  "Nav": {
+    "home": "Home",
+    "works": "Works",
+    "about": "About",
+    "contact": "Contact",
+    "primary": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "language": "Language",
+    "skip": "Skip to content",
+    "instagram": "Instagram (opens in a new tab)",
+    "youtube": "YouTube (opens in a new tab)",
+    "homeLink": "Nikos Pavlakos, home"
+  },
+  "Common": {
+    "cta": {
+      "eyebrow": "Next chapter",
+      "title": "Let's work together",
+      "subtitle": "Have a project in mind?",
+      "button": "Get in touch",
+      "instagram": "or message me on Instagram"
+    },
+    "film": "Film",
+    "loading": "Loading",
+    "pauseVideo": "Pause background video",
+    "playVideo": "Play background video"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Photography · Filmmaking",
+      "titleLine1": "Visual stories.",
+      "titleLine2": "Real impact.",
+      "description": "Photography and film for people, brands and spaces.",
+      "showreel": "Watch showreel",
+      "scroll": "Scroll to explore"
+    },
+    "selectedWorks": {
+      "eyebrow": "Recent projects",
+      "title": "Selected works",
+      "viewAll": "View all works"
+    },
+    "whatIDo": {
+      "eyebrow": "Services",
+      "title": "What I do",
+      "description": "From a first dance to a brand campaign, every project gets the same eye for light, story and detail."
+    },
+    "about": {
+      "eyebrow": "About me",
+      "title": "More than just images.",
+      "body": "I'm Nikos, a photographer and filmmaker based in Greece. I create visual stories for people, brands and spaces, with images that carry atmosphere, character and real emotion.",
+      "body2": "Every project starts with listening: what matters to you, and how it should feel years from now.",
+      "cta": "Learn more"
+    }
+  },
+  "Categories": {
+    "social": {
+      "label": "Social",
+      "tagline": "Brand content",
+      "service": "Commercial content",
+      "description": "Scroll-stopping photo and video for brands, products, bars and restaurants, made for social media and campaigns.",
+      "seoTitle": "Social Media & Brand Content",
+      "seoDescription": "Photography and video for brands, products, cocktail bars and restaurants: content that makes people stop scrolling."
+    },
+    "wedding": {
+      "label": "Wedding",
+      "tagline": "Love stories",
+      "service": "Love stories",
+      "description": "Weddings told like films: honest moments, golden light and the details you will want to remember.",
+      "seoTitle": "Wedding Photography & Film",
+      "seoDescription": "Cinematic wedding photography and film in Greece: real moments, natural light and a story you will relive for years."
+    },
+    "baptism": {
+      "label": "Baptism",
+      "tagline": "Precious moments",
+      "service": "Precious moments",
+      "description": "Baptisms and family celebrations, captured discreetly, from the first candle to the last dance.",
+      "seoTitle": "Baptism Photography & Film",
+      "seoDescription": "Discreet baptism photography and film: the emotion of the ceremony, the family and the celebration, exactly as you lived them."
+    },
+    "real-estate": {
+      "label": "Real Estate",
+      "tagline": "Properties & spaces",
+      "service": "Properties & spaces",
+      "description": "Architecture, villas and interiors presented with the light and atmosphere that sell the feeling of a place.",
+      "seoTitle": "Real Estate Photography & Video",
+      "seoDescription": "Photography and video for real estate, villas and interiors: light, space and atmosphere that make a property stand out."
+    },
+    "production": {
+      "label": "Production",
+      "tagline": "Creative campaigns",
+      "service": "Creative campaigns",
+      "description": "Productions from concept to delivery: commercials, brand films and campaigns, on set and in the edit.",
+      "seoTitle": "Video Production & Campaigns",
+      "seoDescription": "Video production from concept to delivery: commercials, brand films and campaigns with a cinematic look."
+    }
+  },
+  "Works": {
+    "hero": {
+      "eyebrow": "Works",
+      "title": "Selected works",
+      "description": "Different projects. Same vision."
+    },
+    "categoryEyebrow": "Works · {category}",
+    "filters": "Filter projects by category",
+    "all": "All",
+    "projectsCount": "{count, plural, one {# project} other {# projects}}"
+  },
+  "Project": {
+    "category": "Category",
+    "location": "Location",
+    "services": "Services",
+    "photography": "Photography",
+    "film": "Film",
+    "theFilm": "The film",
+    "gallery": "Gallery",
+    "next": "Next project",
+    "breadcrumb": "Breadcrumb"
+  },
+  "About": {
+    "hero": {
+      "eyebrow": "About",
+      "titleLine1": "The story",
+      "titleLine2": "behind the lens.",
+      "tagline": "Passion. Creativity. Authenticity."
+    },
+    "who": {
+      "eyebrow": "Nikos Pavlakos",
+      "title": "Who I am",
+      "p1": "I'm Nikos, a photographer and filmmaker based in Greece. The camera has always been my way of looking more closely: the light shifting across a face, a hand that holds on a moment longer, the quiet just before the laughter breaks.",
+      "p2": "Today I photograph and film weddings, baptisms, businesses and spaces. The subjects change, the approach stays the same: I listen first, learn what matters to you, then build every frame around the story you want to tell.",
+      "p3": "Every collaboration is a story of its own. I don't arrive with a formula. I arrive prepared and curious, and I work quietly in the background so that, in the end, the images do the talking."
+    },
+    "philosophy": {
+      "eyebrow": "Approach",
+      "title": "My philosophy",
+      "p1": "I'm drawn to images with character, atmosphere and substance. Not just beautiful pictures, but images that remind you how that day actually felt.",
+      "p2": "I care about detail and authenticity. Every production is shaped around the person, the brand or the space it presents: its light, its pace, its tone. Because no story should be told twice the same way.",
+      "pillars": {
+        "detail": {
+          "title": "Detail",
+          "text": "The small things that make a moment yours."
+        },
+        "authenticity": {
+          "title": "Authenticity",
+          "text": "Real emotion over staged perfection."
+        },
+        "tailored": {
+          "title": "Made to measure",
+          "text": "Light, pace and tone shaped around you."
+        }
+      }
+    },
+    "services": {
+      "eyebrow": "What I offer",
+      "title": "Services",
+      "items": {
+        "photography": {
+          "title": "Photography",
+          "text": "Documentary and commercial photography, from intimate portraits to entire events."
+        },
+        "videography": {
+          "title": "Videography",
+          "text": "Cinematic films and short edits of the strongest moments, with natural sound and an honest rhythm."
+        },
+        "drone": {
+          "title": "Drone",
+          "text": "Aerial photo and video that reveal the setting, the scale and the landscape around you."
+        },
+        "editing": {
+          "title": "Editing",
+          "text": "Colour grading, retouching and editing that give every project one consistent look."
+        },
+        "creativeDirection": {
+          "title": "Creative Direction",
+          "text": "Concept, visual direction, locations and styling, all planned before the camera rolls."
+        },
+        "consulting": {
+          "title": "Consulting",
+          "text": "Guidance on content, visual identity and how your brand or space can stand out."
+        }
+      }
+    }
+  },
+  "Contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Let's create something together.",
+      "description": "Tell me about your wedding, your celebration, your brand or your space. Every story starts with a conversation."
+    },
+    "form": {
+      "title": "Send an inquiry",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "name@example.com",
+      "phone": "Phone",
+      "type": "Type of project",
+      "typePlaceholder": "Select a category",
+      "typeOther": "Something else",
+      "date": "Date",
+      "location": "Location",
+      "locationPlaceholder": "City or venue",
+      "message": "Message",
+      "messagePlaceholder": "A few words about your project, your ideas and anything I should know.",
+      "optional": "optional",
+      "submit": "Send inquiry",
+      "note": "Sending opens your email app with your message ready to go.",
+      "opened": "Your email app should open now. If it doesn’t, write to me at <email>{address}</email>.",
+      "subject": "New inquiry: {type} | {name}"
+    },
+    "channels": {
+      "title": "Or reach me directly",
+      "instagram": "Instagram",
+      "instagramCta": "Message me on Instagram",
+      "email": "Email",
+      "phone": "Phone",
+      "based": "Based in",
+      "basedValue": "Greece",
+      "titleAlone": "Reach me directly"
+    },
+    "brief": {
+      "title": "What to include",
+      "items": {
+        "date": "The date and the location",
+        "type": "What we are creating: a wedding, a baptism, a brand or a space",
+        "story": "The feeling you are after, in your own words",
+        "references": "Any images that inspire you, if you have them"
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "Photography and film for people, brands and spaces.",
+    "navigate": "Navigate",
+    "follow": "Follow",
+    "contact": "Contact",
+    "basedIn": "Based in Greece",
+    "rights": "© {year} Nikos Pavlakos. All rights reserved.",
+    "madeBy": "Made by"
+  },
+  "Showreel": {
+    "title": "Showreel",
+    "description": "A short reel of recent work.",
+    "close": "Close"
+  },
+  "NotFound": {
+    "eyebrow": "Error 404",
+    "title": "Out of frame.",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  },
+  "Alt": {
+    "homeAbout": "Photographer shooting in a wheat field under a cloudy sky",
+    "aboutHero": "Silhouette of a filmmaker with a cinema camera against red light",
+    "aboutPortrait": "Bearded photographer in a cap holding a camera",
+    "philosophy": "Soft daylight through a window with a sheer curtain in a dark room",
+    "worksHero": "Two cinema cameras on tripods in a dark studio",
+    "contactHero": "Coastline at dusk with a mountain on the horizon"
   },
   "Admin": {
     "nav": {
@@ -30,6 +300,9 @@
     "expenses": {
       "title": "Expenses",
       "description": "Track and manage your organization's expenses."
+    },
+    "auth": {
+      "signIn": "Sign in with Google"
     }
   }
 }
