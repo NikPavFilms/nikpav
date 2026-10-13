@@ -6,10 +6,11 @@
  *   1. Photos go in assets/images/works/<category>/<slug>/01.webp, 02.webp, ... (01 = cover).
  *   2. Update the entry below (title, summary, description, location, alt texts) in both languages.
  * The order of PROJECTS is the order on /works; the first project of each category supplies that
- * category's cover on Home and on its category page.
+ * category's cover on Home and on its category page, unless CATEGORY_COVERS sets one.
  */
 import type { StaticImageData } from "next/image";
 
+import baptismCover from "@/assets/images/works/baptism/cover.webp";
 import babyGarden01 from "@/assets/images/works/baptism/family-celebration/01.webp";
 import babyGarden02 from "@/assets/images/works/baptism/family-celebration/02.webp";
 import babyGarden03 from "@/assets/images/works/baptism/family-celebration/03.webp";
@@ -505,10 +506,22 @@ export const getProject = (category: string, slug: string) =>
 
 export const getNextProject = (project: Project) => PROJECTS[(PROJECTS.indexOf(project) + 1) % PROJECTS.length];
 
+// Category covers that are not a project's cover (Home, category hero, sitemap).
+const CATEGORY_COVERS: Partial<Record<CategorySlug, ProjectImage>> = {
+  baptism: {
+    ...image(
+      baptismCover,
+      "Little girl with tousled hair looking straight into the camera",
+      "Κοριτσάκι με ανακατεμένα μαλλιά κοιτάζει κατευθείαν στον φακό",
+    ),
+    focus: "50% 35%",
+  },
+};
+
 export const getCategoryCover = (category: CategorySlug): ProjectImage => {
-  const first = PROJECTS.find((project) => project.category === category);
-  if (!first) throw new Error(`Category "${category}" has no projects`);
-  return first.cover;
+  const cover = CATEGORY_COVERS[category] ?? PROJECTS.find((project) => project.category === category)?.cover;
+  if (!cover) throw new Error(`Category "${category}" has no projects`);
+  return cover;
 };
 
 export const getCategoryCovers = () =>

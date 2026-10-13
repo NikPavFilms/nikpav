@@ -45,7 +45,8 @@ real work. Replace them project by project:
    text, each in English and Greek. Optionally add a film: `{ type: "youtube", id: "..." }`.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
    (`lib/works/categories.ts`). The first project of each category supplies its cover on Home and on
-   the category page.
+   the category page, unless `CATEGORY_COVERS` in `lib/works/projects.ts` sets a dedicated one
+   (stored as `assets/images/works/<category>/cover.webp`).
 
 Adding a project is the same: a new folder plus a new entry. Its pages, the sitemap and the filters
 pick it up automatically.
