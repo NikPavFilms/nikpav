@@ -22,7 +22,7 @@ pnpm only. Restart `pnpm dev` after editing `messages/*.json`: next-intl caches 
 
 ### Contact details and socials
 
-`lib/general/constants.ts` holds the `SITE` object: name, Instagram, optional YouTube, **email** and
+`lib/general/constants.ts` holds the `SITE` object: name, Instagram, TikTok, optional YouTube, **email** and
 **phone**. The contact form, plus the email and phone links in the footer and on Contact, only appear
 once `email` / `phone` are filled in. The form needs no backend: it opens the visitor's email app with
 the inquiry pre-filled to that address.

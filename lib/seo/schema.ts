@@ -7,7 +7,7 @@ const PERSON_ID = `${SITE_URL}/#person`;
 const BUSINESS_ID = `${SITE_URL}/#business`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
-const sameAs = [SITE.instagram.url, SITE.youtubeUrl].filter(Boolean);
+const sameAs = [SITE.instagram.url, SITE.tiktok.url, SITE.youtubeUrl].filter(Boolean);
 
 interface SiteGraphOptions {
   locale: Locale;

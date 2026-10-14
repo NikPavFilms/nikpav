@@ -33,6 +33,7 @@
     "language": "Language",
     "skip": "Skip to content",
     "instagram": "Instagram (opens in a new tab)",
+    "tiktok": "TikTok (opens in a new tab)",
     "youtube": "YouTube (opens in a new tab)",
     "homeLink": "Nikos Pavlakos, home"
   },
@@ -42,7 +43,8 @@
       "title": "Let's work together",
       "subtitle": "Have a project in mind?",
       "button": "Get in touch",
-      "instagram": "or message me on Instagram"
+      "instagram": "or message me on Instagram",
+      "tiktok": "or follow me on TikTok"
     },
     "film": "Film",
     "loading": "Loading",
@@ -236,6 +238,8 @@
       "title": "Or reach me directly",
       "instagram": "Instagram",
       "instagramCta": "Message me on Instagram",
+      "tiktok": "TikTok",
+      "tiktokCta": "Watch my latest videos on TikTok",
       "email": "Email",
       "phone": "Phone",
       "based": "Based in",

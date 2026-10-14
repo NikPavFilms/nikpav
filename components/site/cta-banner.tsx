@@ -3,11 +3,10 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import ctaPoster from "@/assets/images/site/cta-poster.webp";
-import { InstagramIcon } from "@/components/brand-icons";
 import { Reveal } from "@/components/motion/reveal";
 import { BackgroundVideo } from "@/components/site/background-video";
+import { SOCIAL_PROFILES } from "@/components/site/social-profiles";
 import { Button } from "@/components/ui/button";
-import { SITE } from "@/lib/general/constants";
 import { Link } from "@/lib/i18n/navigation";
 
 // "Let's work together": shared closing banner on Home, Works, projects and About.
@@ -39,16 +38,21 @@ export const CtaBanner = async () => {
               <ArrowRight />
             </Link>
           </Button>
-          <a
-            href={SITE.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex cursor-pointer items-center gap-2 text-sm text-foreground/70 transition-colors duration-300 hover:text-foreground"
-          >
-            <InstagramIcon className="size-4" />
-            <span>{t("instagram")}</span>
-            <span className="text-foreground underline-offset-4 group-hover:underline">@{SITE.instagram.handle}</span>
-          </a>
+          <div className="flex flex-col items-center gap-3">
+            {SOCIAL_PROFILES.map(({ key, Icon, url, handle }) => (
+              <a
+                key={key}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex cursor-pointer items-center gap-2 text-sm text-foreground/70 transition-colors duration-300 hover:text-foreground"
+              >
+                <Icon className="size-4" />
+                <span>{t(key)}</span>
+                <span className="text-foreground underline-offset-4 group-hover:underline">@{handle}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </Reveal>
     </section>

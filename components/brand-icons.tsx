@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-// Lucide v1 removed all brand icons, so the Instagram and YouTube glyphs live here.
+// Lucide v1 removed all brand icons, so the Instagram, TikTok and YouTube glyphs live here.
 // Same 24px grid and 2px stroke as Lucide, so they sit next to it seamlessly.
 
 type IconProps = SVGProps<SVGSVGElement>;
@@ -23,6 +23,13 @@ export const InstagramIcon = (props: IconProps) => (
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+// Outline from Tabler Icons (MIT), which share Lucide's grid and stroke.
+export const TiktokIcon = (props: IconProps) => (
+  <svg {...STROKE_PROPS} {...props}>
+    <path d="M21 7.917v4.034a9.948 9.948 0 0 1-5-1.951v4.5a6.5 6.5 0 1 1-8-6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" />
   </svg>
 );
 

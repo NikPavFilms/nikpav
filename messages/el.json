@@ -33,6 +33,7 @@
     "language": "Γλώσσα",
     "skip": "Μετάβαση στο περιεχόμενο",
     "instagram": "Instagram (ανοίγει σε νέα καρτέλα)",
+    "tiktok": "TikTok (ανοίγει σε νέα καρτέλα)",
     "youtube": "YouTube (ανοίγει σε νέα καρτέλα)",
     "homeLink": "Νίκος Παυλάκος, αρχική σελίδα"
   },
@@ -42,7 +43,8 @@
       "title": "Ας δουλέψουμε μαζί",
       "subtitle": "Έχετε κάτι στο μυαλό σας;",
       "button": "Επικοινωνήστε μαζί μου",
-      "instagram": "ή στείλτε μου μήνυμα στο Instagram"
+      "instagram": "ή στείλτε μου μήνυμα στο Instagram",
+      "tiktok": "ή ακολουθήστε με στο TikTok"
     },
     "film": "Βίντεο",
     "loading": "Φόρτωση",
@@ -236,6 +238,8 @@
       "title": "Ή απευθείας",
       "instagram": "Instagram",
       "instagramCta": "Στείλτε μου μήνυμα στο Instagram",
+      "tiktok": "TikTok",
+      "tiktokCta": "Δείτε τα τελευταία μου βίντεο στο TikTok",
       "email": "Email",
       "phone": "Τηλέφωνο",
       "based": "Έδρα",

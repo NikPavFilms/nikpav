@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 
-import { InstagramIcon, YoutubeIcon } from "@/components/brand-icons";
+import { YoutubeIcon } from "@/components/brand-icons";
+import { SOCIAL_PROFILES } from "@/components/site/social-profiles";
 import { SocialIcon } from "@/components/social-icon";
 import { SITE } from "@/lib/general/constants";
 import { cn } from "@/lib/general/utils";
@@ -20,13 +21,16 @@ export const SocialLinks = ({ size = "md", className }: SocialLinksProps) => {
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <SocialIcon
-        url={SITE.instagram.url}
-        color="monochrome"
-        label={t("instagram")}
-        icon={<InstagramIcon className={iconClass} />}
-        className={buttonClass}
-      />
+      {SOCIAL_PROFILES.map(({ key, Icon, url }) => (
+        <SocialIcon
+          key={key}
+          url={url}
+          color="monochrome"
+          label={t(key)}
+          icon={<Icon className={iconClass} />}
+          className={buttonClass}
+        />
+      ))}
       {SITE.youtubeUrl && (
         <SocialIcon
           url={SITE.youtubeUrl}

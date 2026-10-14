@@ -13,6 +13,7 @@ interface SiteConfig {
   name: string;
   shortName: string;
   instagram: { handle: string; url: string };
+  tiktok: { handle: string; url: string };
   youtubeUrl?: string;
   /** Inquiry address, e.g. "hello@nikpav.gr". */
   email?: string;
@@ -28,6 +29,10 @@ export const SITE: SiteConfig = {
   instagram: {
     handle: "nikpav._",
     url: "https://www.instagram.com/nikpav._/",
+  },
+  tiktok: {
+    handle: "nikos.pavlakos",
+    url: "https://www.tiktok.com/@nikos.pavlakos",
   },
   countryCode: "GR",
   showreel: {

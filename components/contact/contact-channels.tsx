@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
-import { InstagramIcon } from "@/components/brand-icons";
+import { SOCIAL_PROFILES } from "@/components/site/social-profiles";
 import { SocialIcon } from "@/components/social-icon";
 import { SITE, telHref } from "@/lib/general/constants";
 
@@ -33,23 +33,26 @@ export const ContactChannels = async ({ standalone }: { standalone: boolean }) =
     <div>
       <h2 className="title-display text-5xl md:text-6xl">{standalone ? t("titleAlone") : t("title")}</h2>
       <ul className="mt-8 divide-y divide-border border-y border-border">
-        <ChannelRow
-          label={t("instagram")}
-          icon={
-            <SocialIcon
-              url={SITE.instagram.url}
-              color="monochrome"
-              label={tNav("instagram")}
-              icon={<InstagramIcon className="size-4" />}
-              className="size-11 rounded-full"
-            />
-          }
-        >
-          <a href={SITE.instagram.url} target="_blank" rel="noopener noreferrer" className={VALUE_LINK_CLASS}>
-            @{SITE.instagram.handle}
-          </a>
-          <span className="mt-1 block text-sm text-muted-foreground">{t("instagramCta")}</span>
-        </ChannelRow>
+        {SOCIAL_PROFILES.map(({ key, Icon, url, handle }) => (
+          <ChannelRow
+            key={key}
+            label={t(key)}
+            icon={
+              <SocialIcon
+                url={url}
+                color="monochrome"
+                label={tNav(key)}
+                icon={<Icon className="size-4" />}
+                className="size-11 rounded-full"
+              />
+            }
+          >
+            <a href={url} target="_blank" rel="noopener noreferrer" className={VALUE_LINK_CLASS}>
+              @{handle}
+            </a>
+            <span className="mt-1 block text-sm text-muted-foreground">{t(`${key}Cta`)}</span>
+          </ChannelRow>
+        ))}
 
         {SITE.email && (
           <ChannelRow label={t("email")} icon={<span className={CIRCLE_CLASS}><Mail aria-hidden className="size-4" /></span>}>
