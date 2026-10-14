@@ -6,21 +6,16 @@
  *   1. Photos go in assets/images/works/<category>/<slug>/01.webp, 02.webp, ... (01 = cover).
  *   2. Update the entry below (title, summary, description, location, alt texts) in both languages.
  * The order of PROJECTS is the order on /works; the first project of each category supplies that
- * category's cover on Home and on its category page, unless CATEGORY_COVERS sets one.
+ * category's cover on Home and on its category page.
  */
 import type { StaticImageData } from "next/image";
 
-import baptismCover from "@/assets/images/works/baptism/cover.webp";
 import babyGarden01 from "@/assets/images/works/baptism/family-celebration/01.webp";
 import babyGarden02 from "@/assets/images/works/baptism/family-celebration/02.webp";
 import babyGarden03 from "@/assets/images/works/baptism/family-celebration/03.webp";
 import babyGarden04 from "@/assets/images/works/baptism/family-celebration/04.webp";
 import babyGarden05 from "@/assets/images/works/baptism/family-celebration/05.webp";
 import brandFilm01 from "@/assets/images/works/production/brand-film/01.webp";
-import brandFilm02 from "@/assets/images/works/production/brand-film/02.webp";
-import brandFilm03 from "@/assets/images/works/production/brand-film/03.webp";
-import brandFilm04 from "@/assets/images/works/production/brand-film/04.webp";
-import brandFilm05 from "@/assets/images/works/production/brand-film/05.webp";
 import villa01 from "@/assets/images/works/real-estate/seaside-villa/01.webp";
 import villa02 from "@/assets/images/works/real-estate/seaside-villa/02.webp";
 import villa03 from "@/assets/images/works/real-estate/seaside-villa/03.webp";
@@ -36,7 +31,6 @@ import goldenHour02 from "@/assets/images/works/wedding/golden-hour-vows/02.webp
 import goldenHour03 from "@/assets/images/works/wedding/golden-hour-vows/03.webp";
 import goldenHour04 from "@/assets/images/works/wedding/golden-hour-vows/04.webp";
 import goldenHour05 from "@/assets/images/works/wedding/golden-hour-vows/05.webp";
-import { SITE } from "@/lib/general/constants";
 
 import { CATEGORY_SLUGS, type CategorySlug } from "./categories";
 import type { LocalizedText, Project, ProjectImage } from "./types";
@@ -63,10 +57,10 @@ export const PROJECTS: Project[] = [
     cover: {
       ...image(
         goldenHour01,
-        "Bride and groom embracing in a field, backlit by the setting sun",
-        "Νύφη και γαμπρός αγκαλιασμένοι σε χωράφι, κόντρα στον ήλιο που δύει",
+        "Bride and groom embracing on a hilltop against a sunset sky",
+        "Νύφη και γαμπρός αγκαλιασμένοι σε λόφο, με φόντο τον ουρανό στο ηλιοβασίλεμα",
       ),
-      focus: "50% 30%",
+      focus: "50% 55%",
     },
     gallery: [
       image(
@@ -147,11 +141,14 @@ export const PROJECTS: Project[] = [
     },
     location: GREECE,
     services: ["photography", "film"],
-    cover: image(
-      cocktails01,
-      "Bartender in a black vest offering a dark red cocktail in a coupe glass",
-      "Μπάρμαν με μαύρο γιλέκο σερβίρει ένα σκούρο κόκκινο κοκτέιλ σε ποτήρι κουπ",
-    ),
+    cover: {
+      ...image(
+        cocktails01,
+        "Berry sauce poured over a stack of pancakes topped with edible flowers",
+        "Σάλτσα μούρων χύνεται πάνω σε στοίβα από τηγανίτες με βρώσιμα λουλούδια",
+      ),
+      focus: "50% 65%",
+    },
     gallery: [
       image(
         cocktails02,
@@ -189,11 +186,15 @@ export const PROJECTS: Project[] = [
     },
     location: GREECE,
     services: ["photography", "film"],
-    cover: image(
-      villa01,
-      "Villa terrace and infinity pool lit up at night",
-      "Βεράντα βίλας και πισίνα υπερχείλισης φωτισμένες τη νύχτα",
-    ),
+    cover: {
+      ...image(
+        villa01,
+        "Glass balconies of a seaside building, with the sea and mountains behind",
+        "Γυάλινα μπαλκόνια παραθαλάσσιου κτιρίου, με φόντο τη θάλασσα και τα βουνά",
+      ),
+      // Portrait photo: keep the balconies and the sea, crop the empty sky.
+      focus: "50% 55%",
+    },
     gallery: [
       image(
         villa02,
@@ -221,45 +222,42 @@ export const PROJECTS: Project[] = [
     slug: "brand-film",
     category: "production",
     title: { en: "From Idea to Image", el: "Από την ιδέα στην εικόνα" },
-    summary: {
-      en: "A short brand film for a tattoo studio, from the first idea to the final grade.",
-      el: "Μια σύντομη ταινία για ένα στούντιο τατουάζ, από την πρώτη ιδέα μέχρι τη χρωματική διόρθωση.",
-    },
     description: {
-      en: "Concept, direction, shooting and edit for a tattoo studio's short film: haze, ring lights and the craft up close, made for social media and the big screen alike.",
-      el: "Ιδέα, σκηνοθεσία, γύρισμα και μοντάζ για την ταινία ενός στούντιο τατουάζ: ομίχλη, κυκλικά φώτα και η τέχνη από κοντά, φτιαγμένη τόσο για τα social media όσο και για τη μεγάλη οθόνη.",
+      en: "Productions for brands and artists: campaigns, music videos, dance films, event films, reviews and interviews.",
+      el: "Παραγωγές για brands και καλλιτέχνες: καμπάνιες, music videos, χορευτικά βίντεο, βίντεο εκδηλώσεων, reviews και συνεντεύξεις.",
     },
     location: GREECE,
     services: ["film"],
-    cover: image(
-      brandFilm01,
-      "Camera operator filming a tattoo session under red and blue light",
-      "Χειριστής κάμερας κινηματογραφεί μια συνεδρία τατουάζ σε κόκκινο και μπλε φως",
-    ),
-    gallery: [
-      image(
-        brandFilm02,
-        "Young woman in glasses seated under red and blue studio light",
-        "Νεαρή γυναίκα με γυαλιά, καθισμένη σε κόκκινο και μπλε φως στούντιο",
+    // Cover: a still from the Nakas Lab shoot.
+    cover: {
+      ...image(
+        brandFilm01,
+        "Electric guitars and amplifiers set up in a studio in front of a leather sofa",
+        "Ηλεκτρικές κιθάρες και ενισχυτές στημένοι σε στούντιο, μπροστά από δερμάτινο καναπέ",
       ),
-      image(
-        brandFilm03,
-        "Tattoo artist at work beneath a ring light in thick haze",
-        "Τατουατζής δουλεύει κάτω από ένα κυκλικό φως μέσα σε πυκνή ομίχλη",
-      ),
-      image(
-        brandFilm04,
-        "Tattooed hand reaching toward a glowing ring light in the dark",
-        "Χέρι με τατουάζ απλώνεται προς ένα φωτεινό κυκλικό φως στο σκοτάδι",
-      ),
-      image(
-        brandFilm05,
-        "Camera monitor in a dark blue studio showing the scene being filmed",
-        "Οθόνη κάμερας σε σκοτεινό μπλε στούντιο δείχνει τη σκηνή που γυρίζεται",
-      ),
+      // The guitars sit in the lower half: crop the wall above them, not the instruments.
+      focus: "50% 80%",
+    },
+    gallery: [],
+    films: [
+      { type: "youtube", id: "Vo2Mm-ZqMJ8", title: "Prince Oliver | Summer Campaign 2023" },
+      { type: "youtube", id: "n0Xx019zThA", title: "Yamaha NS-5000 στο Nakas Lab | Review & συνέντευξη" },
+      {
+        type: "video",
+        src: "/videos/production/clip-aid.mp4",
+        poster: "/videos/production/clip-aid-poster.webp",
+        title: "AID | Ίδρυμα Ευγενίδου",
+      },
+      { type: "youtube", id: "ByNOr_CeInc", title: "Χριστόδουλος Παπαδάκης | Απαγορευμένες Σκέψεις (Official Music Video)" },
+      { type: "youtube", id: "UwF9NXTJpNc", title: "DUALFO | Click & Clack (Prod. Orfanidis)" },
+      {
+        type: "video",
+        src: "/videos/production/xrysa.mp4",
+        poster: "/videos/production/xrysa-poster.webp",
+        title: "Flor de Mayo Project",
+      },
+      { type: "youtube", id: "sdU4aWfn4RU", title: "Rap Lab x Ryū Records | Lab Raps S2 EP1 (Feat. A-Drop, KYNO, ΚΞ)" },
     ],
-    // Placeholder: the showreel stands in for the real film. Prefer { type: "youtube", id: "..." }.
-    film: SITE.showreel.type === "video" ? { type: "video", src: SITE.showreel.src, poster: SITE.showreel.poster } : undefined,
   },
 ];
 
@@ -271,26 +269,17 @@ export const getProject = (category: string, slug: string) =>
 
 export const getNextProject = (project: Project) => PROJECTS[(PROJECTS.indexOf(project) + 1) % PROJECTS.length];
 
-// Category covers that are not a project's cover (Home, category hero, sitemap).
-const CATEGORY_COVERS: Partial<Record<CategorySlug, ProjectImage>> = {
-  baptism: {
-    ...image(
-      baptismCover,
-      "Little girl with tousled hair looking straight into the camera",
-      "Κοριτσάκι με ανακατεμένα μαλλιά κοιτάζει κατευθείαν στον φακό",
-    ),
-    focus: "50% 35%",
-  },
+// The first project of a category leads it: its cover and title stand for the category.
+export const getCategoryLead = (category: CategorySlug): Project => {
+  const first = PROJECTS.find((project) => project.category === category);
+  if (!first) throw new Error(`Category "${category}" has no projects`);
+  return first;
 };
 
-export const getCategoryCover = (category: CategorySlug): ProjectImage => {
-  const cover = CATEGORY_COVERS[category] ?? PROJECTS.find((project) => project.category === category)?.cover;
-  if (!cover) throw new Error(`Category "${category}" has no projects`);
-  return cover;
-};
+export const getCategoryCover = (category: CategorySlug): ProjectImage => getCategoryLead(category).cover;
 
-export const getCategoryCovers = () =>
-  Object.fromEntries(CATEGORY_SLUGS.map((slug) => [slug, getCategoryCover(slug)])) as Record<CategorySlug, ProjectImage>;
+export const getCategoryLeads = () =>
+  Object.fromEntries(CATEGORY_SLUGS.map((slug) => [slug, getCategoryLead(slug)])) as Record<CategorySlug, Project>;
 
 export const getCategoryCounts = () =>
   Object.fromEntries(CATEGORY_SLUGS.map((slug) => [slug, getProjects(slug).length])) as Record<CategorySlug, number>;

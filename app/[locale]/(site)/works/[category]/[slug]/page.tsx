@@ -87,7 +87,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         focus={project.cover.focus}
         eyebrow={categoryLabel}
         titleLines={[title]}
-        description={project.summary[locale]}
+        description={project.summary?.[locale]}
         height="screen"
       />
 
@@ -131,18 +131,27 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         </Reveal>
       </section>
 
-      {project.film && (
+      {project.films?.length ? (
         <section aria-labelledby="film-title" className="container-site pb-16 md:pb-24">
           <Eyebrow as="h2" id="film-title" className="mb-6">
-            {t("theFilm")}
+            {project.films.length > 1 ? t("theFilms") : t("theFilm")}
           </Eyebrow>
-          <ProjectFilm film={project.film} title={title} />
+          <div className="grid gap-12 md:gap-16">
+            {project.films.map((film) => (
+              <figure key={film.type === "youtube" ? film.id : film.src}>
+                <ProjectFilm film={film} title={film.title ?? title} />
+                {film.title && <figcaption className="mt-4 text-muted-foreground">{film.title}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {project.gallery.length > 0 && (
+        <section aria-label={t("gallery")} className="container-site pb-24 md:pb-32">
+          <ProjectGallery images={project.gallery} locale={locale} />
         </section>
       )}
-
-      <section aria-label={t("gallery")} className="container-site pb-24 md:pb-32">
-        <ProjectGallery images={project.gallery} locale={locale} />
-      </section>
 
       <NextProject project={getNextProject(project)} locale={locale} />
       <CtaBanner />

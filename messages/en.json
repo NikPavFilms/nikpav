@@ -89,7 +89,6 @@
   "Categories": {
     "social": {
       "label": "Social",
-      "tagline": "Brand content",
       "service": "Commercial content",
       "description": "Scroll-stopping photo and video for brands, products, bars and restaurants, made for social media and campaigns.",
       "seoTitle": "Social Media & Brand Content",
@@ -97,7 +96,6 @@
     },
     "wedding": {
       "label": "Wedding",
-      "tagline": "Love stories",
       "service": "Love stories",
       "description": "Weddings told like films: honest moments, golden light and the details you will want to remember.",
       "seoTitle": "Wedding Photography & Film",
@@ -105,7 +103,6 @@
     },
     "baptism": {
       "label": "Baptism",
-      "tagline": "Precious moments",
       "service": "Precious moments",
       "description": "Baptisms and family celebrations, captured discreetly, from the first candle to the last dance.",
       "seoTitle": "Baptism Photography & Film",
@@ -113,7 +110,6 @@
     },
     "real-estate": {
       "label": "Real Estate",
-      "tagline": "Properties & spaces",
       "service": "Properties & spaces",
       "description": "Architecture, villas and interiors presented with the light and atmosphere that sell the feeling of a place.",
       "seoTitle": "Real Estate Photography & Video",
@@ -121,7 +117,6 @@
     },
     "production": {
       "label": "Production",
-      "tagline": "Creative campaigns",
       "service": "Creative campaigns",
       "description": "Productions from concept to delivery: commercials, brand films and campaigns, on set and in the edit.",
       "seoTitle": "Video Production & Campaigns",
@@ -146,6 +141,7 @@
     "photography": "Photography",
     "film": "Film",
     "theFilm": "The film",
+    "theFilms": "The films",
     "gallery": "Gallery",
     "next": "Next project",
     "breadcrumb": "Breadcrumb"
@@ -276,11 +272,11 @@
     "back": "Back to home"
   },
   "Alt": {
-    "homeAbout": "Photographer shooting in a wheat field under a cloudy sky",
-    "aboutHero": "Silhouette of a filmmaker with a cinema camera against red light",
+    "homeAbout": "Double-exposure profile portrait, the face filled with a misty pine forest",
+    "aboutHero": "Thoughtful portrait of a man at a café table, a camera beside him",
     "aboutPortrait": "Bearded photographer in a cap holding a camera",
     "philosophy": "Soft daylight through a window with a sheer curtain in a dark room",
-    "worksHero": "Two cinema cameras on tripods in a dark studio",
+    "worksHero": "Outdoor concert stage at dusk, lit in blue and green, with the crowd in silhouette",
     "contactHero": "Coastline at dusk with a mountain on the horizon"
   },
   "Admin": {

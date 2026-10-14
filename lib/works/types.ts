@@ -15,19 +15,22 @@ export interface ProjectImage {
 
 export type ProjectService = "photography" | "film";
 
-export type ProjectFilm = { type: "video"; src: string; poster: string } | { type: "youtube"; id: string };
+/** `title` captions the film and names its player; without it the project title is used. */
+export type ProjectFilm = ({ type: "video"; src: string; poster: string } | { type: "youtube"; id: string }) & {
+  title?: string;
+};
 
 export interface Project {
   /** URL segment: /works/<category>/<slug>. */
   slug: string;
   category: CategorySlug;
   title: LocalizedText;
-  /** One line for cards and share previews. */
-  summary: LocalizedText;
+  /** One line under the title on the project page; leave it out for a title-only hero. */
+  summary?: LocalizedText;
   description: LocalizedText;
   location: LocalizedText;
   services: ProjectService[];
   cover: ProjectImage;
   gallery: ProjectImage[];
-  film?: ProjectFilm;
+  films?: ProjectFilm[];
 }

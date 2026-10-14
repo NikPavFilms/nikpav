@@ -47,7 +47,8 @@ const AboutPage = async ({ params }: BasePageProps) => {
         description={t("tagline")}
         height="screen"
         grayscale
-        focus="70% center"
+        // The face sits left of centre: keep it in frame on narrow screens, and the head on wide ones.
+        focus="40% 25%"
       />
       <WhoIAm />
       <Philosophy />

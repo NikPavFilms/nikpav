@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { frameNumber } from "@/lib/general/utils";
 import { Link } from "@/lib/i18n/navigation";
 import type { CategorySlug } from "@/lib/works/categories";
-import type { ProjectImage } from "@/lib/works/types";
+import type { Project } from "@/lib/works/types";
 
 // Asymmetric bento: one tall frame beside two stacked ones, then a 5/7 split.
 const TILES: { category: CategorySlug; className: string; sizes: string }[] = [
@@ -22,10 +22,11 @@ const TILES: { category: CategorySlug; className: string; sizes: string }[] = [
 
 interface SelectedWorksProps {
   locale: Locale;
-  covers: Record<CategorySlug, ProjectImage>;
+  /** Each category's lead project: its cover and title fill the tile. */
+  leads: Record<CategorySlug, Project>;
 }
 
-export const SelectedWorks = async ({ locale, covers }: SelectedWorksProps) => {
+export const SelectedWorks = async ({ locale, leads }: SelectedWorksProps) => {
   const t = await getTranslations("Home.selectedWorks");
   const tCategories = await getTranslations("Categories");
 
@@ -43,14 +44,14 @@ export const SelectedWorks = async ({ locale, covers }: SelectedWorksProps) => {
       <div className="mt-14 grid grid-cols-1 gap-3 md:mt-20 md:auto-rows-[clamp(15rem,23vw,22rem)] md:grid-cols-12 md:gap-4">
         {TILES.map(({ category, className, sizes }, index) => (
           <Reveal key={category} delay={(index % 2) * 0.08} className={className}>
-            <MediaTile href={`/works/${category}`} image={covers[category]} locale={locale} sizes={sizes} className="size-full">
+            <MediaTile href={`/works/${category}`} image={leads[category].cover} locale={locale} sizes={sizes} className="size-full">
               <span className="frame-index absolute top-5 left-5 text-foreground/75 md:top-6 md:left-6">
                 {frameNumber(index + 1)}
               </span>
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-7">
                 <div>
                   <h3 className="title-display text-4xl md:text-5xl">{tCategories(`${category}.label`)}</h3>
-                  <p className="mt-2 text-sm text-foreground/75">{tCategories(`${category}.tagline`)}</p>
+                  <p className="mt-2 text-sm text-foreground/75">{leads[category].title[locale]}</p>
                 </div>
                 <ArrowUpRight
                   aria-hidden

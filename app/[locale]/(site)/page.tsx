@@ -11,7 +11,7 @@ import { setupPageLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { siteGraph } from "@/lib/seo/schema";
 import { CATEGORY_SLUGS } from "@/lib/works/categories";
-import { getCategoryCovers } from "@/lib/works/projects";
+import { getCategoryLeads } from "@/lib/works/projects";
 import { BasePageProps } from "@/types/page-props";
 
 export const generateMetadata = async ({ params }: BasePageProps): Promise<Metadata> => {
@@ -44,7 +44,7 @@ const HomePage = async ({ params }: BasePageProps) => {
         })}
       />
       <HomeHero />
-      <SelectedWorks locale={locale} covers={getCategoryCovers()} />
+      <SelectedWorks locale={locale} leads={getCategoryLeads()} />
       <WhatIDo />
       <AboutPreview />
       <CtaBanner />

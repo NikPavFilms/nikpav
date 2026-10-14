@@ -16,13 +16,13 @@ export const AboutPreview = async () => {
   return (
     <section aria-labelledby="about-preview-title" className="container-site py-28 md:py-40">
       <div className="grid items-center gap-14 md:grid-cols-12 md:gap-8">
-        <Reveal className="md:col-span-5">
-          <div className="relative aspect-[4/5] overflow-hidden bg-card">
+        <Reveal className="md:col-span-4 md:col-start-2">
+          <div className="relative aspect-square overflow-hidden bg-card">
             <Image
               src={homeAbout}
               alt={tAlt("homeAbout")}
               fill
-              sizes="(min-width: 768px) 40vw, 100vw"
+              sizes="(min-width: 768px) 33vw, 100vw"
               placeholder="blur"
               className="object-cover"
             />

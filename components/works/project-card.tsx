@@ -27,12 +27,12 @@ export const ProjectCard = ({ project, locale, index, categoryLabel, filmLabel, 
   >
     <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5 md:p-6">
       <span className="frame-index text-foreground/75">{frameNumber(index)}</span>
-      {project.film && (
+      {project.films?.length ? (
         <span className="eyebrow flex items-center gap-1.5 rounded-full border border-foreground/30 bg-ink/40 px-2.5 py-1 text-foreground/90 backdrop-blur-sm">
           <Play aria-hidden className="size-2.5 fill-current" />
           {filmLabel}
         </span>
-      )}
+      ) : null}
     </div>
 
     <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
