@@ -15,6 +15,9 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbSchema } from "@/lib/seo/schema";
 import { BasePageProps } from "@/types/page-props";
 
+// With the form on the page, it and the channels share one centred column.
+const CENTRED_COLUMN = "md:col-span-8 md:col-start-3";
+
 export const generateMetadata = async ({ params }: BasePageProps): Promise<Metadata> => {
   const locale = await setupPageLocale(params);
   const t = await getTranslations({ locale, namespace: "Metadata" });
@@ -48,11 +51,12 @@ const ContactPage = async ({ params }: BasePageProps) => {
         titleLines={[t("hero.title")]}
         description={t("hero.description")}
       />
-      <section className="container-site grid gap-16 py-24 md:grid-cols-12 md:gap-8 md:py-32">
-        {/* The form needs an inbox to send to: it appears once SITE.email is set. Until then the
-            channels lead, with a short guide to writing a good first message. */}
+      <section className="container-site grid gap-16 py-24 md:grid-cols-12 md:gap-x-8 md:py-32">
+        {/* The form needs an inbox to send to: it appears once SITE.email is set, with the channels
+            stacked below it. Until then the channels lead, with a short guide to writing a good
+            first message. */}
         {SITE.email ? (
-          <Reveal className="md:col-span-7">
+          <Reveal className={CENTRED_COLUMN}>
             <h2 className="title-display text-5xl md:text-6xl">{t("form.title")}</h2>
             <div className="mt-10">
               <ContactForm email={SITE.email} />
@@ -63,7 +67,7 @@ const ContactPage = async ({ params }: BasePageProps) => {
             <ContactChannels standalone />
           </Reveal>
         )}
-        <Reveal delay={0.1} className={cn(SITE.email ? "md:col-span-4 md:col-start-9" : "md:col-span-5 md:col-start-8")}>
+        <Reveal delay={0.1} className={cn(SITE.email ? CENTRED_COLUMN : "md:col-span-5 md:col-start-8")}>
           {SITE.email ? <ContactChannels standalone={false} /> : <ContactBrief />}
         </Reveal>
       </section>

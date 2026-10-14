@@ -51,7 +51,7 @@ export const siteGraph = ({ locale, localName, jobTitle, description, services }
       image: `${SITE_URL}/og.jpg`,
       founder: { "@id": PERSON_ID },
       areaServed: { "@type": "Country", name: "Greece" },
-      address: { "@type": "PostalAddress", addressCountry: SITE.countryCode },
+      address: { "@type": "PostalAddress", addressLocality: SITE.city, addressCountry: SITE.countryCode },
       sameAs,
       ...(SITE.email && { email: SITE.email }),
       ...(SITE.phone && { telephone: SITE.phone }),

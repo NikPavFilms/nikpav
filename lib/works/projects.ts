@@ -26,16 +26,6 @@ import villa02 from "@/assets/images/works/real-estate/seaside-villa/02.webp";
 import villa03 from "@/assets/images/works/real-estate/seaside-villa/03.webp";
 import villa04 from "@/assets/images/works/real-estate/seaside-villa/04.webp";
 import villa05 from "@/assets/images/works/real-estate/seaside-villa/05.webp";
-import cabin01 from "@/assets/images/works/real-estate/timber-cabin/01.webp";
-import cabin02 from "@/assets/images/works/real-estate/timber-cabin/02.webp";
-import cabin03 from "@/assets/images/works/real-estate/timber-cabin/03.webp";
-import cabin04 from "@/assets/images/works/real-estate/timber-cabin/04.webp";
-import cabin05 from "@/assets/images/works/real-estate/timber-cabin/05.webp";
-import menu01 from "@/assets/images/works/social/seasonal-menu/01.webp";
-import menu02 from "@/assets/images/works/social/seasonal-menu/02.webp";
-import menu03 from "@/assets/images/works/social/seasonal-menu/03.webp";
-import menu04 from "@/assets/images/works/social/seasonal-menu/04.webp";
-import menu05 from "@/assets/images/works/social/seasonal-menu/05.webp";
 import cocktails01 from "@/assets/images/works/social/signature-cocktails/01.webp";
 import cocktails02 from "@/assets/images/works/social/signature-cocktails/02.webp";
 import cocktails03 from "@/assets/images/works/social/signature-cocktails/03.webp";
@@ -46,11 +36,6 @@ import goldenHour02 from "@/assets/images/works/wedding/golden-hour-vows/02.webp
 import goldenHour03 from "@/assets/images/works/wedding/golden-hour-vows/03.webp";
 import goldenHour04 from "@/assets/images/works/wedding/golden-hour-vows/04.webp";
 import goldenHour05 from "@/assets/images/works/wedding/golden-hour-vows/05.webp";
-import seaside01 from "@/assets/images/works/wedding/seaside-wedding/01.webp";
-import seaside02 from "@/assets/images/works/wedding/seaside-wedding/02.webp";
-import seaside03 from "@/assets/images/works/wedding/seaside-wedding/03.webp";
-import seaside04 from "@/assets/images/works/wedding/seaside-wedding/04.webp";
-import seaside05 from "@/assets/images/works/wedding/seaside-wedding/05.webp";
 import { SITE } from "@/lib/general/constants";
 
 import { CATEGORY_SLUGS, type CategorySlug } from "./categories";
@@ -64,7 +49,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "golden-hour-vows",
     category: "wedding",
-    title: { en: "Golden Hour Vows", el: "Όρκοι στο χρυσό φως" },
+    title: { en: "Your Own Story", el: "Η δική σας ιστορία" },
     summary: {
       en: "A wedding told through warm evening light, quiet glances and wide open landscapes.",
       el: "Ένας γάμος μέσα από το ζεστό φως του δειλινού, βλέμματα και ανοιχτά τοπία.",
@@ -107,9 +92,51 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    slug: "family-celebration",
+    category: "baptism",
+    title: { en: "A New Beginning", el: "Μια νέα αρχή" },
+    summary: {
+      en: "After the ceremony: family, sunlight and a garden in bloom.",
+      el: "Μετά το μυστήριο: οικογένεια, ήλιος και ένας ανθισμένος κήπος.",
+    },
+    description: {
+      en: "The hours after the ceremony, in a garden full of light: the parents, the family and the little one at the centre of it all, captured as it happened.",
+      el: "Οι ώρες μετά το μυστήριο, σε έναν κήπο γεμάτο φως: οι γονείς, η οικογένεια και το μωρό στο κέντρο όλων, όπως ακριβώς συνέβη.",
+    },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(
+      babyGarden01,
+      "Baby in a woman's arms reaching up to the Gospel book held by the priest",
+      "Μωρό στην αγκαλιά μιας γυναίκας απλώνει το χέρι προς το Ευαγγέλιο που κρατά ο ιερέας",
+    ),
+    gallery: [
+      image(
+        babyGarden02,
+        "Hands holding tall baptism candles",
+        "Χέρια που κρατούν ψηλές λαμπάδες βάφτισης",
+      ),
+      image(
+        babyGarden03,
+        "Mother lifting her baby up against green leaves",
+        "Η μητέρα σηκώνει ψηλά το μωρό της μπροστά σε πράσινα φύλλα",
+      ),
+      image(
+        babyGarden04,
+        "Mother and baby in a garden full of flowers",
+        "Μητέρα και μωρό σε έναν κήπο γεμάτο λουλούδια",
+      ),
+      image(
+        babyGarden05,
+        "Baby looking at the camera from a parent's arms",
+        "Το μωρό κοιτάζει τον φακό από την αγκαλιά του γονιού",
+      ),
+    ],
+  },
+  {
     slug: "signature-cocktails",
     category: "social",
-    title: { en: "Signature Cocktails", el: "Κοκτέιλ με υπογραφή" },
+    title: { en: "Content That Stands Out", el: "Content που ξεχωρίζει" },
     summary: {
       en: "A cocktail bar campaign shot after dark: craft, detail and warm light.",
       el: "Καμπάνια για ένα μπαρ κοκτέιλ, γυρισμένη μετά το σούρουπο: τεχνική, λεπτομέρεια και ζεστό φως.",
@@ -151,7 +178,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "seaside-villa",
     category: "real-estate",
-    title: { en: "Seaside Villa", el: "Βίλα δίπλα στη θάλασσα" },
+    title: { en: "The Value of a First Impression", el: "Η αξία της πρώτης εικόνας" },
     summary: {
       en: "A summer villa presented with natural light and a view that sells itself.",
       el: "Μια καλοκαιρινή βίλα με φυσικό φως και θέα που μιλά από μόνη της.",
@@ -193,7 +220,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "brand-film",
     category: "production",
-    title: { en: "Brand Film", el: "Εταιρική ταινία" },
+    title: { en: "From Idea to Image", el: "Από την ιδέα στην εικόνα" },
     summary: {
       en: "A short brand film for a tattoo studio, from the first idea to the final grade.",
       el: "Μια σύντομη ταινία για ένα στούντιο τατουάζ, από την πρώτη ιδέα μέχρι τη χρωματική διόρθωση.",
@@ -233,174 +260,6 @@ export const PROJECTS: Project[] = [
     ],
     // Placeholder: the showreel stands in for the real film. Prefer { type: "youtube", id: "..." }.
     film: SITE.showreel.type === "video" ? { type: "video", src: SITE.showreel.src, poster: SITE.showreel.poster } : undefined,
-  },
-  {
-    slug: "seaside-wedding",
-    category: "wedding",
-    title: { en: "Seaside Wedding", el: "Γάμος δίπλα στη θάλασσα" },
-    summary: {
-      en: "Stone streets, fishing boats and evening light by the sea.",
-      el: "Πέτρινα σοκάκια, ψαρόβαρκες και βραδινό φως δίπλα στη θάλασσα.",
-    },
-    description: {
-      en: "A wedding in a seaside village: the couple between the harbour and the old stone streets, and a sunset that framed it all.",
-      el: "Ένας γάμος σε ένα παραθαλάσσιο χωριό: το ζευγάρι ανάμεσα στο λιμανάκι και τα παλιά πέτρινα σοκάκια, και ένα ηλιοβασίλεμα που τα πλαισίωσε όλα.",
-    },
-    location: GREECE,
-    services: ["photography"],
-    cover: image(
-      seaside01,
-      "Groom kissing the bride's forehead by the sea in a fishing village",
-      "Ο γαμπρός φιλά τη νύφη στο μέτωπο, δίπλα στη θάλασσα ενός ψαροχωριού",
-    ),
-    gallery: [
-      image(
-        seaside02,
-        "Silhouette of the couple framed by a stone arch at sunset",
-        "Η σιλουέτα του ζευγαριού μέσα σε πέτρινη αψίδα στο ηλιοβασίλεμα",
-      ),
-      image(
-        seaside03,
-        "Groom standing at the harbour among fishing boats, the bride in the foreground",
-        "Ο γαμπρός στο λιμανάκι ανάμεσα στις βάρκες, με τη νύφη σε πρώτο πλάνο",
-      ),
-      image(
-        seaside04,
-        "Bride and groom embracing against the sea",
-        "Νύφη και γαμπρός αγκαλιασμένοι με φόντο τη θάλασσα",
-      ),
-      image(
-        seaside05,
-        "Close-up of the couple holding hands, lace sleeve and navy suit",
-        "Κοντινό στα ενωμένα χέρια του ζευγαριού, με τη δαντέλα και το μπλε κοστούμι",
-      ),
-    ],
-  },
-  {
-    slug: "seasonal-menu",
-    category: "social",
-    title: { en: "Seasonal Menu", el: "Μενού εποχής" },
-    summary: {
-      en: "Food and interiors for a restaurant's new season, styled to be shared.",
-      el: "Πιάτα και χώροι για τη νέα σεζόν ενός εστιατορίου, φτιαγμένα για να μοιράζονται.",
-    },
-    description: {
-      en: "A full content day for a restaurant launching its seasonal menu: the plates, the chef at work, the room at night and every detail in between.",
-      el: "Μια ολόκληρη μέρα παραγωγής για ένα εστιατόριο που παρουσιάζει το μενού της σεζόν: τα πιάτα, ο σεφ στη δουλειά, ο χώρος το βράδυ και κάθε λεπτομέρεια ενδιάμεσα.",
-    },
-    location: GREECE,
-    services: ["photography"],
-    cover: image(
-      menu01,
-      "Plated dishes and a glass of white wine on a dark linen table",
-      "Πιάτα και ένα ποτήρι λευκό κρασί σε τραπέζι με σκούρο λινό",
-    ),
-    gallery: [
-      image(
-        menu02,
-        "Chef's hands plating a dish with fresh herbs",
-        "Τα χέρια του σεφ στήνουν ένα πιάτο με φρέσκα μυρωδικά",
-      ),
-      image(
-        menu03,
-        "Diners at a candlelit table with the city lights behind",
-        "Θαμώνες σε τραπέζι με κερί, με τα φώτα της πόλης στο βάθος",
-      ),
-      image(
-        menu04,
-        "Brass table lamp lighting small plated dishes on a wooden counter",
-        "Ορειχάλκινο επιτραπέζιο φωτιστικό φωτίζει μικρά πιάτα σε ξύλινο πάγκο",
-      ),
-      image(
-        menu05,
-        "Grilled steak with herbs on a dark plate",
-        "Ψητή μπριζόλα με μυρωδικά σε σκούρο πιάτο",
-      ),
-    ],
-  },
-  {
-    slug: "timber-cabin",
-    category: "real-estate",
-    title: { en: "Timber Cabin", el: "Ξύλινο καταφύγιο" },
-    summary: {
-      en: "An A-frame retreat photographed from daylight into dusk.",
-      el: "Ένα ξύλινο καταφύγιο σε σχήμα Α, από το φως της μέρας ως το σούρουπο.",
-    },
-    description: {
-      en: "A timber A-frame in open country, presented through its lines, its materials and the view from the big triangular window, from daylight until dusk.",
-      el: "Ένα ξύλινο σπίτι σε σχήμα Α στην εξοχή, μέσα από τις γραμμές του, τα υλικά του και τη θέα από το μεγάλο τριγωνικό παράθυρο, από το φως της μέρας μέχρι να πέσει το σούρουπο.",
-    },
-    location: GREECE,
-    services: ["photography"],
-    cover: image(
-      cabin01,
-      "A-frame timber cabin with a large triangular window in a meadow",
-      "Ξύλινο σπίτι σε σχήμα Α με μεγάλο τριγωνικό παράθυρο μέσα σε λιβάδι",
-    ),
-    gallery: [
-      image(
-        cabin02,
-        "Timber facade and triangular glazing against the sky",
-        "Ξύλινη πρόσοψη και τριγωνικό τζάμι με φόντο τον ουρανό",
-      ),
-      image(
-        cabin03,
-        "Dark interior framed by the triangular window at dusk",
-        "Σκοτεινό εσωτερικό, πλαισιωμένο από το τριγωνικό παράθυρο το σούρουπο",
-      ),
-      image(
-        cabin04,
-        "Living area with a wooden floor and a view through the window",
-        "Καθιστικό με ξύλινο πάτωμα και θέα μέσα από το παράθυρο",
-      ),
-      image(
-        cabin05,
-        "Timber cabin with warm lights at twilight beside a gravel path",
-        "Το ξύλινο σπίτι με ζεστά φώτα το σούρουπο, δίπλα σε ένα μονοπάτι με χαλίκι",
-      ),
-    ],
-  },
-  {
-    slug: "family-celebration",
-    category: "baptism",
-    title: { en: "A Family Celebration", el: "Μια οικογενειακή γιορτή" },
-    summary: {
-      en: "After the ceremony: family, sunlight and a garden in bloom.",
-      el: "Μετά το μυστήριο: οικογένεια, ήλιος και ένας ανθισμένος κήπος.",
-    },
-    description: {
-      en: "The hours after the ceremony, in a garden full of light: the parents, the family and the little one at the centre of it all, captured as it happened.",
-      el: "Οι ώρες μετά το μυστήριο, σε έναν κήπο γεμάτο φως: οι γονείς, η οικογένεια και το μωρό στο κέντρο όλων, όπως ακριβώς συνέβη.",
-    },
-    location: GREECE,
-    services: ["photography", "film"],
-    cover: image(
-      babyGarden01,
-      "Parents with their baby in a sunlit garden",
-      "Οι γονείς με το μωρό τους σε έναν ηλιόλουστο κήπο",
-    ),
-    gallery: [
-      image(
-        babyGarden02,
-        "Hands holding tall baptism candles",
-        "Χέρια που κρατούν ψηλές λαμπάδες βάφτισης",
-      ),
-      image(
-        babyGarden03,
-        "Mother lifting her baby up against green leaves",
-        "Η μητέρα σηκώνει ψηλά το μωρό της μπροστά σε πράσινα φύλλα",
-      ),
-      image(
-        babyGarden04,
-        "Mother and baby in a garden full of flowers",
-        "Μητέρα και μωρό σε έναν κήπο γεμάτο λουλούδια",
-      ),
-      image(
-        babyGarden05,
-        "Baby looking at the camera from a parent's arms",
-        "Το μωρό κοιτάζει τον φακό από την αγκαλιά του γονιού",
-      ),
-    ],
   },
 ];
 

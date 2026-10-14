@@ -2,11 +2,11 @@
   "Metadata": {
     "siteName": "Nikos Pavlakos",
     "defaultTitle": "Nikos Pavlakos | Photography & Film",
-    "defaultDescription": "Nikos Pavlakos is a photographer and filmmaker based in Greece, creating cinematic photography and film for weddings, baptisms, brands and real estate.",
+    "defaultDescription": "Nikos Pavlakos is a photographer and filmmaker based in Athens, Greece, creating cinematic photography and film for weddings, baptisms, brands and real estate.",
     "jobTitle": "Photographer & Filmmaker",
     "home": {
       "title": "Nikos Pavlakos | Photographer & Filmmaker in Greece",
-      "description": "Cinematic photography and film for people, brands and spaces. Weddings, baptisms, social media content, real estate and productions, based in Greece."
+      "description": "Cinematic photography and film for people, brands and spaces. Weddings, baptisms, social media content, real estate and productions, based in Athens, Greece."
     },
     "works": {
       "title": "Works",
@@ -14,7 +14,7 @@
     },
     "about": {
       "title": "About",
-      "description": "Photographer and filmmaker based in Greece. The story, the approach and the services behind every project."
+      "description": "Photographer and filmmaker based in Athens, Greece. The story, the approach and the services behind every project."
     },
     "contact": {
       "title": "Contact",
@@ -68,12 +68,20 @@
     "whatIDo": {
       "eyebrow": "Services",
       "title": "What I do",
-      "description": "From a first dance to a brand campaign, every project gets the same eye for light, story and detail."
+      "description": "From a first dance to a brand campaign, every project gets the same eye for light, story and detail.",
+      "editing": {
+        "label": "Editing",
+        "service": "Post-production & colour"
+      },
+      "drone": {
+        "label": "Drone",
+        "service": "Aerial photo & video"
+      }
     },
     "about": {
       "eyebrow": "About me",
       "title": "More than just images.",
-      "body": "I'm Nikos, a photographer and filmmaker based in Greece. I create visual stories for people, brands and spaces, with images that carry atmosphere, character and real emotion.",
+      "body": "I'm Nikos, a photographer and filmmaker based in Athens, Greece. I create visual stories for people, brands and spaces, with images that carry atmosphere, character and real emotion.",
       "body2": "Every project starts with listening: what matters to you, and how it should feel years from now.",
       "cta": "Learn more"
     }
@@ -152,7 +160,7 @@
     "who": {
       "eyebrow": "Nikos Pavlakos",
       "title": "Who I am",
-      "p1": "I'm Nikos, a photographer and filmmaker based in Greece. The camera has always been my way of looking more closely: the light shifting across a face, a hand that holds on a moment longer, the quiet just before the laughter breaks.",
+      "p1": "I'm Nikos, a photographer and filmmaker based in Athens, Greece. The camera has always been my way of looking more closely: the light shifting across a face, a hand that holds on a moment longer, the quiet just before the laughter breaks.",
       "p2": "Today I photograph and film weddings, baptisms, businesses and spaces. The subjects change, the approach stays the same: I listen first, learn what matters to you, then build every frame around the story you want to tell.",
       "p3": "Every collaboration is a story of its own. I don't arrive with a formula. I arrive prepared and curious, and I work quietly in the background so that, in the end, the images do the talking."
     },
@@ -195,14 +203,6 @@
         "editing": {
           "title": "Editing",
           "text": "Colour grading, retouching and editing that give every project one consistent look."
-        },
-        "creativeDirection": {
-          "title": "Creative Direction",
-          "text": "Concept, visual direction, locations and styling, all planned before the camera rolls."
-        },
-        "consulting": {
-          "title": "Consulting",
-          "text": "Guidance on content, visual identity and how your brand or space can stand out."
         }
       }
     }
@@ -235,7 +235,6 @@
       "subject": "New inquiry: {type} | {name}"
     },
     "channels": {
-      "title": "Or reach me directly",
       "instagram": "Instagram",
       "instagramCta": "Message me on Instagram",
       "tiktok": "TikTok",
@@ -243,7 +242,7 @@
       "email": "Email",
       "phone": "Phone",
       "based": "Based in",
-      "basedValue": "Greece",
+      "basedValue": "Athens, Greece",
       "titleAlone": "Reach me directly"
     },
     "brief": {
@@ -261,7 +260,7 @@
     "navigate": "Navigate",
     "follow": "Follow",
     "contact": "Contact",
-    "basedIn": "Based in Greece",
+    "basedIn": "Based in Athens, Greece",
     "rights": "© {year} Nikos Pavlakos. All rights reserved.",
     "madeBy": "Made by"
   },

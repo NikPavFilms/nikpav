@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { SOCIAL_PROFILES } from "@/components/site/social-profiles";
 import { SocialIcon } from "@/components/social-icon";
 import { SITE, telHref } from "@/lib/general/constants";
+import { cn } from "@/lib/general/utils";
 
 const CIRCLE_CLASS = "flex size-11 shrink-0 items-center justify-center rounded-full border border-border text-foreground";
 const VALUE_LINK_CLASS = "mt-1 block cursor-pointer text-lg transition-colors duration-300 hover:text-muted-foreground";
@@ -25,14 +26,15 @@ const ChannelRow = ({ icon, label, children }: ChannelRowProps) => (
 );
 
 // Direct channels. Email and phone only appear once they are set in SITE (constants.ts).
+// Standalone (no form on the page) they get their own heading; under the form they need none.
 export const ContactChannels = async ({ standalone }: { standalone: boolean }) => {
   const t = await getTranslations("Contact.channels");
   const tNav = await getTranslations("Nav");
 
   return (
     <div>
-      <h2 className="title-display text-5xl md:text-6xl">{standalone ? t("titleAlone") : t("title")}</h2>
-      <ul className="mt-8 divide-y divide-border border-y border-border">
+      {standalone && <h2 className="title-display text-5xl md:text-6xl">{t("titleAlone")}</h2>}
+      <ul className={cn("divide-y divide-border border-y border-border", standalone && "mt-8")}>
         {SOCIAL_PROFILES.map(({ key, Icon, url, handle }) => (
           <ChannelRow
             key={key}

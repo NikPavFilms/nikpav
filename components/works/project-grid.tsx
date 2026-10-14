@@ -9,7 +9,7 @@ type Span = 4 | 5 | 7 | 12;
 
 // Rows are consumed in turn so any filtered list keeps an editorial rhythm; when fewer
 // projects remain than a template needs, the matching fallback completes the last row.
-const ROW_TEMPLATES: Span[][] = [[7, 5], [4, 4, 4], [5, 7], [12]];
+const ROW_TEMPLATES: Span[][] = [[7, 5], [5, 7], [12]];
 const FALLBACK_ROWS: Record<number, Span[]> = { 1: [12], 2: [7, 5], 3: [4, 4, 4] };
 
 const SPAN_CLASSES: Record<Span, string> = {

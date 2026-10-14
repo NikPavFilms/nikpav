@@ -19,6 +19,8 @@ interface SiteConfig {
   email?: string;
   /** Display format, e.g. "+30 690 000 0000". */
   phone?: string;
+  /** Base city in English, for the JSON-LD address. */
+  city: string;
   countryCode: string;
   showreel: Showreel;
 }
@@ -27,13 +29,16 @@ export const SITE: SiteConfig = {
   name: "Nikos Pavlakos",
   shortName: "Nikos",
   instagram: {
-    handle: "nikpav._",
-    url: "https://www.instagram.com/nikpav._/",
+    handle: "nikpav.films",
+    url: "https://www.instagram.com/nikpav.films",
   },
   tiktok: {
-    handle: "nikos.pavlakos",
-    url: "https://www.tiktok.com/@nikos.pavlakos",
+    handle: "nikpavfilms",
+    url: "https://www.tiktok.com/@nikpavfilms",
   },
+  email: "nikpavfilms@gmail.com",
+  phone: "+30 694 002 8714",
+  city: "Athens",
   countryCode: "GR",
   showreel: {
     type: "video",
