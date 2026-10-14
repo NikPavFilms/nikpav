@@ -16,16 +16,6 @@ import babyGarden02 from "@/assets/images/works/baptism/family-celebration/02.we
 import babyGarden03 from "@/assets/images/works/baptism/family-celebration/03.webp";
 import babyGarden04 from "@/assets/images/works/baptism/family-celebration/04.webp";
 import babyGarden05 from "@/assets/images/works/baptism/family-celebration/05.webp";
-import blessings01 from "@/assets/images/works/baptism/little-blessings/01.webp";
-import blessings02 from "@/assets/images/works/baptism/little-blessings/02.webp";
-import blessings03 from "@/assets/images/works/baptism/little-blessings/03.webp";
-import blessings04 from "@/assets/images/works/baptism/little-blessings/04.webp";
-import blessings05 from "@/assets/images/works/baptism/little-blessings/05.webp";
-import backstage01 from "@/assets/images/works/production/behind-the-scenes/01.webp";
-import backstage02 from "@/assets/images/works/production/behind-the-scenes/02.webp";
-import backstage03 from "@/assets/images/works/production/behind-the-scenes/03.webp";
-import backstage04 from "@/assets/images/works/production/behind-the-scenes/04.webp";
-import backstage05 from "@/assets/images/works/production/behind-the-scenes/05.webp";
 import brandFilm01 from "@/assets/images/works/production/brand-film/01.webp";
 import brandFilm02 from "@/assets/images/works/production/brand-film/02.webp";
 import brandFilm03 from "@/assets/images/works/production/brand-film/03.webp";
@@ -197,48 +187,6 @@ export const PROJECTS: Project[] = [
         villa05,
         "Infinity pool and terrace overlooking the sea",
         "Πισίνα υπερχείλισης και βεράντα με θέα στη θάλασσα",
-      ),
-    ],
-  },
-  {
-    slug: "little-blessings",
-    category: "baptism",
-    title: { en: "Little Blessings", el: "Μικρές ευλογίες" },
-    summary: {
-      en: "A baptism in an old stone church, told in soft window light.",
-      el: "Μια βάφτιση σε παλιά πέτρινη εκκλησία, στο απαλό φως των παραθύρων.",
-    },
-    description: {
-      en: "The candles, the font, the hands that held the little one: a baptism photographed discreetly, so the family could stay in the moment while every detail was kept.",
-      el: "Τα κεριά, η κολυμπήθρα, τα χέρια που κράτησαν το μωρό: μια βάφτιση φωτογραφημένη διακριτικά, ώστε η οικογένεια να μείνει στη στιγμή και κάθε λεπτομέρεια να διατηρηθεί.",
-    },
-    location: GREECE,
-    services: ["photography"],
-    cover: image(
-      blessings01,
-      "Priest at the baptismal font inside a stone church, family gathered around",
-      "Ο ιερέας στην κολυμπήθρα μέσα σε πέτρινη εκκλησία, με την οικογένεια γύρω",
-    ),
-    gallery: [
-      image(
-        blessings02,
-        "Woman holding a candle beside the font as the priest blesses the baby",
-        "Γυναίκα με κερί δίπλα στην κολυμπήθρα, την ώρα που ο ιερέας ευλογεί το μωρό",
-      ),
-      image(
-        blessings03,
-        "Woman in a headscarf holding the baby wrapped in a pink blanket",
-        "Γυναίκα με μαντίλα κρατά το μωρό τυλιγμένο σε ροζ κουβέρτα",
-      ),
-      image(
-        blessings04,
-        "Priest lifting the baby above the font",
-        "Ο ιερέας σηκώνει το μωρό πάνω από την κολυμπήθρα",
-      ),
-      image(
-        blessings05,
-        "Priest blessing the baby in a woman's arms",
-        "Ο ιερέας ευλογεί το μωρό στην αγκαλιά μιας γυναίκας",
       ),
     ],
   },
@@ -451,48 +399,6 @@ export const PROJECTS: Project[] = [
         babyGarden05,
         "Baby looking at the camera from a parent's arms",
         "Το μωρό κοιτάζει τον φακό από την αγκαλιά του γονιού",
-      ),
-    ],
-  },
-  {
-    slug: "behind-the-scenes",
-    category: "production",
-    title: { en: "Behind the Scenes", el: "Πίσω από τις κάμερες" },
-    summary: {
-      en: "On set with the crew: lights, lenses and the people who make it happen.",
-      el: "Στο πλατό με το συνεργείο: φώτα, φακοί και οι άνθρωποι που κάνουν τα πάντα να συμβαίνουν.",
-    },
-    description: {
-      en: "A behind-the-scenes series from a commercial shoot, documenting the work that never makes the final cut: setups, rehearsals and the quiet before every take.",
-      el: "Μια σειρά από τα παρασκήνια ενός διαφημιστικού γυρίσματος, με όλη τη δουλειά που δεν φτάνει ποτέ στο τελικό μοντάζ: στησίματα, πρόβες και την ησυχία πριν από κάθε λήψη.",
-    },
-    location: GREECE,
-    services: ["photography"],
-    cover: image(
-      backstage01,
-      "Film crew on a red-lit set, the director's chair in the foreground",
-      "Συνεργείο σε πλατό με κόκκινο φωτισμό, με την καρέκλα του σκηνοθέτη σε πρώτο πλάνο",
-    ),
-    gallery: [
-      image(
-        backstage02,
-        "Director in a labelled chair watching the monitors",
-        "Ο σκηνοθέτης στην καρέκλα του παρακολουθεί τις οθόνες",
-      ),
-      image(
-        backstage03,
-        "Clapperboard held up in front of an actor on set",
-        "Κλακέτα μπροστά από έναν ηθοποιό στο πλατό",
-      ),
-      image(
-        backstage04,
-        "Camera monitor showing an actor in pink light",
-        "Οθόνη κάμερας με έναν ηθοποιό σε ροζ φως",
-      ),
-      image(
-        backstage05,
-        "Camera operator's hands on a cinema camera rig",
-        "Τα χέρια του χειριστή σε κινηματογραφική κάμερα",
       ),
     ],
   },
