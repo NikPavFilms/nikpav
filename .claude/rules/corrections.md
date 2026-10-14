@@ -22,3 +22,4 @@ Rules learned from actual corrections. These are binding.
 - **`tsc` + `lint` passing does not mean it works.** next-intl message caching, Prisma client staleness, and env-var inlining all survive a green typecheck. Drive the feature in the running app.
 - **Read the port `pnpm dev` actually bound.** If 3000 is taken, Next silently moves to 3001, and screenshots of `localhost:3000` capture a different app. Check the `Local:` line before verifying anything.
 - **Restart the dev server** after changing `messages/*.json`, the Prisma schema, or any `NEXT_PUBLIC_*` variable. A running server holds stale caches and will lie to you.
+- **Removing a project (or anything feeding `generateStaticParams`) also needs a dev restart.** The dev server keeps the old params list, so the deleted URL still answers 200 with the not-found UI (a soft 404) while never-existing URLs 404 correctly. Restart, then confirm the 404 with a real request.
