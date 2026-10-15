@@ -41,6 +41,8 @@ export interface Project {
   services: ProjectService[];
   cover: ProjectImage;
   gallery: ProjectImage[];
+  /** Gallery rows filled by shape (two landscapes, three portraits), so each photo shows smaller. */
+  compactGallery?: boolean;
   /** Shown in order. A wedding's (collection's) first landscape film opens its page, under the title. */
   films?: ProjectFilm[];
 }

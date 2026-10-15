@@ -48,8 +48,9 @@ real work. Replace them project by project:
    films, shown in order: `films: [{ type: "youtube", id: "...", title: "..." }]`, or a self-hosted
    `{ type: "video", src: "/videos/...", poster: "/videos/....webp" }` compressed for the web first
    (originals of hundreds of MB break the GitHub push). Vertical reels add `aspect: "9 / 16"` or
-   `"4 / 5"` and sit in a grid at that ratio; list each ratio together so the grid rows stay even.
-   `afterPhoto: 13` puts a film among the gallery photos instead, after the 13th one.
+   `"4 / 5"`; each shape gets its own grid (9:16 four across, 4:5 three across on desktop).
+   `afterPhoto: 13` puts a film among the gallery photos instead, after the 13th one, and
+   `compactGallery: true` fills rows by shape (two landscapes or three portraits), so photos show smaller.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
    (`lib/works/categories.ts`). **Weddings are a collection** (`COLLECTIONS` in
    `lib/works/projects.ts`): one project per wedding, each at `/works/wedding/<names>` (e.g.

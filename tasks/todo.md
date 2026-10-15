@@ -132,3 +132,13 @@ search title.
 - [x] Real estate page: 27 photos from seven shoots (newest first, the 2026-06 flat leads) plus the
       Athali Events & Weddings venue film (166 MB to 42 MB, poster at 1:14) placed after photo 13
       via the new `afterPhoto` film option; the plant and anchor-clock portraits pair. Cover unchanged.
+- [x] Real estate photos smaller (asked by Nikos): `compactGallery` sets every two photos side by
+      side (664x443 each on desktop instead of full width), mixed shapes level; the film stays full
+      width; phones unchanged; weddings unchanged
+- [x] Social: seven new reels (biggie promo, discoteca, vinegret, το μυστικό, s05, s4, delfinia; 1.4 GB
+      to 89 MB at 720p, posters from bright frames) added first. Each reel shape now has its own grid
+      (9:16 four across so a whole reel fits on screen, 4:5 three across): 16 + 3 fill even rows.
+- [x] Social photos smaller too (asked by Nikos): compact galleries now fill rows by shape (a row
+      closes at a ratio sum of 1.9: three portraits 437x656, two landscapes 664x443, portrait plus
+      landscape), a short last row keeps the height of the row above, `sizes` follow each column.
+      Real estate looks the same; weddings unchanged; reels unchanged.

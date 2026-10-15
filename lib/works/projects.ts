@@ -1251,6 +1251,8 @@ export const PROJECTS: Project[] = [
       ),
       focus: "50% 65%",
     },
+    // Compact rows (asked for smaller photos).
+    compactGallery: true,
     gallery: [
       image(
         jewellery06,
@@ -1354,6 +1356,13 @@ export const PROJECTS: Project[] = [
       ),
     ],
     films: [
+      { type: "video", src: "/videos/social/web/biggie-promo.mp4", poster: "/videos/social/web/biggie-promo-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/discoteca.mp4", poster: "/videos/social/web/discoteca-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/vinegret.mp4", poster: "/videos/social/web/vinegret-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/to-mystiko.mp4", poster: "/videos/social/web/to-mystiko-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/reel-s05.mp4", poster: "/videos/social/web/reel-s05-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/reel-s4.mp4", poster: "/videos/social/web/reel-s4-poster.webp", aspect: "9 / 16" },
+      { type: "video", src: "/videos/social/web/delfinia.mp4", poster: "/videos/social/web/delfinia-poster.webp", aspect: "9 / 16" },
       { type: "video", src: "/videos/social/web/lobardi-promo.mp4", poster: "/videos/social/web/lobardi-promo-poster.webp", aspect: "9 / 16" },
       { type: "video", src: "/videos/social/web/kikitsa.mp4", poster: "/videos/social/web/kikitsa-poster.webp", aspect: "9 / 16" },
       { type: "video", src: "/videos/social/web/pork-ribs.mp4", poster: "/videos/social/web/pork-ribs-poster.webp", aspect: "9 / 16" },
@@ -1383,7 +1392,9 @@ export const PROJECTS: Project[] = [
       // Portrait photo: keep the balconies and the sea, crop the empty sky.
       focus: "50% 55%",
     },
-    // One shoot after another, newest first; the venue film sits halfway down the photos.
+    // One shoot after another, newest first, in compact rows (asked for smaller photos); the
+    // venue film sits halfway down.
+    compactGallery: true,
     films: [
       {
         type: "video",

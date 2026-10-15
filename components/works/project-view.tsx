@@ -22,6 +22,13 @@ interface ProjectViewProps {
   locale: Locale;
 }
 
+// Each reel shape gets its own grid, so no row mixes shapes: tall 9:16 reels four across (a whole
+// reel fits on screen), 4:5 three across.
+const REEL_GRIDS = [
+  { aspect: "9 / 16", columns: "md:grid-cols-4" },
+  { aspect: "4 / 5", columns: "md:grid-cols-3" },
+] as const;
+
 /** True when the project is its category's page (/works/<category>), so it has no category crumb. */
 const isCategoryPage = (project: Project) => getSoleProject(project.category) === project;
 
@@ -58,13 +65,15 @@ export const ProjectView = async ({ project, locale }: ProjectViewProps) => {
   ];
   // A wedding (any collection's project) with a film opens on it, under the names. Films with
   // `afterPhoto` sit among the gallery photos. The rest: landscape films run full width, portrait
-  // reels share a grid below them.
+  // reels sit in grids below them, one per shape.
   const galleryFilms = (project.films ?? []).filter((film) => film.afterPhoto !== undefined);
   const sectionFilms = (project.films ?? []).filter((film) => film.afterPhoto === undefined);
   const leadFilm = isCollection(project.category) ? sectionFilms.find((film) => !film.aspect) : undefined;
   const films = sectionFilms.filter((film) => film !== leadFilm);
   const wideFilms = films.filter((film) => !film.aspect);
-  const reels = films.filter((film) => film.aspect);
+  const reelGrids = REEL_GRIDS.map((grid) => ({ ...grid, reels: films.filter((film) => film.aspect === grid.aspect) })).filter(
+    (grid) => grid.reels.length > 0,
+  );
 
   return (
     <>
@@ -169,19 +178,32 @@ export const ProjectView = async ({ project, locale }: ProjectViewProps) => {
               ))}
             </div>
           )}
-          {reels.length > 0 && (
-            <div className={cn("grid grid-cols-2 items-start gap-3 md:grid-cols-3 md:gap-4", wideFilms.length > 0 && "mt-12 md:mt-16")}>
+          {reelGrids.map(({ aspect, columns, reels }, index) => (
+            <div
+              key={aspect}
+              className={cn(
+                "grid grid-cols-2 items-start gap-3 md:gap-4",
+                columns,
+                index > 0 ? "mt-3 md:mt-4" : wideFilms.length > 0 && "mt-12 md:mt-16",
+              )}
+            >
               {reels.map((film) => (
                 <FilmFigure key={filmKey(film)} film={film} fallbackTitle={title} />
               ))}
             </div>
-          )}
+          ))}
         </section>
       )}
 
       {project.gallery.length > 0 && (
         <section aria-label={t("gallery")} className="container-site pb-24 md:pb-32">
-          <ProjectGallery images={project.gallery} films={galleryFilms} filmTitle={title} locale={locale} />
+          <ProjectGallery
+            images={project.gallery}
+            films={galleryFilms}
+            filmTitle={title}
+            compact={project.compactGallery}
+            locale={locale}
+          />
         </section>
       )}
 
