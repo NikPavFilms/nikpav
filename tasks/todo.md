@@ -171,3 +171,6 @@ its photo and «Μια νέα αρχή» on Home and /works (`COLLECTIONS.baptis
       photos and videos (photos inside links keep the menu so cards still open in a new tab), CSS
       stops iPhone long-press saving and image dragging, video players hide their download button
       (`controlsList="nodownload"`). Determined visitors can still screenshot or read the network.
+- [x] New baptism covers chosen by Nikos: Alexandros DSC09642, Michail Panagiotis DSC03948 (hero,
+      focus 45%; the old cover joins the gallery after DSC04376), Petros DSC08016, Petros II
+      DSC08152. 01.webp stays the cover file (files swapped, gallery references follow).

@@ -1442,11 +1442,7 @@ export const PROJECTS: Project[] = [
     title: { en: "Petros", el: "Πέτρος" },
     location: GREECE,
     services: ["photography", "film"],
-    cover: image(
-      petros01,
-      "Petros in white in his mother's arms among green leaves",
-      "Ο Πέτρος στα λευκά, στην αγκαλιά της μαμάς του, ανάμεσα σε πράσινα φύλλα",
-    ),
+    cover: image(petros01, "Black-and-white close-up of Petros", "Ασπρόμαυρο κοντινό του Πέτρου"),
     films: [{ type: "video", src: "/videos/baptism/petros.mp4", poster: "/videos/baptism/petros-poster.webp" }],
     gallery: [
       image(petros02, "The white chapel where the baptism took place", "Το λευκό εκκλησάκι της βάφτισης"),
@@ -1478,7 +1474,7 @@ export const PROJECTS: Project[] = [
         "Petros in his father's arms, both smiling",
         "Ο Πέτρος στην αγκαλιά του μπαμπά του, χαμογελαστοί και οι δύο",
       ),
-      image(petros11, "Black-and-white close-up of Petros", "Ασπρόμαυρο κοντινό του Πέτρου"),
+      image(petros01, "Black-and-white close-up of Petros", "Ασπρόμαυρο κοντινό του Πέτρου"),
       image(
         petros12,
         "Black-and-white photo of guests reading the service",
@@ -1491,7 +1487,7 @@ export const PROJECTS: Project[] = [
       ),
       image(petros14, "Petros in a straw hat and white bonnet", "Ο Πέτρος με ψάθινο καπέλο και λευκό σκουφάκι"),
       image(
-        petros01,
+        petros11,
         "Petros in white in his mother's arms among green leaves",
         "Ο Πέτρος στα λευκά, στην αγκαλιά της μαμάς του, ανάμεσα σε πράσινα φύλλα",
       ),
@@ -1506,8 +1502,8 @@ export const PROJECTS: Project[] = [
     services: ["photography", "film"],
     cover: image(
       alexandros01,
-      "His parents kiss Alexandros by the sea",
-      "Οι γονείς του φιλούν τον Αλέξανδρο δίπλα στη θάλασσα",
+      "Black-and-white photo of Alexandros crying in the font",
+      "Ασπρόμαυρη φωτογραφία του Αλέξανδρου που κλαίει στην κολυμπήθρα",
     ),
     films: [{ type: "video", src: "/videos/baptism/alexandros.mp4", poster: "/videos/baptism/alexandros-poster.webp" }],
     gallery: [
@@ -1534,7 +1530,7 @@ export const PROJECTS: Project[] = [
         "Ο μπαμπάς του σηκώνει ψηλά τον Αλέξανδρο με φόντο τον ουρανό",
       ),
       image(
-        alexandros01,
+        alexandros15,
         "His parents kiss Alexandros by the sea",
         "Οι γονείς του φιλούν τον Αλέξανδρο δίπλα στη θάλασσα",
       ),
@@ -1562,7 +1558,7 @@ export const PROJECTS: Project[] = [
         "Ο ιερέας σηκώνει τον Αλέξανδρο στην κολυμπήθρα",
       ),
       image(
-        alexandros15,
+        alexandros01,
         "Black-and-white photo of Alexandros crying in the font",
         "Ασπρόμαυρη φωτογραφία του Αλέξανδρου που κλαίει στην κολυμπήθρα",
       ),
@@ -1583,10 +1579,10 @@ export const PROJECTS: Project[] = [
     cover: {
       ...image(
         michailPanagiotis01,
-        "Michail Panagiotis in a white hat, lit by the window",
-        "Ο Μιχαήλ Παναγιώτης με λευκό καπέλο στο φως του παραθύρου",
+        "Black-and-white close-up of Michail Panagiotis",
+        "Ασπρόμαυρο κοντινό του Μιχαήλ Παναγιώτη",
       ),
-      focus: "60% 50%",
+      focus: "45% 50%",
     },
     gallery: [
       image(
@@ -1620,11 +1616,6 @@ export const PROJECTS: Project[] = [
         "Ασπρόμαυρη φωτογραφία της οικογένειας που γελά έξω από την εκκλησία",
       ),
       image(
-        michailPanagiotis08,
-        "Black-and-white close-up of Michail Panagiotis",
-        "Ασπρόμαυρο κοντινό του Μιχαήλ Παναγιώτη",
-      ),
-      image(
         michailPanagiotis09,
         "His parents smile at each other in the church",
         "Οι γονείς του χαμογελούν ο ένας στον άλλον μέσα στην εκκλησία",
@@ -1650,6 +1641,11 @@ export const PROJECTS: Project[] = [
         michailPanagiotis15,
         "Black-and-white photo of the family from behind, facing the altar",
         "Ασπρόμαυρη φωτογραφία της οικογένειας από πίσω, μπροστά στο ιερό",
+      ),
+      image(
+        michailPanagiotis08,
+        "Michail Panagiotis in a white hat, lit by the window",
+        "Ο Μιχαήλ Παναγιώτης με λευκό καπέλο στο φως του παραθύρου",
       ),
       image(
         michailPanagiotis16,
@@ -1733,7 +1729,11 @@ export const PROJECTS: Project[] = [
     title: { en: "Petros II", el: "Πέτρος ΙΙ" },
     location: GREECE,
     services: ["photography", "film"],
-    cover: image(petrosII01, "Petros between his parents", "Ο Πέτρος ανάμεσα στους γονείς του"),
+    cover: image(
+      petrosII01,
+      "Petros walking along a wooden fence in the evening sun",
+      "Ο Πέτρος περπατά δίπλα σε έναν ξύλινο φράχτη στον απογευματινό ήλιο",
+    ),
     films: [{ type: "video", src: "/videos/baptism/petros-2.mp4", poster: "/videos/baptism/petros-2-poster.webp" }],
     gallery: [
       image(
@@ -1758,7 +1758,7 @@ export const PROJECTS: Project[] = [
         "Petros crouching beside the Bluey decorations",
         "Ο Πέτρος σκυμμένος δίπλα στη διακόσμηση Bluey",
       ),
-      image(petrosII01, "Petros between his parents", "Ο Πέτρος ανάμεσα στους γονείς του"),
+      image(petrosII12, "Petros between his parents", "Ο Πέτρος ανάμεσα στους γονείς του"),
       image(petrosII08, "Petros sitting with his family", "Ο Πέτρος καθισμένος με την οικογένειά του"),
       image(petrosII09, "The priest leads the outdoor service", "Ο ιερέας στο υπαίθριο μυστήριο"),
       image(petrosII10, "Petros in tears after the font", "Ο Πέτρος κλαίει μετά την κολυμπήθρα"),
@@ -1768,7 +1768,7 @@ export const PROJECTS: Project[] = [
         "Ο Πέτρος κοιτάζει πάνω από έναν ξύλινο φράχτη δίπλα σε μια χαμογελαστή κοπέλα",
       ),
       image(
-        petrosII12,
+        petrosII01,
         "Petros walking along a wooden fence in the evening sun",
         "Ο Πέτρος περπατά δίπλα σε έναν ξύλινο φράχτη στον απογευματινό ήλιο",
       ),
