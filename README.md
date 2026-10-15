@@ -52,14 +52,14 @@ real work. Replace them project by project:
    `afterPhoto: 13` puts a film among the gallery photos instead, after the 13th one, and
    `compactGallery: true` fills rows by shape (two landscapes or three portraits), so photos show smaller.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
-   (`lib/works/categories.ts`). **Weddings are a collection** (`COLLECTIONS` in
-   `lib/works/projects.ts`): one project per wedding, each at `/works/wedding/<names>` (e.g.
-   `panagiotis-elpida`), listed in the order of `PROJECTS` under the category's own cover
-   (`assets/images/works/wedding/cover.webp`) and line, which also fill the Home tile and the single
-   wedding card under "All" on /works, so those photos never change as weddings are added. A wedding
-   with a film opens on it (the names, then the film, then the photos). Every other
-   category is a single project: `/works/<category>` is that project's page, its cover fills the
-   Home tile, and its old `/works/<category>/<slug>` URL forwards there.
+   (`lib/works/categories.ts`). **Weddings and baptisms are collections** (`COLLECTIONS` in
+   `lib/works/projects.ts`): one project per wedding or baptism, each at `/works/<category>/<names>`
+   (e.g. `/works/wedding/panagiotis-elpida`, `/works/baptism/aliki`), listed in the order of
+   `PROJECTS` under the category's own cover (`assets/images/works/<category>/cover.webp`) and line,
+   which also fill the Home tile and the single card under "All" on /works, so those photos never
+   change as projects are added. One with a film opens on it (the names, then the film, then the
+   photos). Every other category is a single project: `/works/<category>` is that project's page,
+   its cover fills the Home tile, and its old `/works/<category>/<slug>` URL forwards there.
 
 Adding a project is the same: a new folder plus a new entry. Its pages, the sitemap and the filters
 pick it up automatically.

@@ -5,14 +5,219 @@
  *   1. Photos go in assets/images/works/<category>/<slug>/01.webp, 02.webp, ... (01 = cover).
  *   2. Update the entry below (title, location, alt texts; optionally summary, description, gallery
  *      and films) in both languages.
- * The order of PROJECTS is the order on /works and in the wedding list (Nikos sets it). A
- * collection (COLLECTIONS: weddings) always lists its projects under its own cover and line. Any
- * other category is one project, shown at /works/<category> and supplying the category's cover on
- * Home (see getProjectPath).
+ * The order of PROJECTS is the order on /works and in the wedding and baptism lists (Nikos sets
+ * it). A collection (COLLECTIONS: weddings, baptisms) always lists its projects under its own
+ * cover and line. Any other category is one project, shown at /works/<category> and supplying the
+ * category's cover on Home (see getProjectPath).
  */
 import type { StaticImageData } from "next/image";
 
-import babyGarden01 from "@/assets/images/works/baptism/family-celebration/01.webp";
+import alexandros01 from "@/assets/images/works/baptism/alexandros/01.webp";
+import alexandros02 from "@/assets/images/works/baptism/alexandros/02.webp";
+import alexandros03 from "@/assets/images/works/baptism/alexandros/03.webp";
+import alexandros04 from "@/assets/images/works/baptism/alexandros/04.webp";
+import alexandros05 from "@/assets/images/works/baptism/alexandros/05.webp";
+import alexandros06 from "@/assets/images/works/baptism/alexandros/06.webp";
+import alexandros07 from "@/assets/images/works/baptism/alexandros/07.webp";
+import alexandros08 from "@/assets/images/works/baptism/alexandros/08.webp";
+import alexandros09 from "@/assets/images/works/baptism/alexandros/09.webp";
+import alexandros10 from "@/assets/images/works/baptism/alexandros/10.webp";
+import alexandros11 from "@/assets/images/works/baptism/alexandros/11.webp";
+import alexandros12 from "@/assets/images/works/baptism/alexandros/12.webp";
+import alexandros13 from "@/assets/images/works/baptism/alexandros/13.webp";
+import alexandros14 from "@/assets/images/works/baptism/alexandros/14.webp";
+import alexandros15 from "@/assets/images/works/baptism/alexandros/15.webp";
+import alexandros16 from "@/assets/images/works/baptism/alexandros/16.webp";
+import alexandros17 from "@/assets/images/works/baptism/alexandros/17.webp";
+import aliki01 from "@/assets/images/works/baptism/aliki/01.webp";
+import aliki02 from "@/assets/images/works/baptism/aliki/02.webp";
+import aliki03 from "@/assets/images/works/baptism/aliki/03.webp";
+import aliki04 from "@/assets/images/works/baptism/aliki/04.webp";
+import aliki05 from "@/assets/images/works/baptism/aliki/05.webp";
+import aliki06 from "@/assets/images/works/baptism/aliki/06.webp";
+import aliki07 from "@/assets/images/works/baptism/aliki/07.webp";
+import aliki08 from "@/assets/images/works/baptism/aliki/08.webp";
+import aliki09 from "@/assets/images/works/baptism/aliki/09.webp";
+import aliki10 from "@/assets/images/works/baptism/aliki/10.webp";
+import aliki11 from "@/assets/images/works/baptism/aliki/11.webp";
+import aliki12 from "@/assets/images/works/baptism/aliki/12.webp";
+import aliki13 from "@/assets/images/works/baptism/aliki/13.webp";
+import aliki14 from "@/assets/images/works/baptism/aliki/14.webp";
+import aliki15 from "@/assets/images/works/baptism/aliki/15.webp";
+import aliki16 from "@/assets/images/works/baptism/aliki/16.webp";
+import antonis01 from "@/assets/images/works/baptism/antonis/01.webp";
+import antonis02 from "@/assets/images/works/baptism/antonis/02.webp";
+import antonis03 from "@/assets/images/works/baptism/antonis/03.webp";
+import antonis04 from "@/assets/images/works/baptism/antonis/04.webp";
+import antonis05 from "@/assets/images/works/baptism/antonis/05.webp";
+import antonis06 from "@/assets/images/works/baptism/antonis/06.webp";
+import antonis07 from "@/assets/images/works/baptism/antonis/07.webp";
+import antonis08 from "@/assets/images/works/baptism/antonis/08.webp";
+import antonis09 from "@/assets/images/works/baptism/antonis/09.webp";
+import antonis10 from "@/assets/images/works/baptism/antonis/10.webp";
+import antonis11 from "@/assets/images/works/baptism/antonis/11.webp";
+import antonis12 from "@/assets/images/works/baptism/antonis/12.webp";
+import antonis13 from "@/assets/images/works/baptism/antonis/13.webp";
+import antonis14 from "@/assets/images/works/baptism/antonis/14.webp";
+import antonis15 from "@/assets/images/works/baptism/antonis/15.webp";
+import antonis16 from "@/assets/images/works/baptism/antonis/16.webp";
+import antonis17 from "@/assets/images/works/baptism/antonis/17.webp";
+import antonis18 from "@/assets/images/works/baptism/antonis/18.webp";
+import antonis19 from "@/assets/images/works/baptism/antonis/19.webp";
+import antonis20 from "@/assets/images/works/baptism/antonis/20.webp";
+import antonis21 from "@/assets/images/works/baptism/antonis/21.webp";
+import athanasios01 from "@/assets/images/works/baptism/athanasios/01.webp";
+import athanasios02 from "@/assets/images/works/baptism/athanasios/02.webp";
+import athanasios03 from "@/assets/images/works/baptism/athanasios/03.webp";
+import athanasios04 from "@/assets/images/works/baptism/athanasios/04.webp";
+import athanasios05 from "@/assets/images/works/baptism/athanasios/05.webp";
+import athanasios06 from "@/assets/images/works/baptism/athanasios/06.webp";
+import athanasios07 from "@/assets/images/works/baptism/athanasios/07.webp";
+import athanasios08 from "@/assets/images/works/baptism/athanasios/08.webp";
+import athanasios09 from "@/assets/images/works/baptism/athanasios/09.webp";
+import athanasios10 from "@/assets/images/works/baptism/athanasios/10.webp";
+import athanasios11 from "@/assets/images/works/baptism/athanasios/11.webp";
+import athanasios12 from "@/assets/images/works/baptism/athanasios/12.webp";
+import athanasios13 from "@/assets/images/works/baptism/athanasios/13.webp";
+import athanasios14 from "@/assets/images/works/baptism/athanasios/14.webp";
+import athanasios15 from "@/assets/images/works/baptism/athanasios/15.webp";
+import athanasios16 from "@/assets/images/works/baptism/athanasios/16.webp";
+import athanasios17 from "@/assets/images/works/baptism/athanasios/17.webp";
+import athanasios18 from "@/assets/images/works/baptism/athanasios/18.webp";
+import athanasios19 from "@/assets/images/works/baptism/athanasios/19.webp";
+import baptismCover from "@/assets/images/works/baptism/cover.webp";
+import evangelia01 from "@/assets/images/works/baptism/evangelia/01.webp";
+import evangelia02 from "@/assets/images/works/baptism/evangelia/02.webp";
+import evangelia03 from "@/assets/images/works/baptism/evangelia/03.webp";
+import evangelia04 from "@/assets/images/works/baptism/evangelia/04.webp";
+import evangelia05 from "@/assets/images/works/baptism/evangelia/05.webp";
+import evangelia06 from "@/assets/images/works/baptism/evangelia/06.webp";
+import evangelia07 from "@/assets/images/works/baptism/evangelia/07.webp";
+import evangelia08 from "@/assets/images/works/baptism/evangelia/08.webp";
+import evangelia09 from "@/assets/images/works/baptism/evangelia/09.webp";
+import evangelia10 from "@/assets/images/works/baptism/evangelia/10.webp";
+import evangelia11 from "@/assets/images/works/baptism/evangelia/11.webp";
+import evangelia12 from "@/assets/images/works/baptism/evangelia/12.webp";
+import foteini01 from "@/assets/images/works/baptism/foteini/01.webp";
+import foteini02 from "@/assets/images/works/baptism/foteini/02.webp";
+import foteini03 from "@/assets/images/works/baptism/foteini/03.webp";
+import foteini04 from "@/assets/images/works/baptism/foteini/04.webp";
+import foteini05 from "@/assets/images/works/baptism/foteini/05.webp";
+import foteini06 from "@/assets/images/works/baptism/foteini/06.webp";
+import foteini07 from "@/assets/images/works/baptism/foteini/07.webp";
+import foteini08 from "@/assets/images/works/baptism/foteini/08.webp";
+import foteini09 from "@/assets/images/works/baptism/foteini/09.webp";
+import foteini10 from "@/assets/images/works/baptism/foteini/10.webp";
+import foteini11 from "@/assets/images/works/baptism/foteini/11.webp";
+import foteini12 from "@/assets/images/works/baptism/foteini/12.webp";
+import foteini13 from "@/assets/images/works/baptism/foteini/13.webp";
+import foteini14 from "@/assets/images/works/baptism/foteini/14.webp";
+import foteini15 from "@/assets/images/works/baptism/foteini/15.webp";
+import giorgos01 from "@/assets/images/works/baptism/giorgos/01.webp";
+import giorgos02 from "@/assets/images/works/baptism/giorgos/02.webp";
+import giorgos03 from "@/assets/images/works/baptism/giorgos/03.webp";
+import giorgos04 from "@/assets/images/works/baptism/giorgos/04.webp";
+import giorgos05 from "@/assets/images/works/baptism/giorgos/05.webp";
+import giorgos06 from "@/assets/images/works/baptism/giorgos/06.webp";
+import giorgos07 from "@/assets/images/works/baptism/giorgos/07.webp";
+import giorgos08 from "@/assets/images/works/baptism/giorgos/08.webp";
+import giorgos09 from "@/assets/images/works/baptism/giorgos/09.webp";
+import giorgos10 from "@/assets/images/works/baptism/giorgos/10.webp";
+import giorgos11 from "@/assets/images/works/baptism/giorgos/11.webp";
+import giorgos12 from "@/assets/images/works/baptism/giorgos/12.webp";
+import giorgos13 from "@/assets/images/works/baptism/giorgos/13.webp";
+import giorgos14 from "@/assets/images/works/baptism/giorgos/14.webp";
+import giorgos15 from "@/assets/images/works/baptism/giorgos/15.webp";
+import giorgos16 from "@/assets/images/works/baptism/giorgos/16.webp";
+import giorgos17 from "@/assets/images/works/baptism/giorgos/17.webp";
+import giorgos18 from "@/assets/images/works/baptism/giorgos/18.webp";
+import giorgos19 from "@/assets/images/works/baptism/giorgos/19.webp";
+import giorgos20 from "@/assets/images/works/baptism/giorgos/20.webp";
+import michailPanagiotis01 from "@/assets/images/works/baptism/michail-panagiotis/01.webp";
+import michailPanagiotis02 from "@/assets/images/works/baptism/michail-panagiotis/02.webp";
+import michailPanagiotis03 from "@/assets/images/works/baptism/michail-panagiotis/03.webp";
+import michailPanagiotis04 from "@/assets/images/works/baptism/michail-panagiotis/04.webp";
+import michailPanagiotis05 from "@/assets/images/works/baptism/michail-panagiotis/05.webp";
+import michailPanagiotis06 from "@/assets/images/works/baptism/michail-panagiotis/06.webp";
+import michailPanagiotis07 from "@/assets/images/works/baptism/michail-panagiotis/07.webp";
+import michailPanagiotis08 from "@/assets/images/works/baptism/michail-panagiotis/08.webp";
+import michailPanagiotis09 from "@/assets/images/works/baptism/michail-panagiotis/09.webp";
+import michailPanagiotis10 from "@/assets/images/works/baptism/michail-panagiotis/10.webp";
+import michailPanagiotis11 from "@/assets/images/works/baptism/michail-panagiotis/11.webp";
+import michailPanagiotis12 from "@/assets/images/works/baptism/michail-panagiotis/12.webp";
+import michailPanagiotis13 from "@/assets/images/works/baptism/michail-panagiotis/13.webp";
+import michailPanagiotis14 from "@/assets/images/works/baptism/michail-panagiotis/14.webp";
+import michailPanagiotis15 from "@/assets/images/works/baptism/michail-panagiotis/15.webp";
+import michailPanagiotis16 from "@/assets/images/works/baptism/michail-panagiotis/16.webp";
+import petros01 from "@/assets/images/works/baptism/petros/01.webp";
+import petros02 from "@/assets/images/works/baptism/petros/02.webp";
+import petros03 from "@/assets/images/works/baptism/petros/03.webp";
+import petros04 from "@/assets/images/works/baptism/petros/04.webp";
+import petros05 from "@/assets/images/works/baptism/petros/05.webp";
+import petros06 from "@/assets/images/works/baptism/petros/06.webp";
+import petros07 from "@/assets/images/works/baptism/petros/07.webp";
+import petros08 from "@/assets/images/works/baptism/petros/08.webp";
+import petros09 from "@/assets/images/works/baptism/petros/09.webp";
+import petros10 from "@/assets/images/works/baptism/petros/10.webp";
+import petros11 from "@/assets/images/works/baptism/petros/11.webp";
+import petros12 from "@/assets/images/works/baptism/petros/12.webp";
+import petros13 from "@/assets/images/works/baptism/petros/13.webp";
+import petros14 from "@/assets/images/works/baptism/petros/14.webp";
+import petros15 from "@/assets/images/works/baptism/petros/15.webp";
+import petrosII01 from "@/assets/images/works/baptism/petros-2/01.webp";
+import petrosII02 from "@/assets/images/works/baptism/petros-2/02.webp";
+import petrosII03 from "@/assets/images/works/baptism/petros-2/03.webp";
+import petrosII04 from "@/assets/images/works/baptism/petros-2/04.webp";
+import petrosII05 from "@/assets/images/works/baptism/petros-2/05.webp";
+import petrosII06 from "@/assets/images/works/baptism/petros-2/06.webp";
+import petrosII07 from "@/assets/images/works/baptism/petros-2/07.webp";
+import petrosII08 from "@/assets/images/works/baptism/petros-2/08.webp";
+import petrosII09 from "@/assets/images/works/baptism/petros-2/09.webp";
+import petrosII10 from "@/assets/images/works/baptism/petros-2/10.webp";
+import petrosII11 from "@/assets/images/works/baptism/petros-2/11.webp";
+import petrosII12 from "@/assets/images/works/baptism/petros-2/12.webp";
+import petrosII13 from "@/assets/images/works/baptism/petros-2/13.webp";
+import rafail01 from "@/assets/images/works/baptism/rafail/01.webp";
+import rafail02 from "@/assets/images/works/baptism/rafail/02.webp";
+import rafail03 from "@/assets/images/works/baptism/rafail/03.webp";
+import rafail04 from "@/assets/images/works/baptism/rafail/04.webp";
+import rafail05 from "@/assets/images/works/baptism/rafail/05.webp";
+import rafail06 from "@/assets/images/works/baptism/rafail/06.webp";
+import rafail07 from "@/assets/images/works/baptism/rafail/07.webp";
+import rafail08 from "@/assets/images/works/baptism/rafail/08.webp";
+import rafail09 from "@/assets/images/works/baptism/rafail/09.webp";
+import rafail10 from "@/assets/images/works/baptism/rafail/10.webp";
+import rafail11 from "@/assets/images/works/baptism/rafail/11.webp";
+import rafail12 from "@/assets/images/works/baptism/rafail/12.webp";
+import simela01 from "@/assets/images/works/baptism/simela/01.webp";
+import simela02 from "@/assets/images/works/baptism/simela/02.webp";
+import simela03 from "@/assets/images/works/baptism/simela/03.webp";
+import simela04 from "@/assets/images/works/baptism/simela/04.webp";
+import simela05 from "@/assets/images/works/baptism/simela/05.webp";
+import simela06 from "@/assets/images/works/baptism/simela/06.webp";
+import simela07 from "@/assets/images/works/baptism/simela/07.webp";
+import simela08 from "@/assets/images/works/baptism/simela/08.webp";
+import simela09 from "@/assets/images/works/baptism/simela/09.webp";
+import simela10 from "@/assets/images/works/baptism/simela/10.webp";
+import simela11 from "@/assets/images/works/baptism/simela/11.webp";
+import simela12 from "@/assets/images/works/baptism/simela/12.webp";
+import simela13 from "@/assets/images/works/baptism/simela/13.webp";
+import simela14 from "@/assets/images/works/baptism/simela/14.webp";
+import sotiris01 from "@/assets/images/works/baptism/sotiris/01.webp";
+import sotiris02 from "@/assets/images/works/baptism/sotiris/02.webp";
+import sotiris03 from "@/assets/images/works/baptism/sotiris/03.webp";
+import sotiris04 from "@/assets/images/works/baptism/sotiris/04.webp";
+import sotiris05 from "@/assets/images/works/baptism/sotiris/05.webp";
+import sotiris06 from "@/assets/images/works/baptism/sotiris/06.webp";
+import sotiris07 from "@/assets/images/works/baptism/sotiris/07.webp";
+import sotiris08 from "@/assets/images/works/baptism/sotiris/08.webp";
+import sotiris09 from "@/assets/images/works/baptism/sotiris/09.webp";
+import sotiris10 from "@/assets/images/works/baptism/sotiris/10.webp";
+import sotiris11 from "@/assets/images/works/baptism/sotiris/11.webp";
+import sotiris12 from "@/assets/images/works/baptism/sotiris/12.webp";
+import sotiris13 from "@/assets/images/works/baptism/sotiris/13.webp";
+import sotiris14 from "@/assets/images/works/baptism/sotiris/14.webp";
+import sotiris15 from "@/assets/images/works/baptism/sotiris/15.webp";
 import brandFilm01 from "@/assets/images/works/production/brand-film/01.webp";
 import villa01 from "@/assets/images/works/real-estate/seaside-villa/01.webp";
 import villa02 from "@/assets/images/works/real-estate/seaside-villa/02.webp";
@@ -278,8 +483,16 @@ const nikosEviCover = image(
   "Η νύφη σηκώνει ψηλά την ανθοδέσμη καθώς ο γαμπρός την οδηγεί στα βράχια",
 );
 
-/** Categories made of many projects (one page per wedding), with the cover and line that head them. */
+/** Categories made of many projects (one page per wedding or baptism), with the cover and line that head them. */
 const COLLECTIONS: Partial<Record<CategorySlug, CategoryShowcase>> = {
+  baptism: {
+    title: { en: "A New Beginning", el: "Μια νέα αρχή" },
+    cover: image(
+      baptismCover,
+      "Baby in a woman's arms reaching up to the Gospel book held by the priest",
+      "Μωρό στην αγκαλιά μιας γυναίκας απλώνει το χέρι προς το Ευαγγέλιο που κρατά ο ιερέας",
+    ),
+  },
   wedding: {
     title: { en: "Your Own Story", el: "Η δική σας ιστορία" },
     cover: {
@@ -1217,17 +1430,840 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    slug: "family-celebration",
+    slug: "petros",
     category: "baptism",
-    title: { en: "A New Beginning", el: "Μια νέα αρχή" },
+    title: { en: "Petros", el: "Πέτρος" },
     location: GREECE,
     services: ["photography", "film"],
     cover: image(
-      babyGarden01,
-      "Baby in a woman's arms reaching up to the Gospel book held by the priest",
-      "Μωρό στην αγκαλιά μιας γυναίκας απλώνει το χέρι προς το Ευαγγέλιο που κρατά ο ιερέας",
+      petros01,
+      "Petros in white in his mother's arms among green leaves",
+      "Ο Πέτρος στα λευκά, στην αγκαλιά της μαμάς του, ανάμεσα σε πράσινα φύλλα",
     ),
-    gallery: [],
+    films: [{ type: "video", src: "/videos/baptism/petros.mp4", poster: "/videos/baptism/petros-poster.webp" }],
+    gallery: [
+      image(petros02, "The white chapel where the baptism took place", "Το λευκό εκκλησάκι της βάφτισης"),
+      image(
+        petros03,
+        "A suitcase decorated with Peter Pan among bougainvillea",
+        "Βαλίτσα διακοσμημένη με τον Πίτερ Παν ανάμεσα σε βουκαμβίλιες",
+      ),
+      image(
+        petros04,
+        "The baby's linen shirt among bougainvillea",
+        "Το λινό πουκάμισο του μωρού ανάμεσα σε βουκαμβίλιες",
+      ),
+      image(
+        petros05,
+        "The baby's suede loafers among the flowers",
+        "Τα σουέτ μοκασίνια του μωρού ανάμεσα στα λουλούδια",
+      ),
+      image(petros06, "A straw hat with a Peter Pan figure", "Ψάθινο καπέλο με μια φιγούρα του Πίτερ Παν"),
+      image(petros07, "A gold cross hanging among the leaves", "Ένας χρυσός σταυρός κρεμασμένος ανάμεσα στα φύλλα"),
+      image(
+        petros08,
+        "Peter Pan decorations and flowers outside the chapel",
+        "Διακόσμηση με τον Πίτερ Παν και λουλούδια έξω από το εκκλησάκι",
+      ),
+      image(petros09, "Petros held close before the ceremony", "Ο Πέτρος στην αγκαλιά πριν από το μυστήριο"),
+      image(
+        petros10,
+        "Petros in his father's arms, both smiling",
+        "Ο Πέτρος στην αγκαλιά του μπαμπά του, χαμογελαστοί και οι δύο",
+      ),
+      image(petros11, "Black-and-white close-up of Petros", "Ασπρόμαυρο κοντινό του Πέτρου"),
+      image(
+        petros12,
+        "Black-and-white photo of guests reading the service",
+        "Ασπρόμαυρη φωτογραφία καλεσμένων που διαβάζουν την ακολουθία",
+      ),
+      image(
+        petros13,
+        "Black-and-white photo of Petros at the font",
+        "Ασπρόμαυρη φωτογραφία του Πέτρου στην κολυμπήθρα",
+      ),
+      image(petros14, "Petros in a straw hat and white bonnet", "Ο Πέτρος με ψάθινο καπέλο και λευκό σκουφάκι"),
+      image(
+        petros01,
+        "Petros in white in his mother's arms among green leaves",
+        "Ο Πέτρος στα λευκά, στην αγκαλιά της μαμάς του, ανάμεσα σε πράσινα φύλλα",
+      ),
+      image(petros15, "His parents kiss Petros on both cheeks", "Οι γονείς του φιλούν τον Πέτρο στα μάγουλα"),
+    ],
+  },
+  {
+    slug: "alexandros",
+    category: "baptism",
+    title: { en: "Alexandros", el: "Αλέξανδρος" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(
+      alexandros01,
+      "His parents kiss Alexandros by the sea",
+      "Οι γονείς του φιλούν τον Αλέξανδρο δίπλα στη θάλασσα",
+    ),
+    films: [{ type: "video", src: "/videos/baptism/alexandros.mp4", poster: "/videos/baptism/alexandros-poster.webp" }],
+    gallery: [
+      image(
+        alexandros02,
+        "A suitcase painted with Alexandros's name and jungle animals by the sea",
+        "Βαλίτσα με το όνομα του Αλέξανδρου και ζωάκια της ζούγκλας δίπλα στη θάλασσα",
+      ),
+      image(alexandros03, "The baptism outfit hanging by the sea", "Τα βαπτιστικά κρεμασμένα δίπλα στη θάλασσα"),
+      image(alexandros04, "A gold cross hanging among green leaves", "Ένας χρυσός σταυρός ανάμεσα σε πράσινα φύλλα"),
+      image(
+        alexandros05,
+        "A white hat and white sneakers on a tree stump",
+        "Ένα λευκό καπέλο και λευκά αθλητικά πάνω σε ένα κούτσουρο",
+      ),
+      image(
+        alexandros06,
+        "Alexandros in his mother's arms by the sea",
+        "Ο Αλέξανδρος στην αγκαλιά της μαμάς του δίπλα στη θάλασσα",
+      ),
+      image(
+        alexandros07,
+        "His father lifts Alexandros up against the sky",
+        "Ο μπαμπάς του σηκώνει ψηλά τον Αλέξανδρο με φόντο τον ουρανό",
+      ),
+      image(
+        alexandros01,
+        "His parents kiss Alexandros by the sea",
+        "Οι γονείς του φιλούν τον Αλέξανδρο δίπλα στη θάλασσα",
+      ),
+      image(
+        alexandros08,
+        "A welcome sign on an easel outside the church",
+        "Πινακίδα καλωσορίσματος σε καβαλέτο έξω από την εκκλησία",
+      ),
+      image(alexandros09, "The decorated entrance of the white church", "Η στολισμένη είσοδος της λευκής εκκλησίας"),
+      image(
+        alexandros10,
+        "Alexandros with family by the sea",
+        "Ο Αλέξανδρος με την οικογένειά του δίπλα στη θάλασσα",
+      ),
+      image(
+        alexandros11,
+        "Alexandros with his pacifier in his father's arms in the church",
+        "Ο Αλέξανδρος με την πιπίλα στην αγκαλιά του μπαμπά του στην εκκλησία",
+      ),
+      image(alexandros12, "Alexandros smiling in the church", "Ο Αλέξανδρος χαμογελά μέσα στην εκκλησία"),
+      image(alexandros13, "Oil poured into the font", "Το λάδι χύνεται στην κολυμπήθρα"),
+      image(
+        alexandros14,
+        "The priest lifts Alexandros at the font",
+        "Ο ιερέας σηκώνει τον Αλέξανδρο στην κολυμπήθρα",
+      ),
+      image(
+        alexandros15,
+        "Black-and-white photo of Alexandros crying in the font",
+        "Ασπρόμαυρη φωτογραφία του Αλέξανδρου που κλαίει στην κολυμπήθρα",
+      ),
+      image(
+        alexandros16,
+        "His mother smiles beside Alexandros in his white hat",
+        "Η μαμά του χαμογελά δίπλα στον Αλέξανδρο με το λευκό καπέλο",
+      ),
+      image(alexandros17, "His mother kisses Alexandros's hand", "Η μαμά του φιλά το χέρι του Αλέξανδρου"),
+    ],
+  },
+  {
+    slug: "michail-panagiotis",
+    category: "baptism",
+    title: { en: "Michail Panagiotis", el: "Μιχαήλ Παναγιώτης" },
+    location: GREECE,
+    services: ["photography"],
+    cover: {
+      ...image(
+        michailPanagiotis01,
+        "Michail Panagiotis in a white hat, lit by the window",
+        "Ο Μιχαήλ Παναγιώτης με λευκό καπέλο στο φως του παραθύρου",
+      ),
+      focus: "60% 50%",
+    },
+    gallery: [
+      image(
+        michailPanagiotis02,
+        "The baby's vest and shirt hanging among leaves",
+        "Το γιλέκο και το πουκάμισο του μωρού κρεμασμένα ανάμεσα σε φύλλα",
+      ),
+      image(
+        michailPanagiotis03,
+        "A gold cross hanging among oleander leaves",
+        "Ένας χρυσός σταυρός ανάμεσα σε φύλλα πικροδάφνης",
+      ),
+      image(
+        michailPanagiotis04,
+        "A decorated suitcase under stone arches",
+        "Στολισμένη βαλίτσα κάτω από πέτρινες καμάρες",
+      ),
+      image(
+        michailPanagiotis05,
+        "His parents kiss on the church steps",
+        "Οι γονείς του φιλιούνται στα σκαλιά της εκκλησίας",
+      ),
+      image(
+        michailPanagiotis06,
+        "Black-and-white photo of his father lifting him on the church steps",
+        "Ασπρόμαυρη φωτογραφία του μπαμπά του που τον σηκώνει ψηλά στα σκαλιά της εκκλησίας",
+      ),
+      image(
+        michailPanagiotis07,
+        "Black-and-white photo of the family laughing outside the church",
+        "Ασπρόμαυρη φωτογραφία της οικογένειας που γελά έξω από την εκκλησία",
+      ),
+      image(
+        michailPanagiotis08,
+        "Black-and-white close-up of Michail Panagiotis",
+        "Ασπρόμαυρο κοντινό του Μιχαήλ Παναγιώτη",
+      ),
+      image(
+        michailPanagiotis09,
+        "His parents smile at each other in the church",
+        "Οι γονείς του χαμογελούν ο ένας στον άλλον μέσα στην εκκλησία",
+      ),
+      image(
+        michailPanagiotis10,
+        "Michail Panagiotis held in the church among the icons",
+        "Ο Μιχαήλ Παναγιώτης στην αγκαλιά μέσα στην εκκλησία, ανάμεσα στις εικόνες",
+      ),
+      image(michailPanagiotis11, "His mother lifts him up, smiling", "Η μαμά του τον σηκώνει ψηλά χαμογελώντας"),
+      image(michailPanagiotis12, "The priest holds him up at the font", "Ο ιερέας τον σηκώνει ψηλά στην κολυμπήθρα"),
+      image(
+        michailPanagiotis13,
+        "Black-and-white photo of the baby in the font",
+        "Ασπρόμαυρη φωτογραφία του μωρού στην κολυμπήθρα",
+      ),
+      image(
+        michailPanagiotis14,
+        "A lock of his hair is cut during the service",
+        "Του κόβουν μια τούφα μαλλιά στο μυστήριο",
+      ),
+      image(
+        michailPanagiotis15,
+        "Black-and-white photo of the family from behind, facing the altar",
+        "Ασπρόμαυρη φωτογραφία της οικογένειας από πίσω, μπροστά στο ιερό",
+      ),
+      image(
+        michailPanagiotis16,
+        "Black-and-white photo of his parents holding him",
+        "Ασπρόμαυρη φωτογραφία των γονιών του που τον κρατούν",
+      ),
+    ],
+  },
+  {
+    slug: "antonis",
+    category: "baptism",
+    title: { en: "Antonis", el: "Αντώνης" },
+    location: GREECE,
+    services: ["photography"],
+    cover: {
+      ...image(antonis01, "Antonis laughing", "Ο Αντώνης γελάει"),
+      focus: "70% 50%",
+    },
+    gallery: [
+      image(antonis02, "A decorated suitcase outside the church", "Στολισμένη βαλίτσα έξω από την εκκλησία"),
+      image(
+        antonis03,
+        "The suitcase and jungle-animal decorations on the church steps",
+        "Η βαλίτσα και διακόσμηση με ζωάκια της ζούγκλας στα σκαλιά της εκκλησίας",
+      ),
+      image(
+        antonis04,
+        "The baby's trousers with braces hanging in a tree",
+        "Το παντελόνι με τις τιράντες κρεμασμένο σε ένα δέντρο",
+      ),
+      image(
+        antonis05,
+        "The baby's vest and shirt hanging in a tree",
+        "Το γιλέκο και το πουκάμισο του μωρού κρεμασμένα σε ένα δέντρο",
+      ),
+      image(antonis06, "A straw hat among green leaves", "Ένα ψάθινο καπέλο ανάμεσα σε πράσινα φύλλα"),
+      image(antonis07, "The baby's white shoes in the greenery", "Τα λευκά παπουτσάκια του μωρού στο πράσινο"),
+      image(antonis08, "A cross in its gift box among the leaves", "Ένας σταυρός στο κουτί του ανάμεσα στα φύλλα"),
+      image(
+        antonis09,
+        "A toy giraffe and lion beside the decorated table",
+        "Λούτρινη καμηλοπάρδαλη και λιοντάρι δίπλα στο στολισμένο τραπέζι",
+      ),
+      image(antonis10, "A gold cross hanging in the light", "Ένας χρυσός σταυρός κρεμασμένος στο φως"),
+      image(antonis11, "His parents kiss Antonis on both cheeks", "Οι γονείς του φιλούν τον Αντώνη στα μάγουλα"),
+      image(antonis12, "A couple hugs and kisses Antonis", "Ένα ζευγάρι αγκαλιάζει και φιλά τον Αντώνη"),
+      image(
+        antonis13,
+        "Antonis with his parents outside the church",
+        "Ο Αντώνης με τους γονείς του έξω από την εκκλησία",
+      ),
+      image(antonis14, "Antonis walking across the churchyard", "Ο Αντώνης περπατά στην αυλή της εκκλησίας"),
+      image(
+        antonis15,
+        "Antonis walking hand in hand with two grown-ups",
+        "Ο Αντώνης περπατά κρατώντας από το χέρι δύο μεγάλους",
+      ),
+      image(
+        antonis16,
+        "Antonis in his mother's arms as the service begins",
+        "Ο Αντώνης στην αγκαλιά της μαμάς του στην αρχή του μυστηρίου",
+      ),
+      image(
+        antonis17,
+        "Antonis looks at the camera from his mother's arms",
+        "Ο Αντώνης κοιτά τον φακό από την αγκαλιά της μαμάς του",
+      ),
+      image(antonis18, "The priest holds Antonis over the font", "Ο ιερέας κρατά τον Αντώνη πάνω από την κολυμπήθρα"),
+      image(antonis19, "A cross hanging against the priest's vestments", "Ένας σταυρός μπροστά στα άμφια του ιερέα"),
+      image(
+        antonis20,
+        "A man comforts Antonis after the font",
+        "Ένας άντρας παρηγορεί τον Αντώνη μετά την κολυμπήθρα",
+      ),
+      image(antonis21, "Antonis with his pacifier, held close", "Ο Αντώνης με την πιπίλα του στην αγκαλιά"),
+    ],
+  },
+  {
+    slug: "petros-2",
+    category: "baptism",
+    title: { en: "Petros II", el: "Πέτρος ΙΙ" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(petrosII01, "Petros between his parents", "Ο Πέτρος ανάμεσα στους γονείς του"),
+    films: [{ type: "video", src: "/videos/baptism/petros-2.mp4", poster: "/videos/baptism/petros-2-poster.webp" }],
+    gallery: [
+      image(
+        petrosII02,
+        "Petros's name embroidered on a cloth with martyrika bracelets and pins",
+        "Το όνομα του Πέτρου κεντημένο σε ύφασμα, με μαρτυρικά βραχιολάκια και καρφίτσες",
+      ),
+      image(
+        petrosII03,
+        "A gold cross in its box beside a Bluey decoration",
+        "Ένας χρυσός σταυρός στο κουτί του δίπλα σε διακόσμηση Bluey",
+      ),
+      image(petrosII04, "The boy's white sneakers on a rock", "Τα λευκά αθλητικά του αγοριού πάνω σε έναν βράχο"),
+      image(
+        petrosII05,
+        "The baptism outfit hanging from a tree in the sun",
+        "Τα βαπτιστικά κρεμασμένα σε ένα δέντρο στον ήλιο",
+      ),
+      image(petrosII06, "Petros in his mother's arms", "Ο Πέτρος στην αγκαλιά της μαμάς του"),
+      image(
+        petrosII07,
+        "Petros crouching beside the Bluey decorations",
+        "Ο Πέτρος σκυμμένος δίπλα στη διακόσμηση Bluey",
+      ),
+      image(petrosII01, "Petros between his parents", "Ο Πέτρος ανάμεσα στους γονείς του"),
+      image(petrosII08, "Petros sitting with his family", "Ο Πέτρος καθισμένος με την οικογένειά του"),
+      image(petrosII09, "The priest leads the outdoor service", "Ο ιερέας στο υπαίθριο μυστήριο"),
+      image(petrosII10, "Petros in tears after the font", "Ο Πέτρος κλαίει μετά την κολυμπήθρα"),
+      image(
+        petrosII11,
+        "Petros peeking over a wooden fence beside a smiling woman",
+        "Ο Πέτρος κοιτάζει πάνω από έναν ξύλινο φράχτη δίπλα σε μια χαμογελαστή κοπέλα",
+      ),
+      image(
+        petrosII12,
+        "Petros walking along a wooden fence in the evening sun",
+        "Ο Πέτρος περπατά δίπλα σε έναν ξύλινο φράχτη στον απογευματινό ήλιο",
+      ),
+      image(
+        petrosII13,
+        "Petros in a white hat between two smiling women",
+        "Ο Πέτρος με λευκό καπέλο ανάμεσα σε δύο χαμογελαστές κοπέλες",
+      ),
+    ],
+  },
+  {
+    slug: "athanasios",
+    category: "baptism",
+    title: { en: "Athanasios", el: "Αθανάσιος" },
+    location: GREECE,
+    services: ["photography"],
+    cover: {
+      ...image(
+        athanasios01,
+        "Athanasios in the arms of a smiling man in the church",
+        "Ο Αθανάσιος στην αγκαλιά ενός χαμογελαστού άντρα μέσα στην εκκλησία",
+      ),
+      focus: "35% 50%",
+    },
+    gallery: [
+      image(athanasios02, "A decorated suitcase against a stone wall", "Στολισμένη βαλίτσα μπροστά σε πέτρινο τοίχο"),
+      image(
+        athanasios03,
+        "The stone church decorated with blue balloons",
+        "Η πέτρινη εκκλησία στολισμένη με μπλε μπαλόνια",
+      ),
+      image(
+        athanasios04,
+        "A wooden letter A and a teddy-bear pin on a ribbon",
+        "Ξύλινο γράμμα Α και καρφίτσα αρκουδάκι σε μια κορδέλα",
+      ),
+      image(
+        athanasios05,
+        "The boy's white sneakers on a pine branch",
+        "Τα λευκά αθλητικά του αγοριού πάνω σε κλαδί πεύκου",
+      ),
+      image(
+        athanasios06,
+        "The blue vest and shirt hanging in a tree",
+        "Το γαλάζιο γιλέκο και το πουκάμισο κρεμασμένα σε ένα δέντρο",
+      ),
+      image(
+        athanasios07,
+        "A straw hat and white sneakers in the greenery",
+        "Ψάθινο καπέλο και λευκά αθλητικά στο πράσινο",
+      ),
+      image(athanasios08, "A balloon arch with Athanasios's name", "Αψίδα από μπαλόνια με το όνομα του Αθανάσιου"),
+      image(athanasios09, "A chalkboard sign that reads BOY", "Πινακάκι με την επιγραφή BOY"),
+      image(
+        athanasios10,
+        "Athanasios walking with his father outside the church",
+        "Ο Αθανάσιος περπατά με τον μπαμπά του έξω από την εκκλησία",
+      ),
+      image(athanasios11, "A gold cross hanging among pine needles", "Ένας χρυσός σταυρός ανάμεσα σε πευκοβελόνες"),
+      image(
+        athanasios12,
+        "Athanasios with his parents at the decorated table",
+        "Ο Αθανάσιος με τους γονείς του στο στολισμένο τραπέζι",
+      ),
+      image(
+        athanasios13,
+        "Two women in teal dresses outside the church",
+        "Δύο κοπέλες με πράσινα φορέματα έξω από την εκκλησία",
+      ),
+      image(
+        athanasios14,
+        "Two women kiss a smiling guest on the cheeks",
+        "Δύο κοπέλες φιλούν στα μάγουλα μια χαμογελαστή κυρία",
+      ),
+      image(
+        athanasios15,
+        "The family on the church steps among the decorations",
+        "Η οικογένεια στα σκαλιά της εκκλησίας ανάμεσα στη διακόσμηση",
+      ),
+      image(athanasios16, "A woman reads from the service book", "Μια κοπέλα διαβάζει από το βιβλίο της ακολουθίας"),
+      image(
+        athanasios17,
+        "Guests smiling in the church, one in a teddy-bear apron",
+        "Καλεσμένοι χαμογελούν στην εκκλησία, μία με ποδιά με αρκουδάκι",
+      ),
+      image(
+        athanasios18,
+        "The baptism oil bottle with a teddy-bear charm",
+        "Το μπουκάλι με το λάδι της βάφτισης με ένα αρκουδάκι",
+      ),
+      image(
+        athanasios19,
+        "Athanasios cries in the font as the priest holds him",
+        "Ο Αθανάσιος κλαίει στην κολυμπήθρα στα χέρια του ιερέα",
+      ),
+    ],
+  },
+  {
+    slug: "foteini",
+    category: "baptism",
+    title: { en: "Foteini", el: "Φωτεινή" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(foteini01, "Foteini laughing in her mother's arms", "Η Φωτεινή γελά στην αγκαλιά της μαμάς της"),
+    films: [{ type: "video", src: "/videos/baptism/foteini.mp4", poster: "/videos/baptism/foteini-poster.webp" }],
+    gallery: [
+      image(
+        foteini02,
+        "The pink tulle dress hanging in a tree by the sea",
+        "Το ροζ τούλινο φόρεμα κρεμασμένο σε ένα δέντρο δίπλα στη θάλασσα",
+      ),
+      image(
+        foteini03,
+        "Gold sandals with pink roses in the greenery",
+        "Χρυσά πεδιλάκια με ροζ τριαντάφυλλα στο πράσινο",
+      ),
+      image(foteini04, "A gold cross against a blurred sea", "Ένας χρυσός σταυρός με φόντο τη θολή θάλασσα"),
+      image(
+        foteini05,
+        "A pink suitcase dressed in tulle in a whitewashed lane",
+        "Ροζ βαλίτσα στολισμένη με τούλι σε ένα ασβεστωμένο σοκάκι",
+      ),
+      image(foteini06, "Three guests smiling by the sea", "Τρεις καλεσμένοι χαμογελούν δίπλα στη θάλασσα"),
+      image(
+        foteini07,
+        "The priest reads beside Foteini and her family in the church",
+        "Ο ιερέας διαβάζει δίπλα στη Φωτεινή και την οικογένειά της στην εκκλησία",
+      ),
+      image(
+        foteini08,
+        "Foteini with her parents under the white arches",
+        "Η Φωτεινή με τους γονείς της κάτω από τις λευκές καμάρες",
+      ),
+      image(foteini09, "Foteini rests her head on her father", "Η Φωτεινή ακουμπά το κεφάλι της στον μπαμπά της"),
+      image(foteini10, "The priest bathes Foteini in the font", "Ο ιερέας βουτά τη Φωτεινή στην κολυμπήθρα"),
+      image(foteini11, "A lock of Foteini's hair is cut", "Κόβουν μια τούφα από τα μαλλιά της Φωτεινής"),
+      image(foteini01, "Foteini laughing in her mother's arms", "Η Φωτεινή γελά στην αγκαλιά της μαμάς της"),
+      image(foteini12, "A floral hoop with Foteini's name", "Στεφάνι με λουλούδια και το όνομα της Φωτεινής"),
+      image(foteini13, "The wish book with Foteini's name", "Το βιβλίο ευχών με το όνομα της Φωτεινής"),
+      image(
+        foteini14,
+        "Foteini standing on the grass in her pink dress",
+        "Η Φωτεινή όρθια στο γρασίδι με το ροζ φόρεμά της",
+      ),
+      image(
+        foteini15,
+        "Foteini reaching out as she walks on the grass",
+        "Η Φωτεινή απλώνει τα χέρια καθώς περπατά στο γρασίδι",
+      ),
+    ],
+  },
+  {
+    slug: "simela",
+    category: "baptism",
+    title: { en: "Simela", el: "Σιμέλα" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(simela01, "Simela smiling in her father's arms", "Η Σιμέλα χαμογελά στην αγκαλιά του μπαμπά της"),
+    films: [{ type: "video", src: "/videos/baptism/simela.mp4", poster: "/videos/baptism/simela-poster.webp" }],
+    gallery: [
+      image(
+        simela02,
+        "The pink baptism dress hanging among the leaves",
+        "Το ροζ βαπτιστικό φόρεμα κρεμασμένο ανάμεσα στα φύλλα",
+      ),
+      image(
+        simela03,
+        "Glittery pink shoes among purple petunias",
+        "Ροζ γυαλιστερά παπουτσάκια ανάμεσα σε μωβ πετούνιες",
+      ),
+      image(simela04, "A pink suitcase with flowers and lace", "Ροζ βαλίτσα με λουλούδια και δαντέλα"),
+      image(simela05, "A gold cross hanging among green leaves", "Ένας χρυσός σταυρός ανάμεσα σε πράσινα φύλλα"),
+      image(simela06, "A green arch leading to the churchyard", "Πράσινη αψίδα που οδηγεί στην αυλή της εκκλησίας"),
+      image(simela01, "Simela smiling in her father's arms", "Η Σιμέλα χαμογελά στην αγκαλιά του μπαμπά της"),
+      image(simela07, "A couple smiling in the church", "Ένα ζευγάρι χαμογελά μέσα στην εκκλησία"),
+      image(
+        simela08,
+        "The priest reads the service beside the family",
+        "Ο ιερέας διαβάζει την ακολουθία δίπλα στην οικογένεια",
+      ),
+      image(
+        simela09,
+        "Simela in her mother's arms in the church",
+        "Η Σιμέλα στην αγκαλιά της μαμάς της στην εκκλησία",
+      ),
+      image(
+        simela10,
+        "Two guests in white aprons ready for the font",
+        "Δύο καλεσμένοι με λευκές ποδιές έτοιμοι για την κολυμπήθρα",
+      ),
+      image(
+        simela11,
+        "The baptism oil bottle tied with lace",
+        "Το μπουκάλι με το λάδι της βάφτισης δεμένο με δαντέλα",
+      ),
+      image(
+        simela12,
+        "Simela cries as the priest lifts her from the font",
+        "Η Σιμέλα κλαίει καθώς ο ιερέας τη σηκώνει από την κολυμπήθρα",
+      ),
+      image(
+        simela13,
+        "Simela walks in the churchyard, holding a woman's hands",
+        "Η Σιμέλα περπατά στην αυλή της εκκλησίας κρατώντας τα χέρια μιας κυρίας",
+      ),
+      image(simela14, "Simela laughing with a man in sunglasses", "Η Σιμέλα γελά με έναν άντρα με γυαλιά ηλίου"),
+    ],
+  },
+  {
+    slug: "aliki",
+    category: "baptism",
+    title: { en: "Aliki", el: "Αλίκη" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(
+      aliki01,
+      "Aliki smiling in a white towel after the font",
+      "Η Αλίκη χαμογελά τυλιγμένη στη λευκή πετσέτα μετά την κολυμπήθρα",
+    ),
+    films: [{ type: "video", src: "/videos/baptism/aliki.mp4", poster: "/videos/baptism/aliki-poster.webp" }],
+    gallery: [
+      image(aliki02, "White baby shoes in the greenery", "Λευκά παπουτσάκια στο πράσινο"),
+      image(
+        aliki03,
+        "The white baptism dress hanging in a tree",
+        "Το λευκό βαπτιστικό φόρεμα κρεμασμένο σε ένα δέντρο",
+      ),
+      image(
+        aliki04,
+        "Roses and a sign with Aliki's name at the church",
+        "Τριαντάφυλλα και πινακίδα με το όνομα της Αλίκης στην εκκλησία",
+      ),
+      image(
+        aliki05,
+        "Aliki with two smiling women under pink balloons",
+        "Η Αλίκη με δύο χαμογελαστές κοπέλες κάτω από ροζ μπαλόνια",
+      ),
+      image(
+        aliki06,
+        "A teddy bear beneath a tree of pink balloons",
+        "Ένα αρκουδάκι κάτω από ένα δέντρο από ροζ μπαλόνια",
+      ),
+      image(aliki07, "Aliki with her pacifier", "Η Αλίκη με την πιπίλα της"),
+      image(aliki08, "Aliki held close in the church", "Η Αλίκη στην αγκαλιά μέσα στην εκκλησία"),
+      image(
+        aliki09,
+        "The priest reads as Aliki is held beside him",
+        "Ο ιερέας διαβάζει ενώ κρατούν την Αλίκη δίπλα του",
+      ),
+      image(aliki10, "A woman in a red dress laughs with Aliki", "Μια κοπέλα με κόκκινο φόρεμα γελά με την Αλίκη"),
+      image(
+        aliki11,
+        "The priest holds Aliki at the font among the candles",
+        "Ο ιερέας κρατά την Αλίκη στην κολυμπήθρα ανάμεσα στις λαμπάδες",
+      ),
+      image(
+        aliki01,
+        "Aliki smiling in a white towel after the font",
+        "Η Αλίκη χαμογελά τυλιγμένη στη λευκή πετσέτα μετά την κολυμπήθρα",
+      ),
+      image(aliki12, "The sweets table with pink balloons", "Το τραπέζι με τα γλυκά και ροζ μπαλόνια"),
+      image(
+        aliki13,
+        "A balloon hoop with Aliki's name above the sweets",
+        "Στεφάνι με μπαλόνια και το όνομα της Αλίκης πάνω από τα γλυκά",
+      ),
+      image(aliki14, "Her parents kiss Aliki", "Οι γονείς της φιλούν την Αλίκη"),
+      image(
+        aliki15,
+        "Aliki with her parents on the church steps",
+        "Η Αλίκη με τους γονείς της στα σκαλιά της εκκλησίας",
+      ),
+      image(
+        aliki16,
+        "Aliki walks on the grass holding her parents' hands",
+        "Η Αλίκη περπατά στο γρασίδι κρατώντας τα χέρια των γονιών της",
+      ),
+    ],
+  },
+  {
+    slug: "rafail",
+    category: "baptism",
+    title: { en: "Rafail", el: "Ραφαήλ" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(rafail01, "Rafail between his parents", "Ο Ραφαήλ ανάμεσα στους γονείς του"),
+    films: [{ type: "video", src: "/videos/baptism/rafail.mp4", poster: "/videos/baptism/rafail-poster.webp" }],
+    gallery: [
+      image(
+        rafail02,
+        "A blue initial among the baptism decorations",
+        "Ένα γαλάζιο αρχικό γράμμα ανάμεσα στη διακόσμηση της βάφτισης",
+      ),
+      image(rafail03, "Rafail in his mother's arms", "Ο Ραφαήλ στην αγκαλιά της μαμάς του"),
+      image(rafail04, "A navy suitcase with a ribbon and charms", "Μπλε βαλίτσα με κορδέλα και στολίδια"),
+      image(
+        rafail05,
+        "The baby's navy-and-white sneakers in the greenery",
+        "Τα μπλε και λευκά αθλητικά του μωρού στο πράσινο",
+      ),
+      image(
+        rafail06,
+        "The shirt and bow tie hanging among the leaves",
+        "Το πουκάμισο και το παπιγιόν κρεμασμένα ανάμεσα στα φύλλα",
+      ),
+      image(rafail07, "A blue hat and the sneakers with stars", "Ένα μπλε καπέλο και τα αθλητικά με τα αστεράκια"),
+      image(rafail01, "Rafail between his parents", "Ο Ραφαήλ ανάμεσα στους γονείς του"),
+      image(
+        rafail08,
+        "A woman lifts Rafail at the church door",
+        "Μια κοπέλα σηκώνει ψηλά τον Ραφαήλ στην πόρτα της εκκλησίας",
+      ),
+      image(rafail09, "Rafail looking down in the church", "Ο Ραφαήλ κοιτάζει κάτω μέσα στην εκκλησία"),
+      image(
+        rafail10,
+        "Little Prince favours in a basket of blue tulle",
+        "Μπομπονιέρες με τον Μικρό Πρίγκιπα σε καλάθι με γαλάζιο τούλι",
+      ),
+      image(rafail11, "A gold cross hanging in the dark", "Ένας χρυσός σταυρός κρεμασμένος στο σκοτάδι"),
+      image(rafail12, "Rafail in the font as the priest holds him", "Ο Ραφαήλ στην κολυμπήθρα στα χέρια του ιερέα"),
+    ],
+  },
+  {
+    slug: "sotiris",
+    category: "baptism",
+    title: { en: "Sotiris", el: "Σωτήρης" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(sotiris01, "Sotiris with his parents among the trees", "Ο Σωτήρης με τους γονείς του ανάμεσα στα δέντρα"),
+    films: [{ type: "video", src: "/videos/baptism/sotiris.mp4", poster: "/videos/baptism/sotiris-poster.webp" }],
+    gallery: [
+      image(sotiris02, "A white hat on a cypress branch", "Ένα λευκό καπέλο πάνω σε κλαδί κυπαρισσιού"),
+      image(
+        sotiris03,
+        "The grey vest and bow tie hanging in the greenery",
+        "Το γκρι γιλέκο και το παπιγιόν κρεμασμένα στο πράσινο",
+      ),
+      image(
+        sotiris04,
+        "A silver cross hanging among the branches",
+        "Ένας ασημένιος σταυρός κρεμασμένος ανάμεσα στα κλαδιά",
+      ),
+      image(sotiris05, "A cross in its blue box on a stone", "Ένας σταυρός στο γαλάζιο κουτί του πάνω σε μια πέτρα"),
+      image(sotiris06, "Sotiris in his mother's arms", "Ο Σωτήρης στην αγκαλιά της μαμάς του"),
+      image(
+        sotiris07,
+        "Sotiris in his father's arms beside the decorations",
+        "Ο Σωτήρης στην αγκαλιά του μπαμπά του δίπλα στη διακόσμηση",
+      ),
+      image(sotiris08, "A smiling man holds Sotiris", "Ένας χαμογελαστός άντρας κρατά τον Σωτήρη"),
+      image(
+        sotiris09,
+        "A wooden sign with Sotiris's name and a teddy bear",
+        "Ξύλινη πινακίδα με το όνομα του Σωτήρη και ένα αρκουδάκι",
+      ),
+      image(sotiris10, "Sotiris with his pacifier over a shoulder", "Ο Σωτήρης με την πιπίλα του πάνω από έναν ώμο"),
+      image(
+        sotiris11,
+        "The priest reads as Sotiris is held beside him",
+        "Ο ιερέας διαβάζει ενώ κρατούν τον Σωτήρη δίπλα του",
+      ),
+      image(
+        sotiris12,
+        "The godfather's apron reads The Godfather of Sotiris",
+        "Η ποδιά του νονού γράφει The Godfather of Sotiris",
+      ),
+      image(sotiris13, "The priest bathes Sotiris in the font", "Ο ιερέας βουτά τον Σωτήρη στην κολυμπήθρα"),
+      image(sotiris14, "Sotiris with his pacifier after the font", "Ο Σωτήρης με την πιπίλα του μετά την κολυμπήθρα"),
+      image(sotiris15, "The godfather kisses Sotiris in his white outfit", "Ο νονός φιλά τον Σωτήρη με τα λευκά του"),
+      image(sotiris01, "Sotiris with his parents among the trees", "Ο Σωτήρης με τους γονείς του ανάμεσα στα δέντρα"),
+    ],
+  },
+  {
+    slug: "giorgos",
+    category: "baptism",
+    title: { en: "Giorgos", el: "Γιώργος" },
+    location: GREECE,
+    services: ["photography"],
+    cover: {
+      ...image(giorgos01, "Giorgos held close between his parents", "Ο Γιώργος στην αγκαλιά, ανάμεσα στους γονείς του"),
+      focus: "62% 50%",
+    },
+    gallery: [
+      image(giorgos02, "The whitewashed chapel with its red door", "Το ασβεστωμένο εκκλησάκι με την κόκκινη πόρτα"),
+      image(
+        giorgos03,
+        "A vintage van turned into a coffee bar under the pines",
+        "Ένα παλιό βανάκι που έγινε καφέ-μπαρ κάτω από τα πεύκα",
+      ),
+      image(
+        giorgos04,
+        "Iced cookies with letters on the sweets table",
+        "Μπισκότα με γράμματα στο τραπέζι με τα γλυκά",
+      ),
+      image(
+        giorgos05,
+        "A gold sign with Giorgos's name among yellow flowers",
+        "Χρυσή επιγραφή με το όνομα του Γιώργου ανάμεσα σε κίτρινα λουλούδια",
+      ),
+      image(giorgos06, "Cookies decorated with the letter Γ", "Μπισκότα στολισμένα με το γράμμα Γ"),
+      image(
+        giorgos07,
+        "A wrapped favour and a small bottle in the grass",
+        "Μια μπομπονιέρα και ένα μπουκαλάκι στο γρασίδι",
+      ),
+      image(giorgos08, "A gold cross hanging from a branch", "Ένας χρυσός σταυρός κρεμασμένος από ένα κλαδί"),
+      image(giorgos09, "A mint suitcase with ribbons and lace", "Βαλίτσα σε χρώμα μέντας με κορδέλες και δαντέλα"),
+      image(
+        giorgos10,
+        "The green vest and bow tie hanging in a tree",
+        "Το πράσινο γιλέκο και το παπιγιόν κρεμασμένα σε ένα δέντρο",
+      ),
+      image(giorgos11, "A straw hat among the leaves", "Ένα ψάθινο καπέλο ανάμεσα στα φύλλα"),
+      image(giorgos12, "Mint-and-white sneakers in the greenery", "Αθλητικά σε μέντα και λευκό στο πράσινο"),
+      image(
+        giorgos13,
+        "Giorgos asleep with his pacifier in his mother's arms",
+        "Ο Γιώργος κοιμάται με την πιπίλα στην αγκαλιά της μαμάς του",
+      ),
+      image(
+        giorgos14,
+        "His mother holds Giorgos as the service begins",
+        "Η μαμά του κρατά τον Γιώργο στην αρχή του μυστηρίου",
+      ),
+      image(giorgos15, "Giorgos with his parents in the church", "Ο Γιώργος με τους γονείς του μέσα στην εκκλησία"),
+      image(
+        giorgos16,
+        "Giorgos is readied for the font as his mother smiles",
+        "Ο Γιώργος ετοιμάζεται για την κολυμπήθρα και η μαμά του χαμογελά",
+      ),
+      image(
+        giorgos17,
+        "The priest lifts Giorgos high after the font",
+        "Ο ιερέας σηκώνει ψηλά τον Γιώργο μετά την κολυμπήθρα",
+      ),
+      image(giorgos18, "The priest reads by candlelight", "Ο ιερέας διαβάζει στο φως των λαμπάδων"),
+      image(giorgos19, "A wooden letter Γ on the guest book", "Ένα ξύλινο γράμμα Γ πάνω στο βιβλίο ευχών"),
+      image(giorgos20, "His parents kiss under the trees", "Οι γονείς του φιλιούνται κάτω από τα δέντρα"),
+    ],
+  },
+  {
+    slug: "evangelia",
+    category: "baptism",
+    title: { en: "Evangelia", el: "Ευαγγελία" },
+    location: GREECE,
+    services: ["photography", "film"],
+    cover: image(
+      evangelia01,
+      "Evangelia with her pacifier and a white bow",
+      "Η Ευαγγελία με την πιπίλα και έναν λευκό φιόγκο",
+    ),
+    films: [{ type: "video", src: "/videos/baptism/evangelia.mp4", poster: "/videos/baptism/evangelia-poster.webp" }],
+    gallery: [
+      image(
+        evangelia02,
+        "The white baptism dress hanging in a tree",
+        "Το λευκό βαπτιστικό φόρεμα κρεμασμένο σε ένα δέντρο",
+      ),
+      image(
+        evangelia03,
+        "A cross in its gift box on a wooden table",
+        "Ένας σταυρός στο κουτί του πάνω σε ξύλινο τραπέζι",
+      ),
+      image(
+        evangelia04,
+        "Sandals with pink roses beside the cross box",
+        "Πεδιλάκια με ροζ τριαντάφυλλα δίπλα στο κουτί του σταυρού",
+      ),
+      image(
+        evangelia05,
+        "Evangelia on a bench beside a smiling woman",
+        "Η Ευαγγελία σε ένα παγκάκι δίπλα σε μια χαμογελαστή κυρία",
+      ),
+      image(evangelia06, "Her parents kiss Evangelia", "Οι γονείς της φιλούν την Ευαγγελία"),
+      image(
+        evangelia07,
+        "Evangelia on a woman's lap, both smiling",
+        "Η Ευαγγελία στα γόνατα μιας κυρίας, χαμογελαστές και οι δύο",
+      ),
+      image(
+        evangelia08,
+        "Evangelia walking hand in hand outside the church",
+        "Η Ευαγγελία περπατά κρατώντας ένα χέρι έξω από την εκκλησία",
+      ),
+      image(
+        evangelia09,
+        "A gold hoop with Evangelia's name on tulle",
+        "Χρυσό στεφάνι με το όνομα της Ευαγγελίας πάνω σε τούλι",
+      ),
+      image(
+        evangelia10,
+        "A woman reads the service as Evangelia watches",
+        "Μια κυρία διαβάζει την ακολουθία και η Ευαγγελία κοιτάζει",
+      ),
+      image(evangelia11, "Evangelia cries in the font", "Η Ευαγγελία κλαίει στην κολυμπήθρα"),
+      image(
+        evangelia01,
+        "Evangelia with her pacifier and a white bow",
+        "Η Ευαγγελία με την πιπίλα και έναν λευκό φιόγκο",
+      ),
+      image(evangelia12, "The family on the church steps", "Η οικογένεια στα σκαλιά της εκκλησίας"),
+    ],
   },
   {
     slug: "signature-cocktails",
