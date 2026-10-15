@@ -38,7 +38,7 @@ export const HomeHero = async () => {
           {t("eyebrow")}
         </Eyebrow>
         {/* The title is the LCP element: visible on the first frame, it only settles into place. */}
-        <h1 className="title-display mt-6 text-[clamp(4rem,12.5vw,12.5rem)]">
+        <h1 className="title-display mt-6 text-[clamp(2.75rem,8.5vw,8.5rem)]">
           <span className="block motion-safe:animate-settle">{t("titleLine1")}</span>{" "}
           <span className="block text-foreground/55 motion-safe:animate-settle [animation-delay:120ms]">
             {t("titleLine2")}
