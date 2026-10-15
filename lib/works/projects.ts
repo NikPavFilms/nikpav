@@ -78,12 +78,12 @@ export const PROJECTS: Project[] = [
     category: "social",
     title: { en: "Content That Stands Out", el: "Content που ξεχωρίζει" },
     summary: {
-      en: "A cocktail bar campaign shot after dark: craft, detail and warm light.",
-      el: "Καμπάνια για ένα μπαρ κοκτέιλ, γυρισμένη μετά το σούρουπο: τεχνική, λεπτομέρεια και ζεστό φως.",
+      en: "Photo and video for businesses that want to stand out on social media.",
+      el: "Φωτογραφία και βίντεο για επιχειρήσεις που θέλουν να ξεχωρίσουν στα social media.",
     },
     description: {
-      en: "Content for a bar's new cocktail menu: the craft behind the counter, the garnish details and the atmosphere guests come back for, delivered as photos and short videos for social media.",
-      el: "Περιεχόμενο για το νέο μενού κοκτέιλ ενός μπαρ: η τέχνη πίσω από τον πάγκο, οι λεπτομέρειες στο γαρνίρισμα και η ατμόσφαιρα που κάνει τους πελάτες να επιστρέφουν, σε φωτογραφίες και σύντομα βίντεο για τα social media.",
+      en: "Reels, photos and campaigns for restaurants, bars, barber shops, gyms, brands and artists. From the idea and the shoot to the final edit: content made to stop the scroll and bring people through your door.",
+      el: "Reels, φωτογραφίες και καμπάνιες για εστιατόρια, μπαρ, κουρεία, γυμναστήρια, brands και καλλιτέχνες. Από την ιδέα και το γύρισμα μέχρι το τελικό μοντάζ: περιεχόμενο φτιαγμένο για να σταματά το scroll και να φέρνει πελάτες στην πόρτα σας.",
     },
     location: GREECE,
     services: ["photography", "film"],
