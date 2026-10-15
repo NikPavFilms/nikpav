@@ -51,6 +51,9 @@ real work. Replace them project by project:
    `"4 / 5"`; each shape gets its own grid (9:16 four across, 4:5 three across on desktop).
    `afterPhoto: 13` puts a film among the gallery photos instead, after the 13th one, and
    `compactGallery: true` fills rows by shape (two landscapes or three portraits), so photos show smaller.
+   To place a photo by hand, give it `row: "with-next"` (shares a row with the next photo, any shapes)
+   or `row: "alone"` (never paired, never pulled up beside an earlier portrait). On desktop, wedding and
+   baptism galleries take four fifths of the page width; phones show every photo full width.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
    (`lib/works/categories.ts`). **Weddings and baptisms are collections** (`COLLECTIONS` in
    `lib/works/projects.ts`): one project per wedding or baptism, each at `/works/<category>/<names>`

@@ -11,6 +11,11 @@ export interface ProjectImage {
   alt: LocalizedText;
   /** CSS object-position used wherever the image is cropped (cards, heroes), e.g. "50% 30%". */
   focus?: string;
+  /**
+   * Gallery row set by hand: "with-next" shares a row with the next photo whatever their shapes,
+   * "alone" is never paired. Without it, upright photos pair up on their own.
+   */
+  row?: "with-next" | "alone";
 }
 
 export type ProjectService = "photography" | "film";

@@ -25,15 +25,20 @@ const isUpright = (image: ProjectImage) => ratioOf(image) < 1.2;
 // or a portrait beside a landscape share a row, so every photo shows smaller.
 const COMPACT_ROW_RATIO = 1.9;
 
-// Each upright photo pairs with the next upright one, even across a landscape, so galleries
-// alternate pairs and full-width frames instead of stacking lone portraits.
+// Each upright photo pairs with the next free upright one, even across a landscape, so galleries
+// alternate pairs and full-width frames instead of stacking lone portraits. Photos placed by hand
+// (`row`), and the photo a "with-next" one shares its row with, are never pulled forward.
 const pairUprights = (images: ProjectImage[]) => {
+  const placedByHand = new Set(images.filter((image, index) => image.row || images[index - 1]?.row === "with-next"));
   const rows: ProjectImage[][] = [];
   const remaining = [...images];
 
   while (remaining.length > 0) {
     const current = remaining.shift() as ProjectImage;
-    const partnerIndex = isUpright(current) ? remaining.findIndex(isUpright) : -1;
+    let partnerIndex = -1;
+    if (current.row === "with-next") partnerIndex = remaining.length > 0 ? 0 : -1;
+    else if (current.row !== "alone" && isUpright(current))
+      partnerIndex = remaining.findIndex((image) => isUpright(image) && !placedByHand.has(image));
     rows.push(partnerIndex === -1 ? [current] : [current, ...remaining.splice(partnerIndex, 1)]);
   }
 
@@ -72,6 +77,9 @@ const buildRows = (images: ProjectImage[], compact: boolean): GalleryRow[] =>
 const rowColumns = (images: ProjectImage[]) =>
   images.map((image) => `minmax(0, ${ratioOf(image).toFixed(4)}fr)`).join(" ");
 
+// Matches md:w-4/5 on narrowed rows.
+const NARROWED_SHARE = 0.8;
+
 interface ProjectGalleryProps {
   images: ProjectImage[];
   /** Films shown between the photos, each after the row that holds its `afterPhoto`-th photo. */
@@ -95,14 +103,18 @@ export const ProjectGallery = ({ images, films = [], filmTitle, compact = false,
       {rows.map(({ key, images: rowImages, widthShare }, rowIndex) => {
         const isMulti = rowImages.length > 1;
         const isLoneUpright = !compact && !isMulti && isUpright(rowImages[0]);
+        // Weddings and baptisms (not compact): pairs and lone landscapes take four fifths of the
+        // width on desktop, a lone portrait four fifths of its usual 48rem.
+        const isNarrowed = !compact && !isLoneUpright;
         const style = {
           ...(isMulti && { "--row-columns": rowColumns(rowImages) }),
           ...(widthShare && { "--row-width": `${(widthShare * 100).toFixed(2)}%` }),
         } as React.CSSProperties;
         // The share of the screen each photo takes on desktop, for the browser's size pick.
         const sizesFor = (image: ProjectImage) => {
-          if (isLoneUpright) return "(min-width: 768px) 50vw, 100vw";
-          const share = (isMulti ? ratioOf(image) / ratioSum(rowImages) : 1) * (widthShare ?? 1);
+          if (isLoneUpright) return "(min-width: 768px) 45vw, 100vw";
+          const rowShare = widthShare ?? (isNarrowed ? NARROWED_SHARE : 1);
+          const share = (isMulti ? ratioOf(image) / ratioSum(rowImages) : 1) * rowShare;
           return `(min-width: 768px) ${Math.ceil(share * 100)}vw, 100vw`;
         };
 
@@ -112,7 +124,8 @@ export const ProjectGallery = ({ images, films = [], filmTitle, compact = false,
               className={cn(
                 "grid gap-3 md:gap-4",
                 isMulti && "md:grid-cols-(--row-columns)",
-                isLoneUpright && "mx-auto max-w-3xl",
+                isLoneUpright && "mx-auto max-w-[38.4rem]",
+                isNarrowed && "md:mx-auto md:w-4/5",
                 widthShare && "mx-auto md:w-(--row-width)",
               )}
               style={style}

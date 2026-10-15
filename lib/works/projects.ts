@@ -372,7 +372,6 @@ import noraSpyros04 from "@/assets/images/works/wedding/nora-spyros/04.webp";
 import noraSpyros05 from "@/assets/images/works/wedding/nora-spyros/05.webp";
 import noraSpyros06 from "@/assets/images/works/wedding/nora-spyros/06.webp";
 import noraSpyros07 from "@/assets/images/works/wedding/nora-spyros/07.webp";
-import noraSpyros08 from "@/assets/images/works/wedding/nora-spyros/08.webp";
 import noraSpyros09 from "@/assets/images/works/wedding/nora-spyros/09.webp";
 import noraSpyros10 from "@/assets/images/works/wedding/nora-spyros/10.webp";
 import noraSpyros11 from "@/assets/images/works/wedding/nora-spyros/11.webp";
@@ -541,8 +540,8 @@ export const PROJECTS: Project[] = [
         "The groom leaning on a balcony rail above the city",
         "Ο γαμπρός ακουμπά στο κάγκελο ενός μπαλκονιού πάνω από την πόλη",
       ),
-      image(noraSpyros08, "The groom buttoning his jacket on a terrace", "Ο γαμπρός κουμπώνει το σακάκι του σε μια ταράτσα"),
-      image(noraSpyros09, "The groom straightening his tie", "Ο γαμπρός φτιάχνει τη γραβάτα του"),
+      // Alone, so it does not pull the bride's sandals forward.
+      { ...image(noraSpyros09, "The groom straightening his tie", "Ο γαμπρός φτιάχνει τη γραβάτα του"), row: "alone" },
       image(
         noraSpyros10,
         "The bride's makeup being done under silver BRIDE balloons",
@@ -591,6 +590,15 @@ export const PROJECTS: Project[] = [
         "Η νύφη κοιτάζει πάνω από τον ώμο της μέσα από το πέπλο",
       ),
       image(noraSpyros25, "The bride smiling from the car", "Η νύφη χαμογελά μέσα από το αυτοκίνητο"),
+      // Nikos placed the groom with the roses beside the couple's first look.
+      {
+        ...image(
+          noraSpyros36,
+          "The groom holding white roses on the church steps",
+          "Ο γαμπρός κρατά λευκά τριαντάφυλλα στα σκαλιά της εκκλησίας",
+        ),
+        row: "with-next",
+      },
       image(
         noraSpyros26,
         "The couple meet, the groom holding the bride's face",
@@ -632,11 +640,6 @@ export const PROJECTS: Project[] = [
         noraSpyros35,
         "The couple in silhouette against a blue spotlight",
         "Το ζευγάρι σε σιλουέτα μπροστά σε έναν μπλε προβολέα",
-      ),
-      image(
-        noraSpyros36,
-        "The groom holding white roses on the church steps",
-        "Ο γαμπρός κρατά λευκά τριαντάφυλλα στα σκαλιά της εκκλησίας",
       ),
       image(
         noraSpyros37,
@@ -814,11 +817,15 @@ export const PROJECTS: Project[] = [
         "Black-and-white photo of the couple walking, the groom carrying their daughter",
         "Ασπρόμαυρη φωτογραφία του ζευγαριού που περπατά, με τον γαμπρό να κρατά την κόρη τους",
       ),
-      image(
-        stellaMarios36,
-        "The bride and her daughter laughing on the dance floor",
-        "Η νύφη και η κόρη της γελούν στην πίστα",
-      ),
+      // Second to last on its own (asked by Nikos), not pulled up beside an earlier portrait.
+      {
+        ...image(
+          stellaMarios36,
+          "The bride and her daughter laughing on the dance floor",
+          "Η νύφη και η κόρη της γελούν στην πίστα",
+        ),
+        row: "alone",
+      },
       image(stellaMarios37, "The groom dancing in blue light and smoke", "Ο γαμπρός χορεύει μέσα σε μπλε φως και καπνό"),
     ],
   },
