@@ -27,7 +27,8 @@ export interface Project {
   title: LocalizedText;
   /** One line under the title on the project page; leave it out for a title-only hero. */
   summary?: LocalizedText;
-  description: LocalizedText;
+  /** Paragraph under the hero; without it the page shows none and search uses the category's text. */
+  description?: LocalizedText;
   location: LocalizedText;
   services: ProjectService[];
   cover: ProjectImage;

@@ -41,6 +41,7 @@ export const Philosophy = async () => {
               alt={tAlt("philosophy")}
               fill
               sizes="(min-width: 768px) 48vw, 100vw"
+              quality={85}
               placeholder="blur"
               className="object-cover"
             />

@@ -31,12 +31,14 @@ export const generateMetadata = async ({ params }: ProjectPageProps): Promise<Me
   const project = getProject(category, slug);
   if (!project) notFound();
 
+  const tCategories = await getTranslations({ locale, namespace: "Categories" });
+
   return buildMetadata({
     locale,
     path: `/works/${project.category}/${project.slug}`,
     title: project.title[locale],
     // The full description (about 150-200 chars) makes a better search snippet than the one-line summary.
-    description: project.description[locale],
+    description: project.description?.[locale] ?? tCategories(`${project.category}.seoDescription`),
     type: "article",
   });
 };
@@ -75,7 +77,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
           locale,
           path,
           name: title,
-          description: project.description[locale],
+          description: project.description?.[locale] ?? tCategories(`${project.category}.seoDescription`),
           genre: tCategories(`${project.category}.seoTitle`),
           images: [project.cover, ...project.gallery].map((image) => image.src.src),
         })}
@@ -115,9 +117,11 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
               </li>
             </ol>
           </nav>
-          <p className="mt-10 text-2xl leading-relaxed text-foreground/90 md:text-3xl md:leading-snug">
-            {project.description[locale]}
-          </p>
+          {project.description && (
+            <p className="mt-10 text-2xl leading-relaxed text-foreground/90 md:text-3xl md:leading-snug">
+              {project.description[locale]}
+            </p>
+          )}
         </Reveal>
         <Reveal delay={0.1} className="md:col-span-4 md:col-start-9 md:self-end">
           <dl className="divide-y divide-border border-y border-border">

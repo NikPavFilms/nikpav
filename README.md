@@ -41,8 +41,9 @@ real work. Replace them project by project:
 1. Put the photos in `assets/images/works/<category>/<slug>/` as `01.webp`, `02.webp`, ... (`01` is
    the cover, preferably landscape; the others form the gallery and keep their own aspect ratio).
    Long edge around 2500px is plenty.
-2. Edit the matching entry in `lib/works/projects.ts`: title, description, location and alt text,
-   each in English and Greek (`summary`, the line under the title, is optional). Optionally add
+2. Edit the matching entry in `lib/works/projects.ts`: title, location and alt text, each in English
+   and Greek. `summary` (the line under the title), `description` (the paragraph below the hero) and
+   the `gallery` photos are optional; without a description, search engines get the category's text. Optionally add
    films, shown in order: `films: [{ type: "youtube", id: "...", title: "..." }]`, or a self-hosted
    `{ type: "video", src: "/videos/...", poster: "/videos/....webp" }` compressed for the web first
    (originals of hundreds of MB break the GitHub push).

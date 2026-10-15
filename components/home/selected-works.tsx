@@ -44,7 +44,14 @@ export const SelectedWorks = async ({ locale, leads }: SelectedWorksProps) => {
       <div className="mt-14 grid grid-cols-1 gap-3 md:mt-20 md:auto-rows-[clamp(15rem,23vw,22rem)] md:grid-cols-12 md:gap-4">
         {TILES.map(({ category, className, sizes }, index) => (
           <Reveal key={category} delay={(index % 2) * 0.08} className={className}>
-            <MediaTile href={`/works/${category}`} image={leads[category].cover} locale={locale} sizes={sizes} className="size-full">
+            {/* The tile shows the lead project, so it opens that project directly (one click to the work). */}
+            <MediaTile
+              href={`/works/${category}/${leads[category].slug}`}
+              image={leads[category].cover}
+              locale={locale}
+              sizes={sizes}
+              className="size-full"
+            >
               <span className="frame-index absolute top-5 left-5 text-foreground/75 md:top-6 md:left-6">
                 {frameNumber(index + 1)}
               </span>
