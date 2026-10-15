@@ -49,8 +49,14 @@ real work. Replace them project by project:
    (originals of hundreds of MB break the GitHub push). Vertical reels add `aspect: "9 / 16"` or
    `"4 / 5"` and sit in a grid at that ratio; list each ratio together so the grid rows stay even.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
-   (`lib/works/categories.ts`). The first project of each category supplies its cover on Home and on
-   the category page.
+   (`lib/works/categories.ts`). **Weddings are a collection** (`COLLECTIONS` in
+   `lib/works/projects.ts`): one project per wedding, each at `/works/wedding/<names>` (e.g.
+   `panagiotis-elpida`), listed newest first under the category's own cover
+   (`assets/images/works/wedding/cover.webp`) and line, which also fill the Home tile and the single
+   wedding card under "All" on /works, so those photos never change as weddings are added. A wedding
+   with a film opens on it (the names, then the film, then the photos). Every other
+   category is a single project: `/works/<category>` is that project's page, its cover fills the
+   Home tile, and its old `/works/<category>/<slug>` URL forwards there.
 
 Adding a project is the same: a new folder plus a new entry. Its pages, the sitemap and the filters
 pick it up automatically.

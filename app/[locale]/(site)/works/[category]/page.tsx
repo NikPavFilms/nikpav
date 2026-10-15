@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
+import { getProjectMetadata, ProjectView } from "@/components/works/project-view";
 import { WorksView } from "@/components/works/works-view";
 import { setupPageLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { CATEGORY_SLUGS, isCategorySlug } from "@/lib/works/categories";
+import { getSoleProject } from "@/lib/works/projects";
 
 interface CategoryPageProps {
   params: Promise<{ locale: string; category: string }>;
@@ -21,6 +23,9 @@ export const generateMetadata = async ({ params }: CategoryPageProps): Promise<M
   const { category } = await params;
   if (!isCategorySlug(category)) notFound();
 
+  const soleProject = getSoleProject(category);
+  if (soleProject) return getProjectMetadata({ project: soleProject, locale });
+
   const t = await getTranslations({ locale, namespace: "Categories" });
 
   return buildMetadata({
@@ -31,10 +36,14 @@ export const generateMetadata = async ({ params }: CategoryPageProps): Promise<M
   });
 };
 
+// A category with a single project shows that project here instead of a one-card grid.
 const CategoryPage = async ({ params }: CategoryPageProps) => {
   const locale = await setupPageLocale(params);
   const { category } = await params;
   if (!isCategorySlug(category)) notFound();
+
+  const soleProject = getSoleProject(category);
+  if (soleProject) return <ProjectView project={soleProject} locale={locale} />;
 
   return <WorksView locale={locale} category={category} />;
 };

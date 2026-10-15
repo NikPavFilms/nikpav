@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Eyebrow } from "@/components/site/eyebrow";
 import { Link } from "@/lib/i18n/navigation";
+import { getProjectPath } from "@/lib/works/projects";
 import type { Project } from "@/lib/works/types";
 
 export const NextProject = async ({ project, locale }: { project: Project; locale: Locale }) => {
@@ -13,7 +14,7 @@ export const NextProject = async ({ project, locale }: { project: Project; local
 
   return (
     <Link
-      href={`/works/${project.category}/${project.slug}`}
+      href={getProjectPath(project)}
       className="group relative isolate block h-[70svh] min-h-120 cursor-pointer overflow-hidden bg-ink"
     >
       <Image

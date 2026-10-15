@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/general/site-url";
 import { routing } from "@/lib/i18n/routing";
 import { CATEGORY_SLUGS } from "@/lib/works/categories";
-import { getCategoryCover, PROJECTS } from "@/lib/works/projects";
+import { getCategoryShowcase, getProjectPath, getSoleProject, PROJECTS } from "@/lib/works/projects";
 import type { ProjectImage } from "@/lib/works/types";
 
 interface SitemapRoute {
@@ -24,10 +24,15 @@ const STATIC_ROUTES: SitemapRoute[] = [
 const sitemap = (): MetadataRoute.Sitemap => {
   const routes: SitemapRoute[] = [
     ...STATIC_ROUTES,
-    ...CATEGORY_SLUGS.map((slug) => ({ path: `/works/${slug}`, priority: 0.8, images: [getCategoryCover(slug)] })),
+    // A category with a single project is listed once, as that project's page.
+    ...CATEGORY_SLUGS.filter((slug) => !getSoleProject(slug)).map((slug) => ({
+      path: `/works/${slug}`,
+      priority: 0.8,
+      images: [getCategoryShowcase(slug).cover],
+    })),
     ...PROJECTS.map((project) => ({
-      path: `/works/${project.category}/${project.slug}`,
-      priority: 0.6,
+      path: getProjectPath(project),
+      priority: getSoleProject(project.category) ? 0.8 : 0.6,
       images: [project.cover, ...project.gallery],
     })),
   ];

@@ -9,11 +9,11 @@ import { CategoryFilter } from "@/components/works/category-filter";
 import { ProjectGrid } from "@/components/works/project-grid";
 import { breadcrumbSchema } from "@/lib/seo/schema";
 import type { CategorySlug } from "@/lib/works/categories";
-import { getCategoryCounts, getCategoryLead, getProjects, PROJECTS } from "@/lib/works/projects";
+import { getCategoryCounts, getCategoryShowcase, getWorkCards, PROJECTS } from "@/lib/works/projects";
 
 interface WorksViewProps {
   locale: Locale;
-  /** Omitted on /works (all projects). */
+  /** Omitted on /works (one card per category). */
   category?: CategorySlug;
 }
 
@@ -23,8 +23,8 @@ export const WorksView = async ({ locale, category }: WorksViewProps) => {
   const tNav = await getTranslations("Nav");
   const tCategories = await getTranslations("Categories");
   const tAlt = await getTranslations("Alt");
-  const projects = getProjects(category);
-  const lead = category && getCategoryLead(category);
+  const cards = getWorkCards(category);
+  const showcase = category && getCategoryShowcase(category);
 
   const crumbs = [
     { name: tNav("home"), path: "" },
@@ -35,15 +35,15 @@ export const WorksView = async ({ locale, category }: WorksViewProps) => {
   return (
     <>
       <JsonLd data={breadcrumbSchema(locale, crumbs)} />
-      {lead ? (
-        // The lead project's cover and title stand for the category, as on Home.
+      {category && showcase ? (
+        // The category's cover and line stand for it, as on Home.
         <PageHero
-          image={lead.cover.src}
-          imageAlt={lead.cover.alt[locale]}
-          focus={lead.cover.focus}
-          eyebrow={t("categoryEyebrow", { category: tCategories(`${lead.category}.label`) })}
-          titleLines={[tCategories(`${lead.category}.label`), lead.title[locale]]}
-          description={tCategories(`${lead.category}.description`)}
+          image={showcase.cover.src}
+          imageAlt={showcase.cover.alt[locale]}
+          focus={showcase.cover.focus}
+          eyebrow={t("categoryEyebrow", { category: tCategories(`${category}.label`) })}
+          titleLines={[tCategories(`${category}.label`), showcase.title[locale]]}
+          description={tCategories(`${category}.description`)}
         />
       ) : (
         <PageHero
@@ -57,8 +57,8 @@ export const WorksView = async ({ locale, category }: WorksViewProps) => {
         />
       )}
       <CategoryFilter active={category} counts={getCategoryCounts()} total={PROJECTS.length} />
-      <section aria-label={t("projectsCount", { count: projects.length })} className="container-site py-10 md:py-14">
-        <ProjectGrid projects={projects} locale={locale} />
+      <section aria-label={t("projectsCount", { count: cards.length })} className="container-site py-10 md:py-14">
+        <ProjectGrid cards={cards} locale={locale} />
       </section>
       <CtaBanner />
     </>

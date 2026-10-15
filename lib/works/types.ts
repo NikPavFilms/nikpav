@@ -38,5 +38,17 @@ export interface Project {
   services: ProjectService[];
   cover: ProjectImage;
   gallery: ProjectImage[];
+  /** Shown in order. A wedding's (collection's) first landscape film opens its page, under the title. */
   films?: ProjectFilm[];
+}
+
+/** What stands for a category on Home and atop its page: a cover and one line under its name. */
+export type CategoryShowcase = Pick<Project, "title" | "cover">;
+
+/** One card on /works: a project, or on "All" a whole collection (every wedding behind one card). */
+export interface WorkCard extends CategoryShowcase {
+  key: string;
+  href: string;
+  category: CategorySlug;
+  hasFilms: boolean;
 }

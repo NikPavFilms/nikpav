@@ -71,3 +71,38 @@ email/phone links render only once they are set.
 
 **Still open (needs Nikos):** email + phone; real photos/videos/showreel (YouTube id supported);
 `NEXT_PUBLIC_SITE_URL` in Vercel. All media and project copy are clearly marked placeholders.
+
+# Category URL is the project page (2026-10-15)
+
+A category with a single project (all five today) opens that project at `/works/<category>`
+instead of a one-card grid. Old `/works/<category>/<slug>` URLs forward to it. A category that gains a
+second project gets its grid and per-project URLs back automatically.
+
+- [x] `getSoleProject` + `getProjectPath` in `lib/works/projects.ts`
+- [x] Project page body into `components/works/project-view.tsx` (view + metadata)
+- [x] Category page renders the project view for a sole project; slug page redirects
+- [x] Links via `getProjectPath`: project card, next project, home selected works, sitemap
+- [x] Filter chips that open a project scroll to the top
+- [x] Breadcrumbs (visual + JSON-LD) without a duplicate category link
+- [x] Verify: 200 on /works/<category> x 5 x 2 locales, old URLs forward (dev and build), screenshots
+
+**Review:** all five categories open their project at `/works/<category>` (200, both locales).
+Home tiles, Works cards, filter chips (now scroll to the top) and "next project" link there; the
+sitemap lists each once. Old slug URLs forward with an instant meta refresh plus a canonical to the
+new URL, in dev and in the static build: a real 308 is impossible under the `(site)` loading
+boundary (rule added to `react-nextjs.md`). On the category URL the `<title>` stays the category's
+search title.
+
+# Weddings as a collection (2026-10-15)
+
+- [x] `COLLECTIONS` (wedding): always a list, headed by its own cover (`wedding/cover.webp`) and
+      line "Η δική σας ιστορία"; `getCategoryShowcase` feeds Home tiles, category hero and sitemap
+- [x] First wedding: Παναγιώτης & Ελπίδα, `/works/wedding/panagiotis-elpida`, 22 photos (cover
+      DSC08453, gallery in the order of the day, portraits paired), 90 MB of JPGs to 3.7 MB of WebP
+- [x] Placeholder project `golden-hour-vows` removed (404 after a dev restart)
+- [x] Verified: 200 on list and page in both locales, sitemap, Home tile, gallery rows, mobile hero
+- [x] /works "All" shows one card per category (`getWorkCards`): the wedding card keeps the category
+      photo and opens the list, so the photos there stay put (asked by Nikos)
+- [x] Second wedding: Νίκος & Εύη (`nikos-evi`), newest first. A wedding with a film opens on it:
+      names, then the film (1.16 GB clip to 74 MB, 1080p two-pass, poster at 3:20), then the photos;
+      the card cover (DSC01993) also sits in the gallery. Verified: playback, list, /works unchanged

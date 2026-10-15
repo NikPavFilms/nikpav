@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { frameNumber } from "@/lib/general/utils";
 import { Link } from "@/lib/i18n/navigation";
 import type { CategorySlug } from "@/lib/works/categories";
-import type { Project } from "@/lib/works/types";
+import type { CategoryShowcase } from "@/lib/works/types";
 
 // Asymmetric bento: one tall frame beside two stacked ones, then a 5/7 split.
 const TILES: { category: CategorySlug; className: string; sizes: string }[] = [
@@ -22,11 +22,11 @@ const TILES: { category: CategorySlug; className: string; sizes: string }[] = [
 
 interface SelectedWorksProps {
   locale: Locale;
-  /** Each category's lead project: its cover and title fill the tile. */
-  leads: Record<CategorySlug, Project>;
+  /** What stands for each category: its cover and line fill the tile. */
+  showcases: Record<CategorySlug, CategoryShowcase>;
 }
 
-export const SelectedWorks = async ({ locale, leads }: SelectedWorksProps) => {
+export const SelectedWorks = async ({ locale, showcases }: SelectedWorksProps) => {
   const t = await getTranslations("Home.selectedWorks");
   const tCategories = await getTranslations("Categories");
 
@@ -44,10 +44,10 @@ export const SelectedWorks = async ({ locale, leads }: SelectedWorksProps) => {
       <div className="mt-14 grid grid-cols-1 gap-3 md:mt-20 md:auto-rows-[clamp(15rem,23vw,22rem)] md:grid-cols-12 md:gap-4">
         {TILES.map(({ category, className, sizes }, index) => (
           <Reveal key={category} delay={(index % 2) * 0.08} className={className}>
-            {/* The tile shows the lead project, so it opens that project directly (one click to the work). */}
+            {/* The category's page is its project, or its list of weddings: one click to the work. */}
             <MediaTile
-              href={`/works/${category}/${leads[category].slug}`}
-              image={leads[category].cover}
+              href={`/works/${category}`}
+              image={showcases[category].cover}
               locale={locale}
               sizes={sizes}
               className="size-full"
@@ -58,7 +58,7 @@ export const SelectedWorks = async ({ locale, leads }: SelectedWorksProps) => {
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-7">
                 <div>
                   <h3 className="title-display text-4xl md:text-5xl">{tCategories(`${category}.label`)}</h3>
-                  <p className="mt-2 text-sm text-foreground/75">{leads[category].title[locale]}</p>
+                  <p className="mt-2 text-sm text-foreground/75">{showcases[category].title[locale]}</p>
                 </div>
                 <ArrowUpRight
                   aria-hidden

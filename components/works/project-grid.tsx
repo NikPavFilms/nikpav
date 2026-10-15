@@ -3,12 +3,12 @@ import { getTranslations } from "next-intl/server";
 
 import { Reveal } from "@/components/motion/reveal";
 import { ProjectCard } from "@/components/works/project-card";
-import type { Project } from "@/lib/works/types";
+import type { WorkCard } from "@/lib/works/types";
 
 type Span = 4 | 5 | 7 | 12;
 
 // Rows are consumed in turn so any filtered list keeps an editorial rhythm; when fewer
-// projects remain than a template needs, the matching fallback completes the last row.
+// cards remain than a template needs, the matching fallback completes the last row.
 const ROW_TEMPLATES: Span[][] = [[7, 5], [5, 7], [12]];
 const FALLBACK_ROWS: Record<number, Span[]> = { 1: [12], 2: [7, 5], 3: [4, 4, 4] };
 
@@ -34,24 +34,24 @@ const ROW_HEIGHTS: Record<number, string> = {
 };
 
 interface GridCell {
-  project: Project;
+  card: WorkCard;
   span: Span;
   column: number;
   rowLength: number;
 }
 
-const buildCells = (projects: Project[]) => {
+const buildCells = (cards: WorkCard[]) => {
   const cells: GridCell[] = [];
   let rowCount = 0;
 
-  while (cells.length < projects.length) {
-    const remaining = projects.length - cells.length;
+  while (cells.length < cards.length) {
+    const remaining = cards.length - cells.length;
     const template = ROW_TEMPLATES[rowCount % ROW_TEMPLATES.length];
     const spans = template.length > remaining ? FALLBACK_ROWS[remaining] : template;
     const start = cells.length;
 
     spans.forEach((span, column) =>
-      cells.push({ project: projects[start + column], span, column, rowLength: spans.length }),
+      cells.push({ card: cards[start + column], span, column, rowLength: spans.length }),
     );
     rowCount += 1;
   }
@@ -60,24 +60,24 @@ const buildCells = (projects: Project[]) => {
 };
 
 interface ProjectGridProps {
-  projects: Project[];
+  cards: WorkCard[];
   locale: Locale;
 }
 
-export const ProjectGrid = async ({ projects, locale }: ProjectGridProps) => {
+export const ProjectGrid = async ({ cards, locale }: ProjectGridProps) => {
   const t = await getTranslations("Categories");
   const tCommon = await getTranslations("Common");
-  const cells = buildCells(projects);
+  const cells = buildCells(cards);
 
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-12 md:gap-4">
-      {cells.map(({ project, span, column, rowLength }, index) => (
-        <Reveal key={project.slug} delay={column * 0.08} className={`${SPAN_CLASSES[span]} ${ROW_HEIGHTS[rowLength]}`}>
+      {cells.map(({ card, span, column, rowLength }, index) => (
+        <Reveal key={card.key} delay={column * 0.08} className={`${SPAN_CLASSES[span]} ${ROW_HEIGHTS[rowLength]}`}>
           <ProjectCard
-            project={project}
+            card={card}
             locale={locale}
             index={index + 1}
-            categoryLabel={t(`${project.category}.label`)}
+            categoryLabel={t(`${card.category}.label`)}
             filmLabel={tCommon("film")}
             sizes={SPAN_SIZES[span]}
             className="size-full"
