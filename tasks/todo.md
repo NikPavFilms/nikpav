@@ -106,3 +106,29 @@ search title.
 - [x] Second wedding: Νίκος & Εύη (`nikos-evi`), newest first. A wedding with a film opens on it:
       names, then the film (1.16 GB clip to 74 MB, 1080p two-pass, poster at 3:20), then the photos;
       the card cover (DSC01993) also sits in the gallery. Verified: playback, list, /works unchanged
+- [x] Third wedding: Δόμνα & Γιάννης (`domna-giannis`), newest first, 30 photos (wedding, their
+      daughter's baptism, then a family shoot at sunset), cover DSC03147 (focus 40% for phones),
+      120 MB of JPGs to 6 MB. Verified: list order, hero desktop and mobile, gallery, /works unchanged
+- [x] Fourth wedding: Έλενα & Αλέξανδρος (`elena-alexandros`), newest first, 18 photos (wedding and
+      their son's baptism), cover DSC09042 (focus 27% keeps the groom on phones), 96 MB to 5.6 MB.
+      Verified: list order, hero desktop and mobile, gallery pairs and lone closer, /works unchanged
+- [x] Fifth wedding: Στέλλα & Μάριος (`stella-marios`), newest first, 37 photos from two cameras
+      ordered by capture time (prep, ceremony, their daughter's baptism, LOVE sign, party), cover
+      DSC01254, 185 MB to 12 MB. Gallery: squares now pair like portraits (`isUpright`, < 6:5), and a
+      pair's columns follow each photo's ratio so mixed shapes end level (was a 61 px gap)
+- [x] Sixth wedding: Νόρα & Σπύρος (`nora-spyros`), newest first, 44 photos (groom prep, bride prep,
+      church, first dance in smoke, then the beach and sunset shoot), cover DSC01119 (focus 22%),
+      201 MB to 9.7 MB
+- [x] Έλενα & Αλέξανδρος: new cover DSC09803 (the couple and their baby, both faces show on phones,
+      asked by Nikos); the old cover DSC09042 joins the gallery at its time of day
+- [x] Seventh wedding: Ελευθερία & Δημήτρης (`eleftheria-dimitris`), 12 photos, cover DSC02104
+      (focus 45% so both faces show on phones), 214 MB to 4.4 MB
+- [x] Wedding order set by Nikos: Νόρα & Σπύρος, Στέλλα & Μάριος, Νίκος & Εύη, Παναγιώτης & Ελπίδα,
+      Δόμνα & Γιάννης, Έλενα & Αλέξανδρος, Ελευθερία & Δημήτρης (last). No more "newest first".
+- [x] Eighth wedding: Γαβριέλα & Χρήστος (`gavriela-christos`), last as asked, 16 photos (civil
+      wedding), 57 MB to 3.3 MB. Cover is a portrait (DSC05055, exported 2560 wide, focus 50% 15%):
+      the only couple landscape split them on phones, and the BW embrace put the title over the
+      bride's smile on desktop. Check the title block against faces, not just the crop.
+- [x] Real estate page: 27 photos from seven shoots (newest first, the 2026-06 flat leads) plus the
+      Athali Events & Weddings venue film (166 MB to 42 MB, poster at 1:14) placed after photo 13
+      via the new `afterPhoto` film option; the plant and anchor-clock portraits pair. Cover unchanged.

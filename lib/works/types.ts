@@ -19,10 +19,13 @@ export type ProjectService = "photography" | "film";
  * `title` captions the film and names its player; without it the project title is used.
  * `aspect` marks a portrait film (a social reel): it sits in a grid at that ratio instead of
  * running full width at 16:9.
+ * `afterPhoto` places the film among the gallery photos, after the row holding that photo
+ * (1 = the first gallery photo), instead of in the films section above the gallery.
  */
 export type ProjectFilm = ({ type: "video"; src: string; poster: string } | { type: "youtube"; id: string }) & {
   title?: string;
   aspect?: "9 / 16" | "4 / 5";
+  afterPhoto?: number;
 };
 
 export interface Project {

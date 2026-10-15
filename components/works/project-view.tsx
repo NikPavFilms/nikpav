@@ -56,10 +56,13 @@ export const ProjectView = async ({ project, locale }: ProjectViewProps) => {
     { label: t("location"), value: project.location[locale] },
     { label: t("services"), value: project.services.map((service) => t(service)).join(" · ") },
   ];
-  // A wedding (any collection's project) with a film opens on it, under the names. Other landscape
-  // films run full width further down; portrait reels share a grid below them.
-  const leadFilm = isCollection(project.category) ? project.films?.find((film) => !film.aspect) : undefined;
-  const films = (project.films ?? []).filter((film) => film !== leadFilm);
+  // A wedding (any collection's project) with a film opens on it, under the names. Films with
+  // `afterPhoto` sit among the gallery photos. The rest: landscape films run full width, portrait
+  // reels share a grid below them.
+  const galleryFilms = (project.films ?? []).filter((film) => film.afterPhoto !== undefined);
+  const sectionFilms = (project.films ?? []).filter((film) => film.afterPhoto === undefined);
+  const leadFilm = isCollection(project.category) ? sectionFilms.find((film) => !film.aspect) : undefined;
+  const films = sectionFilms.filter((film) => film !== leadFilm);
   const wideFilms = films.filter((film) => !film.aspect);
   const reels = films.filter((film) => film.aspect);
 
@@ -178,7 +181,7 @@ export const ProjectView = async ({ project, locale }: ProjectViewProps) => {
 
       {project.gallery.length > 0 && (
         <section aria-label={t("gallery")} className="container-site pb-24 md:pb-32">
-          <ProjectGallery images={project.gallery} locale={locale} />
+          <ProjectGallery images={project.gallery} films={galleryFilms} filmTitle={title} locale={locale} />
         </section>
       )}
 

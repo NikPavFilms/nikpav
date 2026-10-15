@@ -39,7 +39,8 @@ The photos currently on the site are **free-licence placeholders** (Pexels, Mixk
 real work. Replace them project by project:
 
 1. Put the photos in `assets/images/works/<category>/<slug>/` as `01.webp`, `02.webp`, ... (`01` is
-   the cover, preferably landscape; the others form the gallery and keep their own aspect ratio).
+   the cover, preferably landscape; the others form the gallery and keep their own aspect ratio:
+   landscapes run full width, portraits and squares pair up side by side at one height).
    Long edge around 2500px is plenty.
 2. Edit the matching entry in `lib/works/projects.ts`: title, location and alt text, each in English
    and Greek. `summary` (the line under the title), `description` (the paragraph below the hero) and
@@ -48,10 +49,11 @@ real work. Replace them project by project:
    `{ type: "video", src: "/videos/...", poster: "/videos/....webp" }` compressed for the web first
    (originals of hundreds of MB break the GitHub push). Vertical reels add `aspect: "9 / 16"` or
    `"4 / 5"` and sit in a grid at that ratio; list each ratio together so the grid rows stay even.
+   `afterPhoto: 13` puts a film among the gallery photos instead, after the 13th one.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
    (`lib/works/categories.ts`). **Weddings are a collection** (`COLLECTIONS` in
    `lib/works/projects.ts`): one project per wedding, each at `/works/wedding/<names>` (e.g.
-   `panagiotis-elpida`), listed newest first under the category's own cover
+   `panagiotis-elpida`), listed in the order of `PROJECTS` under the category's own cover
    (`assets/images/works/wedding/cover.webp`) and line, which also fill the Home tile and the single
    wedding card under "All" on /works, so those photos never change as weddings are added. A wedding
    with a film opens on it (the names, then the film, then the photos). Every other
