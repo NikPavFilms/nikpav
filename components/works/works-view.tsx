@@ -53,6 +53,7 @@ export const WorksView = async ({ locale, category }: WorksViewProps) => {
           focus="50% 70%"
           eyebrow={t("hero.eyebrow")}
           titleLines={[t("hero.title")]}
+          titleSize="medium"
           description={t("hero.description")}
         />
       )}

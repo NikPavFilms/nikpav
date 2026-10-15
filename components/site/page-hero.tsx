@@ -15,12 +15,19 @@ interface PageHeroProps {
   grayscale?: boolean;
   /** CSS object-position, to keep the subject clear of the text. */
   focus?: string;
+  /** "medium" for a smaller headline (the /works hero). */
+  titleSize?: "large" | "medium";
   children?: React.ReactNode;
 }
 
 const HEIGHTS = {
   screen: "h-dvh min-h-160",
   tall: "h-[82svh] min-h-140",
+} as const;
+
+const TITLE_SIZES = {
+  large: "text-[clamp(3.5rem,10.5vw,10rem)]",
+  medium: "text-[clamp(3rem,8vw,7.5rem)]",
 } as const;
 
 export const PageHero = ({
@@ -32,6 +39,7 @@ export const PageHero = ({
   height = "tall",
   grayscale = false,
   focus = "center",
+  titleSize = "large",
   children,
 }: PageHeroProps) => (
   <section className={cn("relative isolate flex items-end overflow-hidden bg-ink", HEIGHTS[height])}>
@@ -55,7 +63,7 @@ export const PageHero = ({
       </Eyebrow>
       {/* The title is the LCP element: visible on the first frame, lines only settle into place.
           Follow-up lines are dimmed, like the home hero ("WEDDING / LOVE STORIES"). */}
-      <h1 className="title-display mt-6 text-[clamp(3.5rem,10.5vw,10rem)]">
+      <h1 className={cn("title-display mt-6", TITLE_SIZES[titleSize])}>
         {titleLines.map((line, index) => (
           <Fragment key={`${index}-${line}`}>
             {/* A real space between the block lines, so the heading's text reads "Wedding Love stories". */}

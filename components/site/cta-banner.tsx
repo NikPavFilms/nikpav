@@ -27,7 +27,7 @@ export const CtaBanner = async () => {
 
       <Reveal className="container-site py-28 text-center">
         <p className="eyebrow text-foreground/75">{t("eyebrow")}</p>
-        <h2 id="cta-title" className="title-display mt-6 text-[clamp(3.75rem,12vw,11rem)]">
+        <h2 id="cta-title" className="title-display mt-6 text-[clamp(3rem,9vw,8.5rem)]">
           {t("title")}
         </h2>
         <p className="mt-6 text-lg text-foreground/85 md:text-2xl">{t("subtitle")}</p>
