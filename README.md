@@ -46,7 +46,8 @@ real work. Replace them project by project:
    the `gallery` photos are optional; without a description, search engines get the category's text. Optionally add
    films, shown in order: `films: [{ type: "youtube", id: "...", title: "..." }]`, or a self-hosted
    `{ type: "video", src: "/videos/...", poster: "/videos/....webp" }` compressed for the web first
-   (originals of hundreds of MB break the GitHub push).
+   (originals of hundreds of MB break the GitHub push). Vertical reels add `aspect: "9 / 16"` or
+   `"4 / 5"` and sit in a grid at that ratio; list each ratio together so the grid rows stay even.
 3. Categories are fixed: `social`, `wedding`, `baptism`, `real-estate`, `production`
    (`lib/works/categories.ts`). The first project of each category supplies its cover on Home and on
    the category page.

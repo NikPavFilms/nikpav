@@ -8,8 +8,9 @@ import { CtaBanner } from "@/components/site/cta-banner";
 import { Eyebrow } from "@/components/site/eyebrow";
 import { PageHero } from "@/components/site/page-hero";
 import { NextProject } from "@/components/works/next-project";
-import { ProjectFilm } from "@/components/works/project-film";
+import { FilmFigure, filmKey } from "@/components/works/project-film";
 import { ProjectGallery } from "@/components/works/project-gallery";
+import { cn } from "@/lib/general/utils";
 import { setupPageLocale } from "@/lib/i18n/locale";
 import { Link } from "@/lib/i18n/navigation";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -61,6 +62,10 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
     { label: t("location"), value: project.location[locale] },
     { label: t("services"), value: project.services.map((service) => t(service)).join(" · ") },
   ];
+  // Landscape films run full width; portrait reels share a grid below them.
+  const films = project.films ?? [];
+  const wideFilms = films.filter((film) => !film.aspect);
+  const reels = films.filter((film) => film.aspect);
 
   return (
     <>
@@ -135,21 +140,27 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
         </Reveal>
       </section>
 
-      {project.films?.length ? (
+      {films.length > 0 && (
         <section aria-labelledby="film-title" className="container-site pb-16 md:pb-24">
           <Eyebrow as="h2" id="film-title" className="mb-6">
-            {project.films.length > 1 ? t("theFilms") : t("theFilm")}
+            {films.length > 1 ? t("theFilms") : t("theFilm")}
           </Eyebrow>
-          <div className="grid gap-12 md:gap-16">
-            {project.films.map((film) => (
-              <figure key={film.type === "youtube" ? film.id : film.src}>
-                <ProjectFilm film={film} title={film.title ?? title} />
-                {film.title && <figcaption className="mt-4 text-muted-foreground">{film.title}</figcaption>}
-              </figure>
-            ))}
-          </div>
+          {wideFilms.length > 0 && (
+            <div className="grid gap-12 md:gap-16">
+              {wideFilms.map((film) => (
+                <FilmFigure key={filmKey(film)} film={film} fallbackTitle={title} />
+              ))}
+            </div>
+          )}
+          {reels.length > 0 && (
+            <div className={cn("grid grid-cols-2 items-start gap-3 md:grid-cols-3 md:gap-4", wideFilms.length > 0 && "mt-12 md:mt-16")}>
+              {reels.map((film) => (
+                <FilmFigure key={filmKey(film)} film={film} fallbackTitle={title} />
+              ))}
+            </div>
+          )}
         </section>
-      ) : null}
+      )}
 
       {project.gallery.length > 0 && (
         <section aria-label={t("gallery")} className="container-site pb-24 md:pb-32">

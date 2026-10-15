@@ -15,9 +15,14 @@ export interface ProjectImage {
 
 export type ProjectService = "photography" | "film";
 
-/** `title` captions the film and names its player; without it the project title is used. */
+/**
+ * `title` captions the film and names its player; without it the project title is used.
+ * `aspect` marks a portrait film (a social reel): it sits in a grid at that ratio instead of
+ * running full width at 16:9.
+ */
 export type ProjectFilm = ({ type: "video"; src: string; poster: string } | { type: "youtube"; id: string }) & {
   title?: string;
+  aspect?: "9 / 16" | "4 / 5";
 };
 
 export interface Project {
