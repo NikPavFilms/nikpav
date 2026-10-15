@@ -167,3 +167,7 @@ its photo and «Μια νέα αρχή» on Home and /works (`COLLECTIONS.baptis
 - [x] Wedding and baptism photos smaller on desktop (asked by Nikos): every row of a non-compact
       gallery takes 4/5 of the width (landscapes 1344 to 1075 wide, portrait pairs 664 to 530 each,
       a lone portrait 768 to 614); `sizes` follow. Phones unchanged; social and real estate unchanged.
+- [x] Download deterrents (asked by Nikos): `MediaGuard` blocks the context menu and dragging on
+      photos and videos (photos inside links keep the menu so cards still open in a new tab), CSS
+      stops iPhone long-press saving and image dragging, video players hide their download button
+      (`controlsList="nodownload"`). Determined visitors can still screenshot or read the network.

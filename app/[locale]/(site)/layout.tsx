@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { MotionProvider } from "@/components/motion/motion-provider";
+import { MediaGuard } from "@/components/site/media-guard";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { setupPageLocale } from "@/lib/i18n/locale";
@@ -24,6 +25,7 @@ const SiteLayout = async ({ children, params }: BaseLayoutProps) => {
       >
         {t("skip")}
       </a>
+      <MediaGuard />
       <SiteHeader />
       <main id="main">{children}</main>
       <SiteFooter />

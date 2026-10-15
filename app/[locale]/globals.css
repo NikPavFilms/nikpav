@@ -115,6 +115,14 @@ html body[data-scroll-locked] {
     @apply bg-background text-foreground selection:bg-foreground selection:text-background;
   }
 
+  /* With MediaGuard: no long-press "Save to Photos" on iPhone, no dragging photos to the desktop. */
+  img,
+  video {
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
   /* Static film grain over everything: texture without repaint cost. */
   body::after {
     content: "";

@@ -46,6 +46,7 @@ export const ShowreelDialog = () => {
               src={SITE.showreel.src}
               poster={SITE.showreel.poster}
               controls
+              controlsList="nodownload"
               autoPlay
               playsInline
               className="size-full object-contain"

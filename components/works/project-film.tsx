@@ -18,7 +18,14 @@ export const ProjectFilm = ({ film, title }: { film: Film; title: string }) => (
         className="size-full"
       />
     ) : (
-      <video controls playsInline preload="none" poster={film.poster} className="size-full object-cover">
+      <video
+        controls
+        controlsList="nodownload"
+        playsInline
+        preload="none"
+        poster={film.poster}
+        className="size-full object-cover"
+      >
         <source src={film.src} type="video/mp4" />
       </video>
     )}
