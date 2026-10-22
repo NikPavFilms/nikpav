@@ -16,6 +16,10 @@
       "title": "About",
       "description": "Photographer and filmmaker based in Athens, Greece. The story, the approach and the services behind every project."
     },
+    "experiences": {
+      "title": "Experiences",
+      "description": "Experiences by Nikos Pavlakos, photographer and filmmaker in Athens, Greece. Coming soon."
+    },
     "contact": {
       "title": "Contact",
       "description": "Tell me about your wedding, baptism, brand or space. Get in touch with Nikos Pavlakos for photography and film."
@@ -25,6 +29,7 @@
     "home": "Home",
     "works": "Works",
     "about": "About",
+    "experiences": "Experiences",
     "contact": "Contact",
     "primary": "Main navigation",
     "openMenu": "Open menu",
@@ -76,6 +81,10 @@
       "drone": {
         "label": "Drone",
         "service": "Aerial photo & video"
+      },
+      "experiences": {
+        "label": "Experiences",
+        "service": "Coming soon"
       }
     },
     "about": {
@@ -199,9 +208,17 @@
         "editing": {
           "title": "Editing",
           "text": "Colour grading, retouching and editing that give every project one consistent look."
+        },
+        "experiences": {
+          "title": "Experiences",
+          "text": "Coming soon."
         }
       }
     }
+  },
+  "Experiences": {
+    "eyebrow": "Experiences",
+    "title": "Coming soon"
   },
   "Contact": {
     "hero": {

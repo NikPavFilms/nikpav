@@ -1,4 +1,4 @@
-import { ArrowUpRight, Drone, Film } from "lucide-react";
+import { ArrowUpRight, Compass, Drone, Film } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -7,14 +7,15 @@ import { cn, frameNumber } from "@/lib/general/utils";
 import { Link } from "@/lib/i18n/navigation";
 import { CATEGORY_ICONS, CATEGORY_SLUGS } from "@/lib/works/categories";
 
-// Services with no category page of their own: their cards open /works.
+// Services with no category page of their own: editing and drone open /works.
 const EXTRA_SERVICES = [
-  { key: "editing", Icon: Film },
-  { key: "drone", Icon: Drone },
+  { key: "editing", Icon: Film, href: "/works" },
+  { key: "drone", Icon: Drone, href: "/works" },
+  { key: "experiences", Icon: Compass, href: "/experiences" },
 ] as const;
 
 // Hairline cards with thin line icons, as the brief asks (no filled discs or photos here).
-// On desktop the five categories fill one row and the extra services share the row below.
+// On desktop the five categories fill one row and the three extra services share the row below.
 export const WhatIDo = async () => {
   const t = await getTranslations("Home.whatIDo");
   const tCategories = await getTranslations("Categories");
@@ -26,15 +27,15 @@ export const WhatIDo = async () => {
       Icon: CATEGORY_ICONS[slug],
       label: tCategories(`${slug}.label`),
       service: tCategories(`${slug}.service`),
-      span: "lg:col-span-2",
+      span: "lg:col-span-6",
     })),
-    ...EXTRA_SERVICES.map(({ key, Icon }) => ({
+    ...EXTRA_SERVICES.map(({ key, Icon, href }) => ({
       key,
-      href: "/works",
+      href,
       Icon,
       label: t(`${key}.label`),
       service: t(`${key}.service`),
-      span: "lg:col-span-5",
+      span: "lg:col-span-10",
     })),
   ];
 
@@ -48,7 +49,7 @@ export const WhatIDo = async () => {
           title={t("title")}
           description={t("description")}
         />
-        <ul className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 md:mt-20 lg:grid-cols-10">
+        <ul className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 md:mt-20 lg:grid-cols-30">
           {cards.map(({ key, href, Icon, label, service, span }, index) => (
             <Reveal
               as="li"

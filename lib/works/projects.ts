@@ -511,7 +511,8 @@ export const PROJECTS: Project[] = [
     category: "wedding",
     title: { en: "Nora & Spyros", el: "Νόρα & Σπύρος" },
     location: GREECE,
-    services: ["photography"],
+    services: ["photography", "film"],
+    // The film opens the page; the cover fills the card in the wedding list.
     cover: {
       ...image(
         noraSpyros01,
@@ -521,6 +522,7 @@ export const PROJECTS: Project[] = [
       // The couple stands left of centre; keep them in the narrow portrait crop on phones.
       focus: "22% 50%",
     },
+    films: [{ type: "video", src: "/videos/wedding/nora-spyros.mp4", poster: "/videos/wedding/nora-spyros-poster.webp" }],
     gallery: [
       image(noraSpyros02, "A bottle of cologne among green leaves", "Ένα μπουκάλι άρωμα ανάμεσα σε πράσινα φύλλα"),
       image(

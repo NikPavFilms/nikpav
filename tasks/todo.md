@@ -174,3 +174,13 @@ its photo and «Μια νέα αρχή» on Home and /works (`COLLECTIONS.baptis
 - [x] New baptism covers chosen by Nikos: Alexandros DSC09642, Michail Panagiotis DSC03948 (hero,
       focus 45%; the old cover joins the gallery after DSC04376), Petros DSC08016, Petros II
       DSC08152. 01.webp stays the cover file (files swapped, gallery references follow).
+- [x] Νόρα & Σπύρος film (asked by Nikos): "Clip N&S 2" (3:05, 376 MB) to 61 MB, 1080p two-pass
+      2500k, poster at 0:11 (the couple by the sea at sunset). It opens the page like Νίκος & Εύη;
+      cover, gallery and list order unchanged. Verified: both locales 200, plays and seeks in Chrome
+- [x] New menu item Experiences / Εμπειρίες (asked by Nikos), between About and Contact in the
+      header, mobile menu and footer (`NAV_ITEMS`). `/experiences` says only "Coming soon" /
+      «Έρχεται σύντομα» in the 404's viewfinder layout; noindex and left out of the sitemap until
+      it has content. Verified: both locales 200, desktop and phone screenshots, menu open
+- [x] Experiences card in Home "What I do" (opens /experiences; desktop grid 30 columns so the
+      five categories and three extras each fill a row) and in About "Services" (fifth card spans
+      both columns). Both say "Coming soon". Verified: desktop and phone screenshots
