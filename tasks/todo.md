@@ -184,3 +184,12 @@ its photo and «Μια νέα αρχή» on Home and /works (`COLLECTIONS.baptis
 - [x] Experiences card in Home "What I do" (opens /experiences; desktop grid 30 columns so the
       five categories and three extras each fill a row) and in About "Services" (fifth card spans
       both columns). Both say "Coming soon". Verified: desktop and phone screenshots
+
+# Canonical domain (2026-11-03)
+
+- [ ] Open: the code declares `https://nikpav.gr` (`NEXT_PUBLIC_SITE_URL`, sitemap, canonicals), but
+      that domain is not on the Vercel project: it answers a 307 to `www.nikpav.gr`, the only one
+      serving the site. Fix in Vercel > nikpav > Settings > Domains: add `nikpav.gr`, confirm it
+      serves the site, then set `www.nikpav.gr` to redirect to it with a 308. Nameservers are on
+      Vercel, so no change at the registrar. Claude Code's auto mode blocks domain changes, so
+      Nikos does this in the dashboard or allows it.
