@@ -2,31 +2,34 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { Viewfinder } from "@/components/site/viewfinder";
+import { ProjectFilm } from "@/components/works/project-film";
 import { setupPageLocale } from "@/lib/i18n/locale";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { breadcrumbSchema } from "@/lib/seo/schema";
+import type { ProjectFilm as Film } from "@/lib/works/types";
 import { BasePageProps } from "@/types/page-props";
+
+const ALBUM_FILM: Film = {
+  type: "video",
+  src: "/videos/products/album.mp4",
+  poster: "/videos/products/album-poster.webp",
+};
 
 export const generateMetadata = async ({ params }: BasePageProps): Promise<Metadata> => {
   const locale = await setupPageLocale(params);
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
-  // A placeholder until the experiences exist: kept out of search results and the sitemap.
-  return {
-    ...(await buildMetadata({
-      locale,
-      path: "/experiences",
-      title: t("experiences.title"),
-      description: t("experiences.description"),
-    })),
-    robots: { index: false },
-  };
+  return buildMetadata({
+    locale,
+    path: "/products",
+    title: t("products.title"),
+    description: t("products.description"),
+  });
 };
 
-const ExperiencesPage = async ({ params }: BasePageProps) => {
+const ProductsPage = async ({ params }: BasePageProps) => {
   const locale = await setupPageLocale(params);
-  const t = await getTranslations("Experiences");
+  const t = await getTranslations("Products");
   const tNav = await getTranslations("Nav");
 
   return (
@@ -34,21 +37,21 @@ const ExperiencesPage = async ({ params }: BasePageProps) => {
       <JsonLd
         data={breadcrumbSchema(locale, [
           { name: tNav("home"), path: "" },
-          { name: tNav("experiences"), path: "/experiences" },
+          { name: tNav("products"), path: "/products" },
         ])}
       />
-      <section className="relative flex min-h-svh items-center overflow-hidden">
-        <Viewfinder
-          className="inset-x-6 inset-y-24 scale-100 opacity-100 md:inset-x-16 md:inset-y-32"
-          cornerClassName="size-10 border-foreground/25"
-        />
-        <div className="container-site relative text-center">
-          <p className="eyebrow text-muted-foreground">{t("eyebrow")}</p>
-          <h1 className="title-display mt-6 text-[clamp(3.5rem,12vw,10rem)]">{t("title")}</h1>
-        </div>
+      <section className="container-site pt-32 pb-28 md:pt-44 md:pb-40">
+        <p className="eyebrow text-center text-muted-foreground">{t("eyebrow")}</p>
+        <article className="mt-8 text-center">
+          <div className="mx-auto max-w-5xl">
+            <ProjectFilm film={ALBUM_FILM} title={t("album.title")} />
+          </div>
+          <h1 className="title-display mt-10 text-[clamp(2rem,4vw,3.75rem)]">{t("album.title")}</h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">{t("album.text")}</p>
+        </article>
       </section>
     </>
   );
 };
 
-export default ExperiencesPage;
+export default ProductsPage;

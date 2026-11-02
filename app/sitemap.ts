@@ -16,6 +16,7 @@ const STATIC_ROUTES: SitemapRoute[] = [
   { path: "", priority: 1 },
   { path: "/works", priority: 0.9 },
   { path: "/about", priority: 0.8 },
+  { path: "/products", priority: 0.7 },
   { path: "/contact", priority: 0.7 },
 ];
 

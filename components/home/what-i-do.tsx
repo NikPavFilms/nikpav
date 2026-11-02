@@ -1,4 +1,4 @@
-import { ArrowUpRight, Compass, Drone, Film } from "lucide-react";
+import { ArrowUpRight, Drone, Film, ShoppingBag } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -11,7 +11,7 @@ import { CATEGORY_ICONS, CATEGORY_SLUGS } from "@/lib/works/categories";
 const EXTRA_SERVICES = [
   { key: "editing", Icon: Film, href: "/works" },
   { key: "drone", Icon: Drone, href: "/works" },
-  { key: "experiences", Icon: Compass, href: "/experiences" },
+  { key: "products", Icon: ShoppingBag, href: "/products" },
 ] as const;
 
 // Hairline cards with thin line icons, as the brief asks (no filled discs or photos here).

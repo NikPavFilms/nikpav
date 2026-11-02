@@ -1,4 +1,4 @@
-import { Aperture, ArrowUpRight, Compass, Drone, type LucideIcon, SlidersHorizontal, Video } from "lucide-react";
+import { Aperture, ArrowUpRight, Drone, type LucideIcon, ShoppingBag, SlidersHorizontal, Video } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -7,7 +7,7 @@ import { cn, frameNumber } from "@/lib/general/utils";
 import { Link } from "@/lib/i18n/navigation";
 
 const SERVICES: {
-  key: "photography" | "videography" | "drone" | "editing" | "experiences";
+  key: "photography" | "videography" | "drone" | "editing" | "products";
   icon: LucideIcon;
   /** A service with a page of its own: the card opens it. */
   href?: string;
@@ -16,7 +16,7 @@ const SERVICES: {
   { key: "videography", icon: Video },
   { key: "drone", icon: Drone },
   { key: "editing", icon: SlidersHorizontal },
-  { key: "experiences", icon: Compass, href: "/experiences" },
+  { key: "products", icon: ShoppingBag, href: "/products" },
 ];
 
 const CARD_CLASS =

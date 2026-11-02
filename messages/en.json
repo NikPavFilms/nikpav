@@ -16,9 +16,9 @@
       "title": "About",
       "description": "Photographer and filmmaker based in Athens, Greece. The story, the approach and the services behind every project."
     },
-    "experiences": {
-      "title": "Experiences",
-      "description": "Experiences by Nikos Pavlakos, photographer and filmmaker in Athens, Greece. Coming soon."
+    "products": {
+      "title": "Products",
+      "description": "Premium 30x30 digital photo album, 20 spreads with a hard cover, by Nikos Pavlakos, photographer and filmmaker in Athens, Greece."
     },
     "contact": {
       "title": "Contact",
@@ -29,7 +29,7 @@
     "home": "Home",
     "works": "Works",
     "about": "About",
-    "experiences": "Experiences",
+    "products": "Products",
     "contact": "Contact",
     "primary": "Main navigation",
     "openMenu": "Open menu",
@@ -82,9 +82,9 @@
         "label": "Drone",
         "service": "Aerial photo & video"
       },
-      "experiences": {
-        "label": "Experiences",
-        "service": "Coming soon"
+      "products": {
+        "label": "Products",
+        "service": "Premium 30x30 digital album"
       }
     },
     "about": {
@@ -209,16 +209,19 @@
           "title": "Editing",
           "text": "Colour grading, retouching and editing that give every project one consistent look."
         },
-        "experiences": {
-          "title": "Experiences",
-          "text": "Coming soon."
+        "products": {
+          "title": "Products",
+          "text": "Premium 30x30 digital album, 20 spreads with a hard cover."
         }
       }
     }
   },
-  "Experiences": {
-    "eyebrow": "Experiences",
-    "title": "Coming soon"
+  "Products": {
+    "eyebrow": "Products",
+    "album": {
+      "title": "Premium digital album 30x30",
+      "text": "A 20-spread album with a hard cover front and back. Vivid colours that will keep your memories alive forever."
+    }
   },
   "Contact": {
     "hero": {

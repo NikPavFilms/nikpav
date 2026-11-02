@@ -46,3 +46,6 @@ next-env.d.ts
 
 # screenshots
 /screenshots
+
+# full-size source video (over GitHub's 100 MB limit); the site uses public/videos/products/album.mp4
+/public/videos/album.mp4
