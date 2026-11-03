@@ -187,9 +187,6 @@ its photo and «Μια νέα αρχή» on Home and /works (`COLLECTIONS.baptis
 
 # Canonical domain (2026-11-03)
 
-- [ ] Open: the code declares `https://nikpav.gr` (`NEXT_PUBLIC_SITE_URL`, sitemap, canonicals), but
-      that domain is not on the Vercel project: it answers a 307 to `www.nikpav.gr`, the only one
-      serving the site. Fix in Vercel > nikpav > Settings > Domains: add `nikpav.gr`, confirm it
-      serves the site, then set `www.nikpav.gr` to redirect to it with a 308. Nameservers are on
-      Vercel, so no change at the registrar. Claude Code's auto mode blocks domain changes, so
-      Nikos does this in the dashboard or allows it.
+- [x] Done by Nikos in the Vercel dashboard: `nikpav.gr` is on the project and serves the site,
+      `www.nikpav.gr` redirects to it with a 308, canonicals and the 62 sitemap URLs match. Google TXT
+      record added too. Search Console verification and the sitemap submission are his to confirm.
