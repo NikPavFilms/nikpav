@@ -935,12 +935,15 @@ export const PROJECTS: Project[] = [
     category: "wedding",
     title: { en: "Panagiotis & Elpida", el: "Παναγιώτης & Ελπίδα" },
     location: GREECE,
-    services: ["photography"],
+    services: ["photography", "film"],
     cover: image(
       panagiotisElpida01,
       "The couple on the shore at sunset, the groom's jacket over his shoulder",
       "Το ζευγάρι στην ακτή στο ηλιοβασίλεμα, με το σακάκι του γαμπρού στον ώμο",
     ),
+    films: [
+      { type: "video", src: "/videos/wedding/panagiotis-elpida.mp4", poster: "/videos/wedding/panagiotis-elpida-poster.webp" },
+    ],
     gallery: [
       image(
         panagiotisElpida02,
@@ -1050,7 +1053,7 @@ export const PROJECTS: Project[] = [
     category: "wedding",
     title: { en: "Domna & Giannis", el: "Δόμνα & Γιάννης" },
     location: GREECE,
-    services: ["photography"],
+    services: ["photography", "film"],
     cover: {
       ...image(
         domnaGiannis01,
@@ -1060,6 +1063,7 @@ export const PROJECTS: Project[] = [
       // The kiss sits left of centre; keep it in the narrow portrait crop on phones.
       focus: "40% 50%",
     },
+    films: [{ type: "video", src: "/videos/wedding/domna-giannis.mp4", poster: "/videos/wedding/domna-giannis-poster.webp" }],
     gallery: [
       image(
         domnaGiannis02,

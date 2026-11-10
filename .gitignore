@@ -47,5 +47,7 @@ next-env.d.ts
 # screenshots
 /screenshots
 
-# full-size source video (over GitHub's 100 MB limit); the site uses public/videos/products/album.mp4
+# full-size source videos (over GitHub's 100 MB limit); the site uses the web versions
 /public/videos/album.mp4
+/public/videos/panagiotis elpida CLIP.mp4
+/public/videos/domna giannis CLIP.mp4
